@@ -1,1 +1,5 @@
-data/raw_data/
+# Ignorar todos los archivos dentro de la carpeta
+data/raw_data/*
+
+# Mantener la carpeta en el repositorio
+!data/raw_data/.gitkeep
