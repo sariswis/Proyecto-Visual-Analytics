@@ -1,0 +1,545 @@
+IDExpediente,Estado,Regional,Departamento,Municipio,Vereda,Class,TipoCombustible,TipoFuenteEmision,Cuenca,Latitud,Longitud
+73640.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,CENTRO,,Otros,Horno,Río Bogotá,4.703417522164974,-74.22656074120917
+73788.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Resguardo,,Carbón,Caldera Horno,Río Suárez,5.318407377599899,-73.70428142050933
+74314.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MADRID,LA PUNTA,,ACPM,Caldera Horno,Río Bogotá,4.800461743437419,-74.21035542351376
+75972.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Fuel Oil No.8,Planta de Asfalto,Río Bogotá,4.678796745272664,-74.28411217939394
+78824.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FUNZA,El Hato,,Carbón,Caldera Horno,Río Bogotá,4.699589511070331,-74.19375177162796
+79754.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Horno,Río Suárez,5.186499421111086,-73.88197627029925
+80558.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FUNZA,La isla,,Coque,Caldera,Río Bogotá,4.744925265784511,-74.17508267728543
+83236.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,Vuelta Grande,,Carbón,Caldera,Río Bogotá,4.756802846772209,-74.14035346537922
+88514.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,ACPM,Secadores,Río Bogotá,4.68744271057875,-74.28129363469138
+89878.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,ACPM,Planta de Asfalto,Río Bogotá,4.680198773239136,-74.28289584257708
+93120.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Fuel Oil No.8,Planta de Asfalto,Río Bogotá,4.685590329529632,-74.27629087264197
+102214.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TENJO,La Punta,,NoAplica,NoAplica (área de operación),Río Bogotá,4.781656397575474,-74.18674334861848
+104014.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,ACPM,Caldera,Río Bogotá,4.668429690322708,-74.26523633666623
+109430.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MADRID,CASCO URBANO,,Madera,Caldera,Río Bogotá,4.73061248602139,-74.25431946798817
+117700.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Fuel Oil No.8,PLANTA DE ASFALTO ADM,Río Bogotá,4.677815636514173,-74.2679517245167
+119814.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Caldera Horno,Río Suárez,5.189139417876079,-73.88027071141002
+120014.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Horno,Río Suárez,5.188686408335298,-73.8775198087606
+121606.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Cabrera,,Carbón,Caldera Horno,Río Suárez,5.404332484014891,-73.67784659358865
+123330.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.072532666468105,-73.96173186680015
+124002.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chacua,,Otros,REACTOR,(sin definir),11.876445941579393,-40.5431040219577
+124654.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FACATATIVA,Moyano,,Carbón,Caldera,Río Bogotá,4.794271656471029,-74.32465722228024
+127196.0,Seguimiento y Control,Alto Magdalena,Cundinamarca,NILO,LA ESMERALDA,,ACPM,Caldera,Río Sumapaz,3.978951276472348,-74.45757606122676
+127300.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Casa Blanca,,Carbón,Caldera Horno,Río Bogotá,5.124111114499696,-73.90930461495846
+128338.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,Vuelta Grande,,Gas,Caldera Horno,Río Bogotá,4.741710643609742,-74.13242897551558
+130078.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Caldera Horno,Río Suárez,5.235020055600297,-73.80065993375005
+131966.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.067304100739209,-73.95243509058483
+134880.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Caldera Horno,Río Suárez,5.188253149081619,-73.88006353101989
+135212.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Pajarito,,Carbón,Caldera Horno,Río Bogotá,5.155501952928119,-73.92039921548076
+135366.0,Seguimiento y Control,Almeidas y Municipio de Guatavita,Cundinamarca,SUESCA,CHITIVA,,Carbón,Horno,Río Bogotá,5.102860839254118,-73.80553322046644
+135366.0,Seguimiento y Control,Almeidas y Municipio de Guatavita,Cundinamarca,SUESCA,CHITIVA ABAJO,,Carbón,Horno,Río Bogotá,5.10078911304372,-73.80339670128349
+135366.0,Seguimiento y Control,Almeidas y Municipio de Guatavita,Cundinamarca,SUESCA,CHITIVA ABAJO,,Carbón,Horno,Río Bogotá,5.099270879183655,-73.80567902769707
+135366.0,Seguimiento y Control,Almeidas y Municipio de Guatavita,Cundinamarca,SUESCA,CHITIVA ABAJO,,Carbón,Horno,Río Bogotá,5.099270879183655,-73.80567902769707
+135850.0,Seguimiento y Control,Ubate,Cundinamarca,UBATE,La Patera,,Otros,Horno,Río Suárez,5.306875406456808,-73.80306390803548
+135850.0,Seguimiento y Control,Ubate,Cundinamarca,UBATE,La Patera,,Otros,Horno,Río Suárez,5.307454278663283,-73.80336136073772
+136222.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FACATATIVA,Mancilla,,Carbón,Caldera,Río Bogotá,4.846983831770509,-74.34650179589275
+136448.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Gas,Horno,(sin definir),11.886868625331884,-40.527334955878445
+136490.0,Seguimiento y Control,Alto Magdalena,Cundinamarca,RICAURTE,BUENOS AIRES,,Carbón,Horno,Río Sumapaz,3.887967424881892,-74.371055451274
+136616.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Estancia,,Otros,Horno,Río Suárez,5.328939839386754,-73.68600615127848
+136886.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chacua,,NoAplica,FILTRO MOLINO PENDULAR,(sin definir),11.873641666430338,-40.541236252072466
+137006.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Serrezeluita,,Otros,Molino,Río Bogotá,4.699729230701192,-74.22047602944497
+137218.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chacua,,Carbón,Caldera,(sin definir),11.879024648012846,-40.543524257045355
+137254.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,CANOAS,,Otros,Barrilado de grafito ,Río Bogotá,4.582978439087634,-74.24243217681114
+138622.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,(sin definir),(sin definir),Río Bogotá,5.118907635516168,-73.8954349960792
+139320.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,(sin definir),Horno,Río Suárez,5.190613195803246,-73.87958474565609
+139882.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,(sin definir),11.869338952096133,-40.50123088878086
+141414.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FACATATIVA,Centro Urbano,,Otros,Aspiración molino Danioni I,Río Bogotá,4.80476559651936,-74.21355643778917
+141586.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Caldera Horno,Río Bogotá,5.127454811990184,-73.90118667346393
+141774.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Canelón,,Carbón,Caldera,Río Bogotá,4.919869822773218,-74.06360501248838
+141798.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MADRID,Puente Piedra,,ACPM,Planta de Asfalto,Río Bogotá,4.80476559651936,-74.21355643778917
+141856.0,Seguimiento y Control,Sabana Centro,Cundinamarca,SOPO,Pueblo Viejo,,Gas,Caldera Horno,Río Bogotá,4.914466140453649,-73.93997679404697
+142500.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Pajarito,,Carbón,Caldera Horno,Río Bogotá,5.146516959350765,-73.89997285814142
+142884.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,Río Bogotá,4.520138002374677,-74.19645293953957
+144002.0,Seguimiento y Control,Ubate,Cundinamarca,SIMIJACA,Hato Chico,,Otros,Horno,Río Suárez,5.532379891649153,-73.83440456802114
+144412.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Rabanal,,Carbón,Horno,Río Suárez,5.33671022354105,-73.70490190272402
+144412.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Rabanal,,Carbón,Horno,Río Suárez,5.33671022354105,-73.70490190272402
+144412.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Peñas,,Carbón,Horno,Río Suárez,5.33671022354105,-73.70490190272402
+145760.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Panamá,,Gas,Horno,Río Bogotá,4.562457250245541,-74.21062594373767
+146234.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,Vuelta Grande,,Otros,TRITURADOR DE ESCOMBROS,Río Bogotá,4.756314499845698,-74.14058778462476
+147752.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MADRID,Puente Piedra,,ACPM,Planta de Asfalto,Río Bogotá,4.818670893069072,-74.22727968673412
+147870.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Tibitó,,Carbón,Caldera Horno,Río Machetá,4.9578196312945,-73.70782726554745
+148522.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chacua,,Gas,HORNO DE SECADO,(sin definir),11.876105874947447,-40.54120542623025
+150306.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,(sin definir),(sin definir),Río Bogotá,5.125421030494849,-73.90439797153304
+151254.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chusaca,,Gas,CAMPANA DE EXTRACCIÓN  PLOMO 1,Río Bogotá,4.535888872799148,-74.25191919047849
+151706.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FUNZA,El Cacique,,Carbón,Caldera,Río Bogotá,4.730851780541538,-74.1913322996901
+152236.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.132011888252765,-73.89917418037368
+153454.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TABIO,Rio Frío Oriental,,Carbón,Horno,Río Bogotá,4.957922845608089,-74.06308125331644
+153534.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.065794389946128,-73.95486125585315
+153780.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Tibitó,,Gas,Horno,Río Bogotá,4.968520890391967,-73.96514953656599
+154266.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Mortiño,,Carbón,Caldera,Río Bogotá,5.044340815540402,-73.93683866225531
+154302.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Otros,TRITURADORA,Río Bogotá,4.686963005306945,-74.2827445943305
+154404.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Chimenea 1,Río Suárez,5.188262627219513,-73.88146159849582
+154642.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Gas,Horno arcillas de Soacha tipo túnel,(sin definir),11.892809469097637,-40.50622069588541
+155148.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Canavita,,Gas,Horno,Río Bogotá,4.94890310168157,-73.94601077555946
+155298.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.06757508437556,-73.95086588094019
+155300.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Coque,Horno,Río Suárez,5.187104937201386,-73.88082155045036
+155300.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Coque,Horno,Río Suárez,5.187113982906728,-73.88083056744304
+155530.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.077117471050673,-73.96184828721185
+156070.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Otros,Caldera,Río Bogotá,4.67388255865053,-74.26556225033188
+161770.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Coque,Horno,Río Suárez,5.184166157402317,-73.88134560550077
+164064.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.072758477228417,-73.96027087464054
+164066.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.072757472919745,-73.95485994243853
+164672.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.074149403244205,-73.9512974754703
+166012.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Chuntame Alto,,Otros,TRITURADOR DE MATERIAL,Río Bogotá,4.906383841408903,-74.01451335072929
+166542.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,La Unión,,Fuel Oil No.8,Horno,(sin definir),11.868159440984144,-40.55375774565463
+167378.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.517287002502915,-74.14492788758095
+167380.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.534975795179951,-74.13999140271514
+167394.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.535310391458448,-74.13998242029001
+167396.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.503459767494724,-74.14802632128853
+167796.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.531032911512373,-74.14093723192799
+168788.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.526221823595039,-74.14258583733415
+169532.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.517658008181525,-74.14232375543543
+169720.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.534406065242357,-74.14014454355686
+169726.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.52597679631161,-74.15156082977826
+169728.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.519628633139708,-74.15048787853901
+169730.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.515343216106536,-74.13948510753538
+169746.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.526681284128709,-74.15967086038007
+170762.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Verganzo,,Carbón,Caldera,(sin definir),12.197747584705445,-40.23297231681016
+170950.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.523607901815922,-74.14750562613166
+171144.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,ACPM,Horno,Río Bogotá,4.526293750993234,-74.14707335308687
+171168.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.514311647899588,-74.1466937521958
+171196.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,(sin definir),(sin definir),Río Bogotá,4.506914034508921,-74.15013518661247
+171200.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.530824762533079,-74.14270339321416
+171204.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,(sin definir),(sin definir),Río Bogotá,4.516029605486364,-74.14912686751758
+171210.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.51665431313687,-74.14128740772773
+171210.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.516283560010455,-74.14111616748636
+171218.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.51597608343633,-74.14123328287343
+171372.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO ALTO,,Carbón,Horno,Río Bogotá,4.530960797220908,-74.13825191141156
+171376.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.530282179260267,-74.14265828905526
+171570.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Canavita,,Gas,Caldera,Río Bogotá,4.955374410959588,-73.92956321239852
+172430.0,Seguimiento y Control,Sabana Centro,Cundinamarca,ZIPAQUIRA,Centro    ,,Otros,Horno,Río Bogotá,5.009788663543848,-73.9962884761451
+172924.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,ACPM,Caldera,Río Bogotá,4.526094739623085,-74.14772213040409
+173286.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.051780797728392,-73.97197091052757
+173902.0,Seguimiento y Control,Sabana Centro,Cundinamarca,SOPO,Pueblo Viejo,,Carbón,Horno,Río Bogotá,4.922950696435342,-73.95118215031653
+174480.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.067159318971524,-73.95194813879871
+174562.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.522333277103341,-74.14262153423219
+174768.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,FUNZA,La isla,,Gas,Horno,Río Bogotá,4.750422507990216,-74.18150134396804
+174782.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.520469975307662,-74.14711785236653
+174832.0,Seguimiento y Control,Sabana Centro,Cundinamarca,SOPO,La Carolina,,Gas,Horno,Río Bogotá,4.925290703351028,-73.94041636598074
+175104.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Mortiño,,Gas,Horno,Río Bogotá,5.038589828443855,-73.93841800424288
+175380.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.52988273894483,-74.15797713391493
+176396.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,,Carbón,Horno,Río Suárez,5.323226569497588,-73.71852365618248
+178612.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Panamá,,Gas,HORNO TÚNEL 1 SOACHA 2,Río Bogotá,4.459956039015855,-74.10719670471978
+181110.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.531258660037451,-74.1445867571135
+183514.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Balsillas,,Otros,Trituradora,Río Bogotá,4.66799319038012,-74.27412284038506
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.062846259618801,-73.95421250947518
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.063108431682171,-73.95382468213964
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.063470229451343,-73.95423944557243
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.063859128461356,-73.95450991481249
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.063298514179143,-73.95477154530808
+183556.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,,Carbón,Horno,Río Bogotá,5.062294659255415,-73.95432083082554
+183560.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Tibitó,,Carbón,Caldera,Río Bogotá,4.986453623175652,-73.96796882637689
+183976.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.141135929250273,-73.8982156143763
+185276.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Canelón,,Carbón,Caldera,Río Bogotá,4.921062492435692,-74.03828759452762
+185684.0,Seguimiento y Control,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,,Carbón,Chimenea Triunfo central,Río Suárez,5.20757802997226,-73.85366477007742
+187436.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Carbón,Horno,(sin definir),11.893424590252797,-40.52496757610384
+188060.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Chuntame Alto,,Carbón,Caldera,Río Bogotá,4.972477821182302,-74.00104494634783
+188280.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.07090404704611,-73.95688938595272
+188764.0,Seguimiento y Control,Ubate,Cundinamarca,TAUSA,Rasgatá,,Carbón,Chimenea 1,Río Suárez,5.189093129940887,-73.87686123390627
+190770.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chusaca,,Carbón,700 BHP VR2,(sin definir),11.877707620662056,-40.54427535733022
+190772.0,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,Chusaca,,Carbón,Caldera,(sin definir),11.877682665770413,-40.544317740285784
+197696.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,San José,,Otros,molino,Río Bogotá,4.697863547136177,-74.18591900240203
+199550.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Cazuca,,Carbón,Caldera,Río Bogotá,4.59059363178149,-74.19144491479723
+199976.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.069357018781721,-73.9532914220978
+203658.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Chuntame Bajo,,Fuel Oil No.8,PLANTA DE MEZCLA ASFÁLTICA,Río Bogotá,4.950794121243961,-74.01465343303985
+205016.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Casa Blanca,,Carbón,Batería de coquización A,Río Bogotá,5.130911002130798,-73.90780567938849
+205316.0,Seguimiento y Control,Sabana Centro,Cundinamarca,ZIPAQUIRA,Centro    ,,Gas,Horno,Río Bogotá,5.029057177522787,-73.98090202384775
+205998.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Rabanal,,Carbón,Horno,Río Suárez,5.334212517575045,-73.70175481069927
+206954.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Canavita,,Otros,Horno,Río Bogotá,4.948160070683243,-73.93863541906872
+206956.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,Mortiño,,Carbón,Horno,Río Bogotá,5.060730225984948,-73.95432112675945
+208554.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,Vuelta Grande,,Otros,Horno,Río Bogotá,4.741710643609742,-74.13242897551558
+209714.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Frontera,,Coque,Horno,Río Suárez,5.373902748081655,-73.69011881548678
+210888.0,Seguimiento y Control,Ubate,Cundinamarca,SUTATAUSA,Peñas de Cajón,,Carbón,Horno,Río Suárez,5.214274490915157,-73.84186403026766
+211090.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Gas,Horno,Río Bogotá,4.545286581264353,-74.2436941623454
+211788.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.515170499729747,-74.1492168925191
+214656.0,Seguimiento y Control,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,,Otros,Horno,Río Bogotá,4.327055786248329,-74.80120845771593
+214656.0,Seguimiento y Control,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,,Otros,Horno,Río Bogotá,4.326766634580483,-74.80099199260722
+215160.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,,Carbón,Horno,Río Suárez,5.325691944704173,-73.71291977431318
+215160.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,,Carbón,Horno,Río Suárez,5.324652169741913,-73.71315494967774
+215548.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.532045540756562,-74.14318109269777
+218040.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Peñas,,Carbón,Horno,Río Suárez,5.375688989508088,-73.68354038302505
+219702.0,Seguimiento y Control,Magdalena Centro,Cundinamarca,SAN JUAN DE RIOSECO,Centro Poblado Cambao,,ACPM,Caldera,Río Seco - Río Magdalena,4.901375933995789,-74.72910930382439
+220334.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,,Carbón,Horno,Río Suárez,5.324352711280675,-73.71138688481753
+220334.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,,Carbón,Horno,Río Suárez,5.324352711280675,-73.71138688481753
+221308.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,La Ramada,,Carbón,Horno,Río Suárez,5.322074072592789,-73.71160475103049
+223364.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Rabanal,,Carbón,Horno,Río Suárez,5.342877295476011,-73.70479893802133
+224442.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,Siete Trojes,,Gas,Horno,Río Bogotá,4.718446115323723,-74.23096251271922
+226506.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,Río Bogotá,4.549327252662023,-74.20745154059891
+226506.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,Río Bogotá,4.549327252662023,-74.20745154059891
+226506.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,Río Bogotá,4.549327252662023,-74.20745154059891
+226592.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,ACPM,Secadores,Río Bogotá,4.525045864719102,-74.14639740542519
+226674.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Casa Blanca,,Carbón,molino,Río Bogotá,5.122663890887295,-73.907961177625
+228146.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,SIBERIA,,Otros,Horno,Río Bogotá,4.743980426788356,-74.13277168008962
+229140.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,ACPM,Secadores,Río Bogotá,4.52746940611893,-74.14655983395548
+229254.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,,Carbón,Horno,Río Bogotá,5.067493903404046,-73.95192101977662
+234474.0,Seguimiento y Control,Sabana Centro,Cundinamarca,COTA,SIBERIA,,Otros,Secadores,Río Bogotá,4.757888426399601,-74.13566628255914
+236124.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,Carbón,Horno,Río Bogotá,4.516545132678234,-74.14842406462392
+236626.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Otros,Secadores,Río Bogotá,4.549327252662023,-74.20745154059891
+237320.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Horno,Río Suárez,5.220712393214728,-73.81738069600944
+237546.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Santuario,,Carbón,Horno,Río Suárez,5.367661724854596,-73.68765968240605
+239650.0,Seguimiento y Control,Bogotá y Municipio de la Calera,Cundinamarca,LA CALERA,ALTAMAR,,(sin definir),(sin definir),Río Bogotá,4.730325004988502,-73.95057780141846
+240512.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Cazuca,,Gas,Secadores,Río Bogotá,4.585336568654857,-74.20904409471083
+242468.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Santuario,,(sin definir),(sin definir),Río Suárez,5.368512628332108,-73.68905759236137
+246026.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MOSQUERA,San José,,NoAplica,molino buhler,Río Bogotá,4.696014871207774,-74.20857787225968
+247634.0,Seguimiento y Control,Sumapaz,Cundinamarca,FUSAGASUGA,Cucharal,,Otros,Planta de Asfalto,Río Sumapaz,4.328762800946419,-74.41884479172194
+249390.0,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,,Carbón,Horno,Río Suárez,5.444633640351026,-73.60050816910078
+249462.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Aposentos,,NoAplica,Horno,Río Suárez,5.227279655231649,-73.78144106251762
+250486.0,Seguimiento y Control,Chiquinquira,Boyacá,CHIQUINQUIRA,Sucre Oriental,,Otros,Secadores,Río Suárez,5.558346040461315,-73.82330194303466
+251256.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Canavita,,NoAplica,Horno,Río Bogotá,4.948368027349582,-73.93848209506716
+251262.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Pueblo Viejo,,Carbón,Horno,(sin definir),12.486339051750814,-39.980202101042096
+251522.0,Seguimiento y Control,Ubate,Cundinamarca,SIMIJACA,Centro,,Carbón,Horno,Río Suárez,5.512951489781183,-73.84572926117762
+252170.0,Seguimiento y Control,Ubate,Cundinamarca,SIMIJACA,Hato Chico,,Leña,Horno,(sin definir),12.649001376707186,-40.068676757927456
+252754.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Horno,Río Suárez,5.233765376122582,-73.8058562407743
+253304.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.122310435827001,-73.90503914988963
+253700.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.131588829580173,-73.90633539971547
+253700.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.131579709262431,-73.90604679345861
+253916.0,Seguimiento y Control,Ubate,Cundinamarca,SUTATAUSA,Peñas de Cajón,,Mezcla,Horno,Río Suárez,5.213668439470928,-73.84138618837785
+253916.0,Seguimiento y Control,Ubate,Cundinamarca,SUTATAUSA,Peñas de Cajón,,Mezcla,Horno,Río Suárez,5.213541730894566,-73.84109759104514
+253924.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Peñas,,Carbón,Horno,(sin definir),12.494483215224372,-39.961927994997
+253926.0,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,Peñas,,Carbón,Horno,Río Suárez,5.389132226919711,-73.66500843821844
+253958.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Hulla,Horno,(sin definir),12.399667659923882,-40.07735792030298
+253958.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Hulla,Horno,(sin definir),12.399667659923882,-40.07735792030298
+254206.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.11407293807444,-73.90733212518127
+254360.0,Seguimiento y Control,Sabana Occidente,Cundinamarca,MADRID,La Cuesta,,ACPM,PLANTA TRITURADORA ,Río Bogotá,4.851403178634114,-74.19943889069901
+254602.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Carbón,Horno,Río Bogotá,5.114741361860678,-73.90451808765988
+254614.0,En Trámite,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,,Gas,Horno,Río Bogotá,5.120701371343946,-73.90719509076919
+255944.0,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,,Carbón,Horno,Río Suárez,5.443367531678636,-73.60031967843835
+259752.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Gas,Horno,(sin definir),11.909820192451479,-40.484171511604714
+260370.0,Seguimiento y Control,Sabana Centro,Cundinamarca,CAJICA,Chuntame Alto,,Otros,Horno,Río Bogotá,4.953109118758864,-74.01450894895697
+262148.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Horno,(sin definir),12.392064710900724,-40.088128800437744
+265866.0,En Trámite,Sabana Centro,Cundinamarca,ZIPAQUIRA,CASCO URBANO,,Carbón,Caldera,Río Bogotá,5.022983920924119,-74.00971397007675
+268628.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Horno,(sin definir),12.392169363300315,-40.084093932589056
+269526.0,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,Verganzo,,NoAplica,Caldera,Río Bogotá,4.963030855079891,-73.95977650306315
+269960.0,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,,Carbón,Chimenea 1,Río Suárez,5.228566356333745,-73.80727467545057
+271904.0,Seguimiento y Control,Sabana Centro,Cundinamarca,NEMOCON,Cerro Verde,,Carbón,Batería de producción de coque,Río Bogotá,5.135243972568703,-73.88117122864963
+272546.0,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,,Carbón,Horno,(sin definir),12.532648630538466,-39.91823591503857
+272546.0,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,,Carbón,Horno,(sin definir),12.532413312508515,-39.91861311187053
+273724.0,En Trámite,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.073019945414556,-73.95605931663142
+273724.0,En Trámite,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.07248663313253,-73.95724982090229
+273724.0,En Trámite,Sabana Centro,Cundinamarca,COGUA,Neusa,,Carbón,Horno,Río Bogotá,5.072983997871496,-73.95725874707476
+274218.0,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,Fusunga,,Carbón,Horno,(sin definir),11.875791834078868,-40.499477931414525
+277246.0,Seguimiento y Control,Ubate,Cundinamarca,LENGUAZAQUE,La Ramada,,NoAplica,NoAplica (área de operación),Río Suárez,5.320792253355371,-73.71541261856255
+281510.0,En Trámite,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,,(sin definir),(sin definir),(sin definir),11.835708958384386,-40.45972948803284
+281730.0,En Trámite,Sabana Centro,Cundinamarca,TOCANCIPA,Tibitó,,Carbón,Caldera,Río Bogotá,4.957605672455215,-73.96328493791145
+84550.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,Mortiño,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.066568931747036,-73.93922367036498
+94206.0,Sancionatorio,Sabana Centro,Cundinamarca,TENJO,Churuguaco,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.866675715457455,-74.14239201606195
+96416.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Oratorio,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.075065212873094,-73.92123948691632
+96946.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,MANTA,Casco Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.138454859403585,-73.67173935679345
+109564.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,CHOCONTA,Soatama,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Machetá,5.13766333750456,-73.54254491791754
+110204.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,MANTA,Fuchatoque,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),86.08715945397307,-68.10794785375118
+144976.0,Sancionatorio,Sabana Centro,Cundinamarca,COTA,Vuelta Grande,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.76060036023827,-74.14634814428524
+149104.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,QUIBA ALTA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.558719743580678,-74.17034405643113
+150604.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,Pajarito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.140893962021765,-73.90618861109839
+151912.0,Sancionatorio,Sabana Centro,Cundinamarca,CHIA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.858937849536002,-74.06337187008603
+152014.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,Chasques,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.243819181812527,-73.5933389849135
+152140.0,Sancionatorio,Rionegro,Cundinamarca,LA PALMA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.359883285616657,-74.39175444784289
+152218.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE SUBA,CHORRILLOS,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.792679193239126,-74.0997556073905
+153862.0,Sancionatorio,Rionegro,Cundinamarca,PACHO,KENNEDY,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.128513738288823,-74.16003190661208
+153862.0,Sancionatorio,Rionegro,Cundinamarca,PACHO,KENNEDY,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.128513738288823,-74.16003190661208
+156148.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE SUBA,CHORRILLOS,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.777043371309548,-74.10911190037291
+156796.0,Sancionatorio,Tequendama,Cundinamarca,TENA,INSPECCION LA GRAN VIA,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.6487422901155,-74.41316242641665
+158534.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Santa Ana,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.566341393818399,-74.23247062806013
+158568.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,Chusaca,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.542437009581842,-74.24797384432563
+158672.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.298845009980081,-74.8088832640906
+159404.0,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,CASCO URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Suárez,5.627317486398075,-73.80856837864569
+159408.0,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,CASCO URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Suárez,5.627317486398075,-73.80856837864569
+160008.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,DUCALES,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.571875537004082,-74.23350815057302
+160186.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Fusunga,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.550584295557992,-74.2071634028477
+161340.0,Sancionatorio,Bogotá y Municipio de la Calera,Cundinamarca,LA CALERA,Centro la Toma,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.72022667747147,-73.96673183066753
+161754.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE FONTIBON,PUENTE GRANDE,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.679284000964967,-74.15624540339164
+162044.0,Sancionatorio,Bogotá y Municipio de la Calera,Cundinamarca,LA CALERA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.720172578073919,-73.9677323379922
+162270.0,Sancionatorio,Bogotá y Municipio de la Calera,Cundinamarca,LA CALERA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.706117374037105,-73.95411541814988
+163482.0,Sancionatorio,Gualiva,Cundinamarca,ALBAN,La María,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Negro,4.917265304913495,-74.42520328263082
+163736.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.579614351782139,-74.24270175690222
+164052.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Astorga,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,5.058051342260439,-73.87398027702358
+164448.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Punta Grande,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.342191203763201,-73.75473565633806
+165068.0,Sancionatorio,Sabana Occidente,Cundinamarca,MADRID,Santa Cruz,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.748679900247107,-74.25650541046015
+166650.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.5039119265132,-74.14799933247245
+166794.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE KENNEDY,TINTALITO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.655157357482492,-74.15344878460306
+168210.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.569148011009392,-74.21657481726287
+168226.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.573909508970414,-74.18895505976167
+168392.0,Sancionatorio,Sabana Centro,Cundinamarca,COTA,SIBERIA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.751213784706429,-74.14508526423714
+168490.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.459494709986158,-74.11022412945748
+168616.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO ALTO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.50224798133018,-74.14809829074211
+168956.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.537088177465246,-74.17372048353121
+169248.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Río Grande,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.978907266921981,-73.99993512045668
+169516.0,Sancionatorio,Sabana Centro,Cundinamarca,SOPO,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.923032165458978,-73.95161491118245
+169584.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,RIO FRIO-LA FLORIDA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.921107711801773,-74.03835972120199
+170230.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Tierra Negra,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.378754932535756,-74.34660495109256
+170540.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Tierra Negra,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.379052510114605,-74.34893843458083
+170548.0,Sancionatorio,Sumapaz,Cundinamarca,SILVANIA,Azafranal,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.439076346507298,-74.3822697689574
+170618.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE KENNEDY,TINTALITO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.654614891880992,-74.15233115523553
+170806.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE FONTIBON,EL CHARCO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.698064835661141,-74.16964115732343
+171236.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.531412614852203,-74.14215376714297
+171250.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.506308231849069,-74.14926107740006
+171320.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO ALTO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.503911949191132,-74.14776505203284
+171546.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.343310238861903,-74.35999735805336
+171708.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Paso Ancho,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.009100674642049,-73.99067075031871
+171784.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Bermejal,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.374470183009603,-74.34193669384523
+172164.0,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,CASCO URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Suárez,5.620774506233361,-73.81729066129132
+172710.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,Moyano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.797485698834556,-74.28622074733866
+172710.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,Moyano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.802694796068038,-74.28514058611823
+172940.0,Sancionatorio,Sabana Occidente,Cundinamarca,FUNZA,La Florida,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.728504729167104,-74.16244328733147
+173068.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,Tierra Morada,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.864618558903129,-74.2935346978195
+173944.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.323524958706307,-73.71848739660393
+173948.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.522477523597392,-74.14737936340134
+174580.0,Sancionatorio,Alto Magdalena,Cundinamarca,TOCAIMA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.456725467921365,-74.63397912834974
+174606.0,Sancionatorio,Alto Magdalena,Cundinamarca,TOCAIMA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.456761543231247,-74.63410529258086
+174920.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.429751044743832,-73.6382273624479
+175534.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Peñas,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.199806941206461,-73.84467462153063
+175598.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,Ramada  Flores,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.323334924557479,-73.7182529444509
+175776.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.299009226147966,-74.80737014375782
+175778.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.277865284350967,-74.77137456628721
+176346.0,Sancionatorio,Ubate,Cundinamarca,UBATE,Guatancuy,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.355177265652509,-73.79250457318558
+176384.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,Pajarito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.138198773864668,-73.90471921551881
+176816.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,La Ramada,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.323081959319736,-73.71865004281216
+177306.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE SUBA,CHORRILLOS,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.776392032519601,-74.11391646419493
+177574.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,Centro Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.789465777581055,-74.33564396734384
+178160.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Peñas,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.199843079390366,-73.84458440872808
+178282.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.009432163998458,-74.46942670337023
+178352.0,Sancionatorio,Ubate,Cundinamarca,CARMEN DE CARUPA,Alisal,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.322992557469982,-73.88163599170963
+178520.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.009584047749668,-74.47249262761589
+179220.0,Sancionatorio,Alto Magdalena,Cundinamarca,RICAURTE,Manuel del Sur,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.371199251885157,-74.76472109834666
+180258.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.119062373166955,-73.89901543245215
+180984.0,Sancionatorio,Bajo Magdalena,Cundinamarca,GUADUAS,El Hato,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Negro,5.050345271892867,-74.61589752996909
+181048.0,Sancionatorio,Sabana Occidente,Cundinamarca,BOJACA,San Antonio,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.669761040815742,-74.34295407480086
+181102.0,Sancionatorio,Sabana Occidente,Cundinamarca,EL ROSAL,Tibagota,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.89483375125798,-74.21516124336435
+182418.0,Sancionatorio,Sabana Occidente,Cundinamarca,MADRID,CENTRO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.730783286681798,-74.25825845988392
+183020.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE SUBA,CASABLANCA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.786439582937853,-74.05864983422728
+183176.0,Sancionatorio,Ubate,Cundinamarca,UBATE,Volcán,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.320763688650551,-73.82061393457278
+183202.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,Resguardo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.308087682164367,-73.71622294275865
+183962.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.316512296256442,-74.79165016059083
+184188.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.309269150937624,-74.80132672188316
+184204.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.31266289238801,-74.78878208540156
+185260.0,Sancionatorio,Bajo Magdalena,Cundinamarca,PUERTO SALGAR,CASCO URBANO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Seco - Río Magdalena,5.468125844829177,-74.64815479245206
+185598.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.198302590100542,-73.86098321807637
+186016.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.134824758725474,-73.90104936442434
+186116.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,La Ramada,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.272860199072597,-73.7725700106038
+186116.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,La Ramada,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.271919867320899,-73.7728140345664
+186332.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,ALFONSO LOPEZ,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.009161592160701,-74.46823627780427
+186572.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,La Tribuna,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.835319440797014,-74.40576114751379
+187368.0,Sancionatorio,Sabana Occidente,Cundinamarca,FACATATIVA,Mancilla,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.831047298681187,-74.35360823259428
+188006.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE USAQUEN,TORCA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.771074008460913,-74.02965164503016
+188548.0,Sancionatorio,Ubate,Cundinamarca,FUQUENE,Guatancuy,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.369679388122446,-73.78716562545205
+188778.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.513560734919547,-73.854573091323
+190214.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,Rasgatá,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.189157481143908,-73.8801985472276
+190248.0,Sancionatorio,Ubate,Cundinamarca,CARMEN DE CARUPA,Alisal,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.3229925517339,-73.88161794821552
+190852.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,EL OLIVO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.06921341590918,-73.95907209715048
+191526.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,SESQUILE,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,5.045507345183228,-73.7972338411392
+191540.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,SESQUILE,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,5.043834590465194,-73.79764937438759
+191632.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,5.197632784729669,-73.60972710149596
+191970.0,Sancionatorio,Gualiva,Cundinamarca,SAN FRANCISCO,Centro,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,4.974907709563404,-74.28992745642303
+192030.0,Sancionatorio,Sabana Centro,Cundinamarca,COTA,Rozo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.848492687140919,-74.04917315273944
+193876.0,Sancionatorio,Ubate,Cundinamarca,CARMEN DE CARUPA,Alisal,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.330607279005114,-73.8836364334388
+194408.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Canelón,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.904179033385005,-74.0361608199865
+194436.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.333296102246229,-74.36911036191317
+194658.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,Chacua,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.53758040598044,-74.24993713940717
+195016.0,Sancionatorio,Alto Magdalena,Cundinamarca,NILO,LA ESMERALDA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.250427877887141,-74.72207183636668
+196466.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.011311007359859,-74.47284533448536
+197216.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Santuario,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.384298118265803,-73.67053345020797
+198770.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,Río Dulce,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,4.982355240943402,-74.4587888377847
+199040.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,5.011050195673839,-74.47047366004449
+199754.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.129217253322953,-73.89784916543367
+199770.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.128774190575636,-73.89799359295527
+200132.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Chuntame Alto,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.955153215119313,-74.01858426860646
+200936.0,Sancionatorio,Sabana Centro,Cundinamarca,TOCANCIPA,Canavita,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.94655028160238,-73.93798656770748
+202864.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,Rincón Santo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.059681417732822,-73.9552501830669
+203442.0,Sancionatorio,Gualiva,Cundinamarca,LA VEGA,Centro,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Negro,4.994586143870356,-74.33745382879084
+204034.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.596634366816839,-74.19177030294624
+204892.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.124622488784956,-73.89446835486822
+205018.0,Sancionatorio,Gualiva,Cundinamarca,LA VEGA,Hoya Grande,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Negro,5.052429794335312,-74.29900647060008
+206226.0,Sancionatorio,Alto Magdalena,Cundinamarca,RICAURTE,Manuel del Sur,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.342390600432843,-74.76381214407832
+206936.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,La Unión,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.512508340837361,-74.26840345801124
+207912.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.224800364693482,-73.8188402978964
+207912.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.225596127953522,-73.8188219309283
+208076.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Bosatama,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.619958837956742,-74.22770573099046
+208990.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.53554837428393,-73.6490428336362
+209064.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Suárez,5.201132991072281,-73.86091911128077
+209066.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.198185597046631,-73.8626339069754
+209070.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.198294170027362,-73.86280524906932
+210070.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Barandillas,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.021947312925231,-73.96775552090288
+210752.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.596127603471669,-74.19393308336146
+211736.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.198293488364197,-73.86081184231386
+211736.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.198637454976694,-73.86179489882547
+212504.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.329229868279485,-74.38402698583262
+212870.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.296656859810623,-74.80875507287195
+213042.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,La Venta,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.329701041838457,-74.38171197451662
+213312.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.328497045084245,-74.38485547747382
+213810.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Casco Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.070295596763497,-73.87438226495645
+214966.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.329718528381597,-74.38319839460753
+215422.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.196140025211011,-73.60875407767658
+215570.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.547743174964427,-74.21569660577741
+216024.0,Sancionatorio,Sabana Centro,Cundinamarca,CHIA,Fusca,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.840172093101948,-74.031188404317
+216694.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,CHOCONTA,CENTRO URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.145207530178488,-73.68253988587348
+217322.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.546314381106262,-74.21561523192449
+218084.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,20 DE JULIO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.214929571183395,-73.59537262315251
+218846.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,Rasgatá,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.193360243051502,-73.87332409290259
+219606.0,Sancionatorio,Gualiva,Cundinamarca,SAN FRANCISCO,Arrayán,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Negro,4.968488488375229,-74.31281890229234
+220028.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.517322079747855,-73.8533623888463
+220312.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893244646186334,-40.50382574042856
+221230.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Chuntame Alto,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.940151403229866,-74.02513151614413
+221816.0,Sancionatorio,Sumapaz,Cundinamarca,ARBELAEZ,Casco Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.262116340081896,-74.39632281908719
+222632.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.565350224949535,-74.21495201074333
+222890.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.228426185432441,-73.81796383717186
+222890.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.228996814068948,-73.82021869011862
+223214.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Bosatama,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.620338641347446,-74.22773284755563
+223524.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.329719102559903,-74.38177504168269
+223578.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Atraviesas,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.21665433873559,-73.76282847980059
+223704.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,SUSAGUA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.019931705390128,-73.97373445730739
+223800.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.445211713642322,-73.59968659379847
+224274.0,Sancionatorio,Sumapaz,Cundinamarca,SAN BERNARDO,casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.178529440289133,-74.42207515201356
+225168.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,La Unión,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.50725396763851,-74.26969963928937
+226708.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,CENTRO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.301062336303238,-74.80687667782986
+227964.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.302759859041437,-74.80943646364432
+228134.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.301451446364659,-74.80657979607011
+230256.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Bosatama,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.618783346897361,-74.22719178860326
+230416.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),(sin definir),11.839800927934386,-40.55152234074212
+230518.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,Chinquira,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.207783013180157,-73.60348689770606
+230950.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.200463273338831,-73.60991442720098
+231078.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,Chapaima,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Negro,4.951612776894636,-74.5259609739148
+231148.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.56354234132852,-74.21105869595607
+232026.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,Chiguala,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.219812805780909,-73.6075909997801
+232028.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,SESQUILE,Boitiva,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.05322012247381,-73.79538186795376
+232030.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,MANTA,Bermejal,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Machetá,5.017535108037421,-73.53475396239507
+232062.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.583444577918196,-74.21941627863804
+232146.0,Sancionatorio,Sabana Centro,Cundinamarca,GACHANCIPA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.991449874145052,-73.8733246594156
+232204.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,CHOCONTA,Casco Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.146939473620316,-73.69032227460167
+233196.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.897113354222794,-40.48516600874105
+233208.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.514085853149235,-73.85627853889143
+233900.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.123604422553176,-73.9082134592498
+234116.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Centro    ,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.0318440671409,-73.99275984046265
+234450.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.131043939169463,-73.89790276867541
+235362.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893180796756923,-40.485037333275365
+235692.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.296078687873255,-74.80818704555666
+236852.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.892328238762056,-40.52570384182125
+236854.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.570039109525429,-74.18864806749431
+236856.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.570310406750797,-74.18862107448219
+236890.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Fusunga,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.541752777573627,-74.18535462037833
+236892.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.570174725265038,-74.18884634352828
+237026.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.893054725311908,-40.484331404849335
+237034.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Cazuca,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.594528499258293,-74.1841999693076
+239016.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.159156011844717,-73.88971428724822
+239766.0,Sancionatorio,Sabana Centro,Cundinamarca,TOCANCIPA,Verganzo,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.969458560129427,-73.9497576973356
+241084.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Resguardo Oriente,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.542843115173715,-73.63319903209485
+243442.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,Chiguala,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.219903238898046,-73.60759995248173
+243574.0,Sancionatorio,Tequendama,Cundinamarca,LA MESA,LAGUNAS,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.616409775060601,-74.45693658680317
+244284.0,Sancionatorio,Bajo Magdalena,Cundinamarca,PUERTO SALGAR,TRES Y MEDIO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Seco - Río Magdalena,5.499439907538576,-74.63845668652208
+244364.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.197868027273065,-73.60990732195619
+244834.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.565612427987966,-74.21519537199039
+245692.0,Sancionatorio,Alto Magdalena,Cundinamarca,RICAURTE,LA VIRGINIA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),4.254101652347796,-74.74044962008253
+245858.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Páramo de Guerrero,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.09125275293583,-74.06088682619423
+245860.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Páramo de Guerrero,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.09125275293583,-74.06088682619423
+245860.0,Sancionatorio,Sabana Centro,Cundinamarca,ZIPAQUIRA,Páramo de Guerrero,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.091786289171321,-74.06090484950452
+246228.0,Sancionatorio,Magdalena Centro,Cundinamarca,GUAYABAL DE SIQUIMA,Centro,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Negro,4.878296126478888,-74.46459852395759
+246504.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.132375528009385,-73.90619990454671
+246504.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.131398841029172,-73.90601076566642
+246546.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.570174725265038,-74.18884634352828
+246748.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.893180796756923,-40.485037333275365
+246770.0,Sancionatorio,Sumapaz,Cundinamarca,FUSAGASUGA,Casco urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Sumapaz,4.331783490424381,-74.3974417916346
+247030.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Cerro Verde,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.135895341875457,-73.88208195543166
+247032.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Casa Blanca,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.119001431967226,-73.9076915770164
+247032.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.120466231136845,-73.90710496432652
+247264.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.124209509308468,-73.90525509479042
+247264.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.123576552789451,-73.90543564246336
+249470.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.892688097662209,-40.520135914477116
+250188.0,Sancionatorio,Ubate,Cundinamarca,UBATE,Guatancuy,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.348180277831223,-73.79713612845529
+250358.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.19680253569438,-73.61199165539514
+251176.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.299121395877108,-74.80354201747208
+251428.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Pueblo Viejo,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.371921510273315,-73.70319340773649
+251608.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.224728355963919,-73.81965215359403
+251692.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.299226210305596,-74.80740638059103
+251728.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.445238605094254,-73.59938880392512
+252040.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,VILLAPINZON,SAN PEDRO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.196140025211011,-73.60875407767658
+252496.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.298810007335657,-74.8076672050277
+253104.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.513440269750506,-73.84693836175244
+253104.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.513585118455466,-73.84736245999737
+253400.0,Sancionatorio,Ubate,Cundinamarca,UBATE,Guatancuy,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.349781511248578,-73.79857893331886
+253486.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,Neusa,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.073010184713374,-73.95229871945382
+253996.0,Sancionatorio,Gualiva,Cundinamarca,NIMAIMA,Resguardo Bajo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.377657742038346,-40.58983141919419
+254046.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.235851920395933,-73.80048817959096
+254046.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.232932913899285,-73.80465688694254
+254046.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.232932913899285,-73.80465688694254
+254246.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Canelón,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.90476680895542,-74.03581817790594
+254620.0,Sancionatorio,Sabana Centro,Cundinamarca,CAJICA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.919479095449158,-74.02560197464095
+254754.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,Casa Blanca,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.135944749673374,-73.9315876860321
+255000.0,Sancionatorio,Sabana Centro,Cundinamarca,TENJO,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.871441039964282,-74.14597162470609
+255028.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.502103307873801,-74.14792707228571
+255122.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Casco Urbano,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.07016891922375,-73.8741388145397
+255802.0,Sancionatorio,Sabana Centro,Cundinamarca,COGUA,Neusa,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.072930550517208,-73.96169572300772
+256200.0,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,SUESCA,Palmira,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.067303226427441,-73.82536986009363
+256908.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.317077041569522,-74.79686622803895
+257900.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.628916154098865,-39.909139745298155
+258626.0,Sancionatorio,Sabana Centro,Cundinamarca,COTA,SIBERIA,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.755800032633183,-74.12868027579898
+259074.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.123314981907553,-73.90796100604113
+259074.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,5.122971305114901,-73.90778973748579
+259142.0,Sancionatorio,Alto Magdalena,Cundinamarca,NILO,LA ESMERALDA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.214282251513867,-74.69134675738793
+259382.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.540186981287942,-39.89215111061938
+261630.0,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,CASCO URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.717819293414454,-40.03700460517995
+262288.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,Resguardo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.31742255462353,-73.70566230783075
+262288.0,Sancionatorio,Ubate,Cundinamarca,LENGUAZAQUE,Resguardo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.319970755715703,-73.7026114889318
+263962.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.311753935202193,-74.79378956779624
+263990.0,Sancionatorio,Sabana Centro,Cundinamarca,TENJO,La Punta,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.7961028300108,-74.2112289855591
+265736.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,RASGATA ALTO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.363155860441339,-40.15008618812934
+266510.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.891706870918112,-40.525813645038454
+266794.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Oratorio,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.097769907038486,-73.91263933043093
+267034.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Firita Peña Arriba,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.434006059550224,-73.60878172636772
+267074.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Rabanal,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.328478226990447,-73.69978254733113
+267348.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.134886324435548,-73.89488030772235
+267448.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.137590064724375,-73.89455485061337
+267448.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.137282231794186,-73.89325618862327
+267586.0,Sancionatorio,Sabana Centro,Cundinamarca,NEMOCON,Patio Bonito,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,5.141587747097725,-73.8970520166181
+268660.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893345350902528,-40.4843842547176
+268676.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893340189935346,-40.484346076301314
+269936.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Peñas,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.376951302863127,-40.11778087864256
+270222.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Seco - Río Magdalena,4.300762016114748,-74.81822598347996
+270832.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Bosatama,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.937392727914547,-40.51229008351135
+271292.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.308893694844855,-74.77741078130506
+272168.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893203356467115,-40.48463743101971
+272170.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.893127714153652,-40.484928037479165
+272438.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOC.USAQUEN CERROS ORIENTALES,EL PÁRAMO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.95485937679258,-40.32456613104501
+273090.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Concubita,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.395775932897209,-40.13288763470881
+273994.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.197543188764451,-73.86156977287244
+274106.0,Sancionatorio,Soacha,Cundinamarca,SIBATE,Chusaca,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),(sin definir),11.878617265297784,-40.54192296303177
+274748.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Seco - Río Magdalena,4.295490563091735,-74.8179326541322
+275304.0,Sancionatorio,Sumapaz,Cundinamarca,SILVANIA,Casco Urbano,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),(sin definir),11.775733250206828,-40.67227919497796
+275692.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Rabanal,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.464820135083501,-39.98290048487797
+275776.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,La Laguna,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.351408654103755,-40.093870153447384
+276904.0,Sancionatorio,Sabana Centro,Cundinamarca,TABIO,RIO FRIO ORIENTAL,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.957045672237348,-74.06304520573721
+277174.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.887782598020769,-40.50423609665577
+277840.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.37492777182549,-40.13338342602597
+277840.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.38210121791006,-40.13248314762569
+277840.0,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,Peñas de Boquerón,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.374674328912288,-40.13348293566986
+277968.0,Sancionatorio,Alto Magdalena,Cundinamarca,RICAURTE,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.278489030418242,-74.77158229854801
+277970.0,Sancionatorio,Alto Magdalena,Cundinamarca,RICAURTE,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.279935809286241,-74.77161062362819
+278282.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.290784321339293,-74.80346207568493
+278284.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),Río Bogotá,4.290314850395054,-74.80268698663401
+278408.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.91748011060211,-40.509458854935865
+279376.0,Sancionatorio,Ubate,Cundinamarca,GUACHETA,Santuario,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.494670507400103,-39.96634466411598
+280458.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.899633632508623,-40.51475630105776
+280976.0,Sancionatorio,Soacha,Cundinamarca,SOACHA,Panamá,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Bogotá,4.556102615733071,-74.24149786067338
+281502.0,Sancionatorio,Sumapaz,Cundinamarca,GRANADA,Carrizal,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.875723361916988,-40.58000307733515
+281670.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,Resguardo Oriente,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.542843115173715,-73.63319903209485
+281696.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),(sin definir),11.744831463713686,-41.03986651206761
+282068.0,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,Centro,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.635799463739822,-40.073338374006326
+282348.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO ALTO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.854036434826499,-40.45127430291233
+282350.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.854181833372374,-40.4509897375705
+282352.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.854079065959459,-40.451136201941715
+282354.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.853946127018672,-40.45111581610063
+282356.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.853965382848966,-40.45131528361312
+282358.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.853946127018672,-40.45111581610063
+282360.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.853946127018672,-40.45111581610063
+282542.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),11.853932740527783,-40.4510166052324
+283436.0,Sancionatorio,Tequendama,Cundinamarca,TENA,PEÑA NEGRA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Bogotá,4.641435102732765,-74.41418638013744
+283576.0,Sancionatorio,Alto Magdalena,Cundinamarca,TOCAIMA,MORRO AZUL,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.835968302032443,-40.95720222518809
+284322.0,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,Sucre Oriental,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.558346040461315,-73.82330194303466
+287776.0,Sancionatorio,Ubate,Cundinamarca,UBATE,CASCO URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Suárez,5.297331888494278,-73.81623024196622
+288962.0,Sancionatorio,Ubate,Cundinamarca,SUSA,LA GLORIETA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.593593579306695,-40.06814162315663
+289234.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),12.627894124423952,-39.91343021819183
+289754.0,Sancionatorio,Gualiva,Cundinamarca,VILLETA,CASCO URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.287815371037915,-40.673198893295535
+290848.0,Sancionatorio,Ubate,Cundinamarca,TAUSA,Rasgatá,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.186102066738321,-73.88370819024968
+291446.0,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,CASCO URBANO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),(sin definir),12.629098826420629,-39.89362833068098
+291712.0,Sancionatorio,Sumapaz,Cundinamarca,ARBELAEZ,San Roque,Por emisiones atmosféricas sin cumplir con los requisitos de ley,(sin definir),(sin definir),Río Sumapaz,4.274012700733305,-74.44618631544816
+292030.0,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,Pueblo Viejo,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),Río Suárez,5.228254326531621,-73.817855663854
+292322.0,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,URBANO,Emitir por encima de los parámetros establecidos en la norma,(sin definir),(sin definir),(sin definir),11.73650302531465,-41.043145003840884
+292674.0,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,LOCALIDAD DE CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,(sin definir),(sin definir),(sin definir),11.835281227311594,-40.459112476544
