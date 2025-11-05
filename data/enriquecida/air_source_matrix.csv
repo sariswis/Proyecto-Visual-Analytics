@@ -1,0 +1,181 @@
+Variable,Tipo de fuente,Probabilidad,Justificación,Ponderación
+SO2,Sin definir,4,Emisiones de SO₂ suelen asociarse a combustión de combustibles fósiles; sin definir probablemente incluye combustibles líquidos/solidos.,0.4
+SO2,Horno,7,Hornos que queman combustibles fósiles o coque emiten SO₂; intensidad depende del combustible.,0.4
+SO2,Caldera,8,"Calderas industriales queman combustibles (residual, fuel oil, gas) y suelen ser fuentes importantes de SO₂.",0.4
+SO2,Caldera horno,8,Combina características de caldera y horno — alta probabilidad de SO₂ por combustión.,0.4
+SO2,Planta de asfalto,6,Uso de combustibles bituminosos y procesos de calentamiento emiten SO₂ moderado-alto.,0.4
+SO2,Secadores,5,"Secadores industriales (si usan combustión) pueden emitir SO₂, pero menor que calderas.",0.4
+SO2,Molino,1,Procesamiento mecánico en molinos no suele generar SO₂; solo si tienen quemadores asociados.,0.4
+SO2,Trituradora,1,"Igual que molino: principalmente físico, no combustión directa.",0.4
+SO2,Chimenea,5,"Chimenea es el conducto de salida; si está asociada a combustión, puede transportar SO₂ (depende de fuente).",0.4
+SO2,No aplica (área de operación),4,Actividad de área puede incluir combustión distribuida o manejo de materiales con azufre; probabilidad moderada para emisiones difusas.,0.4
+SO2,Batería de coquización,9,La coquización libera compuestos sulfurados; alta emisión de SO₂/compuestos originados en coque.,0.4
+SO2,Reactor,4,Depende del proceso del reactor; ciertos procesos químicos pueden emitir SO₂ pero no es general.,0.4
+RH,Sin definir,0,Humedad relativa (RH) es meteorológica; fuentes de combustión no la causan directamente.,0.5
+RH,Horno,0,Horno no genera RH de forma significativa; influencia mínima.,0.5
+RH,Caldera,0,Variable meteorológica; efecto de fuente negligible.,0.5
+RH,Caldera horno,0,Variable meteorológica; efecto negligible.,0.5
+RH,Planta de asfalto,0,Variable meteorológica; efecto negligible.,0.5
+RH,Secadores,1,Secadores extraen o agregan humedad al flujo de gases locales — leve efecto muy localizado.,0.5
+RH,Molino,0,Efecto nulo sobre RH ambiental.,0.5
+RH,Trituradora,0,Efecto nulo sobre RH ambiental.,0.5
+RH,Chimenea,0,Variable meteorológica; efecto negligible.,0.5
+RH,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
+RH,Batería de coquización,0,Variable meteorológica; efecto negligible.,0.5
+RH,Reactor,1,Algunos reactores manejan vapor/humedad; posible efecto muy limitado y localizado.,0.5
+WDS,Sin definir,0,WDS es meteorológica; no se produce por fuente puntual.,0.5
+WDS,Horno,0,Variable meteorológica; no generada por hornos.,0.5
+WDS,Caldera,0,Variable meteorológica; no generada por calderas.,0.5
+WDS,Caldera horno,0,Variable meteorológica.,0.5
+WDS,Planta de asfalto,0,Variable meteorológica; influencia negligente.,0.5
+WDS,Secadores,0,Variable meteorológica; efecto local negligible a escala de estación.,0.5
+WDS,Molino,0,Variable meteorológica.,0.5
+WDS,Trituradora,0,Variable meteorológica.,0.5
+WDS,Chimenea,0,"Chimenea impulsa flujo ascendente, no velocidad horizontal medida por WDS.",0.5
+WDS,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
+WDS,Batería de coquización,0,Variable meteorológica; no altera WDS a escala regional.,0.5
+WDS,Reactor,0,Variable meteorológica.,0.5
+WDD,Sin definir,0,Dirección del viento es meteorológica; no originada por fuente.,0.5
+WDD,Horno,0,Variable meteorológica.,0.5
+WDD,Caldera,0,Variable meteorológica.,0.5
+WDD,Caldera horno,0,Variable meteorológica.,0.5
+WDD,Planta de asfalto,0,Variable meteorológica.,0.5
+WDD,Secadores,0,Variable meteorológica.,0.5
+WDD,Molino,0,Variable meteorológica.,0.5
+WDD,Trituradora,0,Variable meteorológica.,0.5
+WDD,Chimenea,0,Variable meteorológica; no altera dirección regional registrada.,0.5
+WDD,No aplica (área de operación),0,Variable meteorológica.,0.5
+WDD,Batería de coquización,0,Variable meteorológica.,0.5
+WDD,Reactor,0,Variable meteorológica.,0.5
+PM2.5,Sin definir,4,PM2.5 ligado fuertemente a combustión y procesos térmicos; sin definir puede contener esas fuentes.,0.6
+PM2.5,Horno,8,Hornos que queman combustibles sólidos o coque generan partículas finas.,0.6
+PM2.5,Caldera,8,Calderas industriales son emisoras relevantes de PM2.5 si no tienen control de partículas.,0.6
+PM2.5,Caldera horno,8,Similar: combinación con emisiones de partículas finas.,0.6
+PM2.5,Planta de asfalto,7,Procesos de calentamiento y manejo de agregados generan partículas finas (y PM10).,0.6
+PM2.5,Secadores,6,Secado de materiales y emisiones de gases/aerosoles pueden contribuir a PM2.5.,0.6
+PM2.5,Molino,5,Molienda genera polvo; fracción fina puede contribuir si no hay controles.,0.6
+PM2.5,Trituradora,5,Trituración produce polvo fino-medio; depende de material y controles.,0.6
+PM2.5,Chimenea,6,"Chimenea descarga partículas de procesos de combustión — si la fuente genera PM, la chimenea la transporta.",0.6
+PM2.5,No aplica (área de operación),5,"Actividades de área (tráfico interno, manejo de materiales, resuspensión) pueden generar PM2.5 de forma difusa significativa.",0.6
+PM2.5,Batería de coquización,9,Proceso de coquización genera partículas finas significativas.,0.6
+PM2.5,Reactor,4,Dependiendo del proceso químico puede emitir partículas; en general menor que combustión directa.,0.6
+NO2,Sin definir,3,NO₂ proviene de combustión a alta temperatura; sin definir puede incluir calderas/hornos.,0.4
+NO2,Horno,7,Combustión a alta temperatura produce NOx → NO₂.,0.4
+NO2,Caldera,8,"Calderas industriales = fuente principal de NOx si queman gasóleo, carbón o fuel.",0.4
+NO2,Caldera horno,8,Alto potencial de NOx por condiciones de combustión.,0.4
+NO2,Planta de asfalto,7,Quemadores y mezclado a alta T generan NOx.,0.4
+NO2,Secadores,5,"Si usan combustión, generan NOx moderado.",0.4
+NO2,Molino,1,Operaciones mecánicas no generan NO₂ directamente.,0.4
+NO2,Trituradora,1,Operaciones mecánicas no generan NO₂ directamente.,0.4
+NO2,Chimenea,6,Transporta NOx de la fuente de combustión.,0.4
+NO2,No aplica (área de operación),3,Área de operación puede incluir vehículos/equipos móviles que generan NO₂; emisiones difusas moderadas.,0.4
+NO2,Batería de coquización,9,Proceso térmico y coque producen cantidades considerables de NOx.,0.4
+NO2,Reactor,3,Algunos procesos químicos generan NOx; no es universal.,0.4
+CO,Sin definir,3,CO es producto de combustión incompleta; sin definir puede cubrir procesos incompletos.,0.4
+CO,Horno,7,Combustión incompleta en hornos puede generar CO elevado.,0.4
+CO,Caldera,6,Calderas bien ajustadas generan menos CO; mal mantenimiento puede elevarlo.,0.4
+CO,Caldera horno,7,Combinación con posibilidad de combustión incompleta.,0.4
+CO,Planta de asfalto,6,Procesos de mezclado y calentamiento pueden generar CO.,0.4
+CO,Secadores,5,"Si usan quemadores sin buena combustión, generan CO.",0.4
+CO,Molino,1,Actividad mecánica no produce CO.,0.4
+CO,Trituradora,1,Actividad mecánica no produce CO.,0.4
+CO,Chimenea,6,"Si la fuente emite CO, chimenea lo transporta.",0.4
+CO,No aplica (área de operación),4,Vehículos y equipos móviles en área de operación generan CO por combustión incompleta; emisiones difusas moderadas.,0.4
+CO,Batería de coquización,8,Coquización genera gases combustibles y CO por procesos de destilación/carbonización.,0.4
+CO,Reactor,3,"Reacciones químicos específicos pueden generar CO, pero es menos común.",0.4
+Temp,Sin definir,0,Temperatura es meteorológica; fuentes no la alteran a escala de estación.,0.5
+Temp,Horno,0,Variable meteorológica; efecto local negligible.,0.5
+Temp,Caldera,0,Variable meteorológica; efecto local negligible.,0.5
+Temp,Caldera horno,0,Variable meteorológica.,0.5
+Temp,Planta de asfalto,0,Variable meteorológica; efecto local negligible.,0.5
+Temp,Secadores,0,Variable meteorológica.,0.5
+Temp,Molino,0,Variable meteorológica.,0.5
+Temp,Trituradora,0,Variable meteorológica.,0.5
+Temp,Chimenea,0,Variable meteorológica; efecto local negligible.,0.5
+Temp,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
+Temp,Batería de coquización,0,Variable meteorológica; efecto local negligible.,0.5
+Temp,Reactor,0,Variable meteorológica.,0.5
+NO,Sin definir,3,NO (monóxido o NO gas) surge en combustión de alta T; sin definir puede incluirlo.,0.4
+NO,Horno,7,Hornos generan NO que se oxida a NO₂ posteriormente.,0.4
+NO,Caldera,8,Calderas industriales generan NO por alta temperatura de combustión.,0.4
+NO,Caldera horno,8,Alto potencial de formación de NO.,0.4
+NO,Planta de asfalto,7,Generación de NO por quemadores.,0.4
+NO,Secadores,5,"Si usan combustión, generan NO.",0.4
+NO,Molino,1,Operaciones mecánicas no producen NO.,0.4
+NO,Trituradora,1,Operaciones mecánicas no producen NO.,0.4
+NO,Chimenea,6,Transporta NO (si la fuente lo emite).,0.4
+NO,No aplica (área de operación),4,Vehículos y equipos móviles en área pueden generar NO por combustión; emisiones difusas moderadas.,0.4
+NO,Batería de coquización,9,Coquización y altos T producen NO/NOx apreciables.,0.4
+NO,Reactor,3,Posible en procesos químicos específicos.,0.4
+PM10,Sin definir,5,PM10 asociada a manejo de partículas/combustión; sin definir suele incluir procesos emisores.,0.6
+PM10,Horno,8,Hornos generan partículas gruesas y finas según combustible y material procesado.,0.6
+PM10,Caldera,8,Calderas sin control son fuentes importantes de PM10.,0.6
+PM10,Caldera horno,8,Alto riesgo de emisión de PM10.,0.6
+PM10,Planta de asfalto,8,Manipulación de áridos y mezclado produce PM10 considerable.,0.6
+PM10,Secadores,6,Emisión de material particulado al secar agregados o materiales.,0.6
+PM10,Molino,7,Molienda produce partículas gruesas y finas; PM10 significativa.,0.6
+PM10,Trituradora,7,Trituración genera polvo PM10 alto.,0.6
+PM10,Chimenea,6,Chimenea transporta PM10 de la fuente.,0.6
+PM10,No aplica (área de operación),5,"Tráfico interno, resuspensión de polvo, manejo de materiales en áreas genera PM10 difusa considerable.",0.6
+PM10,Batería de coquización,9,Coquización genera cantidades importantes de partículas (PM10 y PM2.5).,0.6
+PM10,Reactor,4,"Depende del proceso (polvo de reactivos, manejo), generalmente menor que procesos mecánicos.",0.6
+BP,Sin definir,0,BP es meteorológica; no generada por fuente.,0.5
+BP,Horno,0,Variable meteorológica.,0.5
+BP,Caldera,0,Variable meteorológica.,0.5
+BP,Caldera horno,0,Variable meteorológica.,0.5
+BP,Planta de asfalto,0,Variable meteorológica.,0.5
+BP,Secadores,0,Variable meteorológica.,0.5
+BP,Molino,0,Variable meteorológica.,0.5
+BP,Trituradora,0,Variable meteorológica.,0.5
+BP,Chimenea,0,Variable meteorológica; la chimenea no cambia presión regional.,0.5
+BP,No aplica (área de operación),0,Variable meteorológica.,0.5
+BP,Batería de coquización,0,Variable meteorológica.,0.5
+BP,Reactor,0,Variable meteorológica.,0.5
+NOX,Sin definir,4,NOx (NO + NO₂) relacionado con combustión; sin definir puntuación alta por incluir combustión.,0.4
+NOX,Horno,8,Hornos de alta temp generan NOx significativo.,0.4
+NOX,Caldera,9,Calderas industriales son fuentes primarias de NOx.,0.4
+NOX,Caldera horno,9,Alta probabilidad de NOx.,0.4
+NOX,Planta de asfalto,8,Quemadores y procesos a alta T generan NOx.,0.4
+NOX,Secadores,6,"Si usan combustión, contribuyen a NOx.",0.4
+NOX,Molino,1,Operaciones mecánicas no producen NOx.,0.4
+NOX,Trituradora,1,Operaciones mecánicas no producen NOx.,0.4
+NOX,Chimenea,7,Chimenea descarga los NOx generados por la unidad de combustión.,0.4
+NOX,No aplica (área de operación),5,Vehículos y equipos de combustión en área de operación generan NOx difuso significativo.,0.4
+NOX,Batería de coquización,9,Proceso térmico de coque produce NOx alto.,0.4
+NOX,Reactor,3,Posible en reacciones a alta temp o procesos particulares.,0.4
+O3,Sin definir,0,"Ozono troposférico es secundario (se forma por reacciones fotoquímicas con NOx y VOCs), no directamente emitido por fuente.",0.4
+O3,Horno,0,Hornos no emiten O₃ directamente (pueden emitir precursores NOx/VOCs pero O₃ es secundario).,0.4
+O3,Caldera,0,No emisión directa de O₃ (puede aportar precursores).,0.4
+O3,Caldera horno,0,No emisión directa de O₃ (puede aportar precursores).,0.4
+O3,Planta de asfalto,1,Emisión de VOCs/NOx como precursores puede favorecer formación de ozono localmente.,0.4
+O3,Secadores,0,No emisión directa de O₃.,0.4
+O3,Molino,0,No emisión directa de O₃.,0.4
+O3,Trituradora,0,No emisión directa de O₃.,0.4
+O3,Chimenea,0,No emisión directa de O₃.,0.4
+O3,No aplica (área de operación),1,"Emisiones de precursores (NOx, VOCs) de vehículos y operaciones pueden contribuir indirectamente a formación de O₃.",0.4
+O3,Batería de coquización,1,Puede liberar precursores (VOCs) que en presencia de NOx/sol forman ozono secundario.,0.4
+O3,Reactor,0,No emisión directa de O₃ (posible emisión de precursores según proceso).,0.4
+RAIN,Sin definir,0,Lluvia es meteorológica; no producida por fuentes.,0.5
+RAIN,Horno,0,Variable meteorológica.,0.5
+RAIN,Caldera,0,Variable meteorológica.,0.5
+RAIN,Caldera horno,0,Variable meteorológica.,0.5
+RAIN,Planta de asfalto,0,Variable meteorológica.,0.5
+RAIN,Secadores,0,Variable meteorológica.,0.5
+RAIN,Molino,0,Variable meteorológica.,0.5
+RAIN,Trituradora,0,Variable meteorológica.,0.5
+RAIN,Chimenea,0,Variable meteorológica.,0.5
+RAIN,No aplica (área de operación),0,Variable meteorológica.,0.5
+RAIN,Batería de coquización,0,Variable meteorológica.,0.5
+RAIN,Reactor,0,Variable meteorológica.,0.5
+SRAD,Sin definir,0,Radiación solar es meteorológica; no generada por fuente.,0.5
+SRAD,Horno,0,Variable meteorológica.,0.5
+SRAD,Caldera,0,Variable meteorológica.,0.5
+SRAD,Caldera horno,0,Variable meteorológica.,0.5
+SRAD,Planta de asfalto,0,Variable meteorológica.,0.5
+SRAD,Secadores,0,Variable meteorológica.,0.5
+SRAD,Molino,0,Variable meteorológica.,0.5
+SRAD,Trituradora,0,Variable meteorológica.,0.5
+SRAD,Chimenea,0,Variable meteorológica.,0.5
+SRAD,No aplica (área de operación),0,Variable meteorológica.,0.5
+SRAD,Batería de coquización,0,Variable meteorológica.,0.5
+SRAD,Reactor,0,Variable meteorológica.,0.5
