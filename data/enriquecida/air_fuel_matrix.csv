@@ -11,42 +11,6 @@ SO2,Hulla,6,Moderada — tipo de carbón; riesgo de SO₂ similar al carbón.,0.
 SO2,Mezcla,5,Media — mezcla puede incluir fracciones sulfurosas.,0.6
 SO2,Madera,2,Baja — biomasa tiene poco azufre comparado con fuel oil/coal.,0.6
 SO2,Leña,2,"Baja — similar a madera, baja emisión de SO₂.",0.6
-RH,Sin definir,1,Meteorología; no es causada directamente por el combustible; efecto local muy pequeño.,0.5
-RH,Carbón,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Otros,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Gas,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,ACPM,0,No corresponde a emisiones.,0.5
-RH,No aplica,0,No corresponde a emisiones.,0.5
-RH,Fuel Oil No.8,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Coque,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Hulla,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Mezcla,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Madera,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-RH,Leña,1,Meteorología; no es causada por el combustible; efecto local muy pequeño.,0.5
-WDS,Sin definir,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Carbón,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Otros,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Gas,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,ACPM,0,No corresponde a emisiones.,0.5
-WDS,No aplica,0,No corresponde a emisiones.,0.5
-WDS,Fuel Oil No.8,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Coque,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Hulla,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Mezcla,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Madera,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDS,Leña,1,Emisiones no generan cambios sistemáticos en la velocidad del viento; efectos por plumas son locales.,0.5
-WDD,Sin definir,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Carbón,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Otros,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Gas,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,ACPM,0,No corresponde a emisiones.,0.5
-WDD,No aplica,0,No corresponde a emisiones.,0.5
-WDD,Fuel Oil No.8,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Coque,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Hulla,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Mezcla,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Madera,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
-WDD,Leña,1,Dirección del viento es meteorológica; combustibles no la causan; efectos locales mínimos.,0.5
 PM2.5,Sin definir,2,Baja — puede o no producir PM2.5.,0.4
 PM2.5,Carbón,6,Alta-moderada — combustión de carbón produce partículas finas.,0.4
 PM2.5,Otros,6,Moderada — depende del combustible concreto.,0.4
@@ -83,18 +47,6 @@ CO,Hulla,4,Moderada — carbón puede producir CO.,0.6
 CO,Mezcla,4,Moderada — variable.,0.6
 CO,Madera,8,Alta — biomasa y leña generan CO por combustión incompleta.,0.6
 CO,Leña,8,Alta — común emisor de CO.,0.6
-Temp,Sin definir,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Carbón,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Otros,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Gas,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,ACPM,0,No corresponde a emisiones.,0.5
-Temp,No aplica,0,No corresponde a emisiones.,0.5
-Temp,Fuel Oil No.8,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Coque,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Hulla,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Mezcla,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Madera,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
-Temp,Leña,1,No causa temperatura ambiental de forma directa; efecto térmico local mínimo.,0.5
 NO,Sin definir,2,Baja — sin definir.,0.6
 NO,Carbón,5,Moderada — combustión a alta T produce NO.,0.6
 NO,Otros,6,Moderada — depende.,0.6
@@ -119,18 +71,6 @@ PM10,Hulla,6,Alta-moderada — carbón mineral produce PM10.,0.4
 PM10,Mezcla,6,Moderada — mezcla puede incluir fracciones particuladas.,0.4
 PM10,Madera,8,Alta — biomasa produce partículas gruesas también.,0.4
 PM10,Leña,8,Alta — similar a madera.,0.4
-BP,Sin definir,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Carbón,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Otros,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Gas,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,ACPM,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,No aplica,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Fuel Oil No.8,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Coque,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Hulla,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Mezcla,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Madera,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
-BP,Leña,0,Presión barométrica es puramente meteorológica; no es causada por tipo de combustible.,0.5
 NOX,Sin definir,2,Baja — sin definir.,0.6
 NOX,Carbón,5,Moderada — combustión sólida produce NOx.,0.6
 NOX,Otros,6,Moderada — depende.,0.6
@@ -155,27 +95,3 @@ O3,Hulla,5,Moderada — contribución a precusores NOx/VOCs.,0.6
 O3,Mezcla,5,Moderada — mezcla variable en precursores.,0.6
 O3,Madera,5,"Moderada — biomasa emite NMVOCs, contribuye a O₃.",0.6
 O3,Leña,4,"Baja-moderada — biomasa contribuye, pero menor que fósiles.",0.6
-RAIN,Sin definir,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Carbón,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Otros,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Gas,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,ACPM,0,No corresponde a emisiones.,0.5
-RAIN,No aplica,0,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Fuel Oil No.8,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Coque,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Hulla,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Mezcla,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Madera,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-RAIN,Leña,1,Muy bajo — precipitación es meteorológica; emisiones pueden afectar nucleación pero efecto directo es pequeño.,0.5
-SRAD,Sin definir,1,Baja — aerosoles pueden reducir radiación pero efecto local variable.,0.5
-SRAD,Carbón,3,Moderada — aerosoles y hollín de carbón reducen SRAD localmente.,0.5
-SRAD,Otros,1,Baja — depende de tipo de 'Otros'.,0.5
-SRAD,Gas,1,Baja — gas produce pocos aerosoles.,0.5
-SRAD,ACPM,2,Moderada — diesel produce partículas que pueden afectar SRAD.,0.5
-SRAD,No aplica,0,No corresponde a emisiones.,0.5
-SRAD,Fuel Oil No.8,3,Moderada — fuel-oils y hollín reducen radiación (oscurecimiento).,0.5
-SRAD,Coque,3,Moderada — coque y subproductos reducen SRAD.,0.5
-SRAD,Hulla,3,Moderada — hulla produce partículas que afectan SRAD.,0.5
-SRAD,Mezcla,2,Baja-moderada — mezcla variable en generación de aerosoles.,0.5
-SRAD,Madera,3,Moderada — biomasa produce aerosoles que afectan SRAD.,0.5
-SRAD,Leña,3,Moderada — leña igual que biomasa.,0.5

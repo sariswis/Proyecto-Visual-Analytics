@@ -11,42 +11,6 @@ SO2,Chimenea,5,"Chimenea es el conducto de salida; si está asociada a combusti�
 SO2,No aplica (área de operación),4,Actividad de área puede incluir combustión distribuida o manejo de materiales con azufre; probabilidad moderada para emisiones difusas.,0.4
 SO2,Batería de coquización,9,La coquización libera compuestos sulfurados; alta emisión de SO₂/compuestos originados en coque.,0.4
 SO2,Reactor,4,Depende del proceso del reactor; ciertos procesos químicos pueden emitir SO₂ pero no es general.,0.4
-RH,Sin definir,0,Humedad relativa (RH) es meteorológica; fuentes de combustión no la causan directamente.,0.5
-RH,Horno,0,Horno no genera RH de forma significativa; influencia mínima.,0.5
-RH,Caldera,0,Variable meteorológica; efecto de fuente negligible.,0.5
-RH,Caldera horno,0,Variable meteorológica; efecto negligible.,0.5
-RH,Planta de asfalto,0,Variable meteorológica; efecto negligible.,0.5
-RH,Secadores,1,Secadores extraen o agregan humedad al flujo de gases locales — leve efecto muy localizado.,0.5
-RH,Molino,0,Efecto nulo sobre RH ambiental.,0.5
-RH,Trituradora,0,Efecto nulo sobre RH ambiental.,0.5
-RH,Chimenea,0,Variable meteorológica; efecto negligible.,0.5
-RH,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
-RH,Batería de coquización,0,Variable meteorológica; efecto negligible.,0.5
-RH,Reactor,1,Algunos reactores manejan vapor/humedad; posible efecto muy limitado y localizado.,0.5
-WDS,Sin definir,0,WDS es meteorológica; no se produce por fuente puntual.,0.5
-WDS,Horno,0,Variable meteorológica; no generada por hornos.,0.5
-WDS,Caldera,0,Variable meteorológica; no generada por calderas.,0.5
-WDS,Caldera horno,0,Variable meteorológica.,0.5
-WDS,Planta de asfalto,0,Variable meteorológica; influencia negligente.,0.5
-WDS,Secadores,0,Variable meteorológica; efecto local negligible a escala de estación.,0.5
-WDS,Molino,0,Variable meteorológica.,0.5
-WDS,Trituradora,0,Variable meteorológica.,0.5
-WDS,Chimenea,0,"Chimenea impulsa flujo ascendente, no velocidad horizontal medida por WDS.",0.5
-WDS,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
-WDS,Batería de coquización,0,Variable meteorológica; no altera WDS a escala regional.,0.5
-WDS,Reactor,0,Variable meteorológica.,0.5
-WDD,Sin definir,0,Dirección del viento es meteorológica; no originada por fuente.,0.5
-WDD,Horno,0,Variable meteorológica.,0.5
-WDD,Caldera,0,Variable meteorológica.,0.5
-WDD,Caldera horno,0,Variable meteorológica.,0.5
-WDD,Planta de asfalto,0,Variable meteorológica.,0.5
-WDD,Secadores,0,Variable meteorológica.,0.5
-WDD,Molino,0,Variable meteorológica.,0.5
-WDD,Trituradora,0,Variable meteorológica.,0.5
-WDD,Chimenea,0,Variable meteorológica; no altera dirección regional registrada.,0.5
-WDD,No aplica (área de operación),0,Variable meteorológica.,0.5
-WDD,Batería de coquización,0,Variable meteorológica.,0.5
-WDD,Reactor,0,Variable meteorológica.,0.5
 PM2.5,Sin definir,4,PM2.5 ligado fuertemente a combustión y procesos térmicos; sin definir puede contener esas fuentes.,0.6
 PM2.5,Horno,8,Hornos que queman combustibles sólidos o coque generan partículas finas.,0.6
 PM2.5,Caldera,8,Calderas industriales son emisoras relevantes de PM2.5 si no tienen control de partículas.,0.6
@@ -83,18 +47,6 @@ CO,Chimenea,6,"Si la fuente emite CO, chimenea lo transporta.",0.4
 CO,No aplica (área de operación),4,Vehículos y equipos móviles en área de operación generan CO por combustión incompleta; emisiones difusas moderadas.,0.4
 CO,Batería de coquización,8,Coquización genera gases combustibles y CO por procesos de destilación/carbonización.,0.4
 CO,Reactor,3,"Reacciones químicos específicos pueden generar CO, pero es menos común.",0.4
-Temp,Sin definir,0,Temperatura es meteorológica; fuentes no la alteran a escala de estación.,0.5
-Temp,Horno,0,Variable meteorológica; efecto local negligible.,0.5
-Temp,Caldera,0,Variable meteorológica; efecto local negligible.,0.5
-Temp,Caldera horno,0,Variable meteorológica.,0.5
-Temp,Planta de asfalto,0,Variable meteorológica; efecto local negligible.,0.5
-Temp,Secadores,0,Variable meteorológica.,0.5
-Temp,Molino,0,Variable meteorológica.,0.5
-Temp,Trituradora,0,Variable meteorológica.,0.5
-Temp,Chimenea,0,Variable meteorológica; efecto local negligible.,0.5
-Temp,No aplica (área de operación),0,Variable meteorológica; no atribuible a operaciones de área.,0.5
-Temp,Batería de coquización,0,Variable meteorológica; efecto local negligible.,0.5
-Temp,Reactor,0,Variable meteorológica.,0.5
 NO,Sin definir,3,NO (monóxido o NO gas) surge en combustión de alta T; sin definir puede incluirlo.,0.4
 NO,Horno,7,Hornos generan NO que se oxida a NO₂ posteriormente.,0.4
 NO,Caldera,8,Calderas industriales generan NO por alta temperatura de combustión.,0.4
@@ -119,18 +71,6 @@ PM10,Chimenea,6,Chimenea transporta PM10 de la fuente.,0.6
 PM10,No aplica (área de operación),5,"Tráfico interno, resuspensión de polvo, manejo de materiales en áreas genera PM10 difusa considerable.",0.6
 PM10,Batería de coquización,9,Coquización genera cantidades importantes de partículas (PM10 y PM2.5).,0.6
 PM10,Reactor,4,"Depende del proceso (polvo de reactivos, manejo), generalmente menor que procesos mecánicos.",0.6
-BP,Sin definir,0,BP es meteorológica; no generada por fuente.,0.5
-BP,Horno,0,Variable meteorológica.,0.5
-BP,Caldera,0,Variable meteorológica.,0.5
-BP,Caldera horno,0,Variable meteorológica.,0.5
-BP,Planta de asfalto,0,Variable meteorológica.,0.5
-BP,Secadores,0,Variable meteorológica.,0.5
-BP,Molino,0,Variable meteorológica.,0.5
-BP,Trituradora,0,Variable meteorológica.,0.5
-BP,Chimenea,0,Variable meteorológica; la chimenea no cambia presión regional.,0.5
-BP,No aplica (área de operación),0,Variable meteorológica.,0.5
-BP,Batería de coquización,0,Variable meteorológica.,0.5
-BP,Reactor,0,Variable meteorológica.,0.5
 NOX,Sin definir,4,NOx (NO + NO₂) relacionado con combustión; sin definir puntuación alta por incluir combustión.,0.4
 NOX,Horno,8,Hornos de alta temp generan NOx significativo.,0.4
 NOX,Caldera,9,Calderas industriales son fuentes primarias de NOx.,0.4
@@ -155,27 +95,3 @@ O3,Chimenea,0,No emisión directa de O₃.,0.4
 O3,No aplica (área de operación),1,"Emisiones de precursores (NOx, VOCs) de vehículos y operaciones pueden contribuir indirectamente a formación de O₃.",0.4
 O3,Batería de coquización,1,Puede liberar precursores (VOCs) que en presencia de NOx/sol forman ozono secundario.,0.4
 O3,Reactor,0,No emisión directa de O₃ (posible emisión de precursores según proceso).,0.4
-RAIN,Sin definir,0,Lluvia es meteorológica; no producida por fuentes.,0.5
-RAIN,Horno,0,Variable meteorológica.,0.5
-RAIN,Caldera,0,Variable meteorológica.,0.5
-RAIN,Caldera horno,0,Variable meteorológica.,0.5
-RAIN,Planta de asfalto,0,Variable meteorológica.,0.5
-RAIN,Secadores,0,Variable meteorológica.,0.5
-RAIN,Molino,0,Variable meteorológica.,0.5
-RAIN,Trituradora,0,Variable meteorológica.,0.5
-RAIN,Chimenea,0,Variable meteorológica.,0.5
-RAIN,No aplica (área de operación),0,Variable meteorológica.,0.5
-RAIN,Batería de coquización,0,Variable meteorológica.,0.5
-RAIN,Reactor,0,Variable meteorológica.,0.5
-SRAD,Sin definir,0,Radiación solar es meteorológica; no generada por fuente.,0.5
-SRAD,Horno,0,Variable meteorológica.,0.5
-SRAD,Caldera,0,Variable meteorológica.,0.5
-SRAD,Caldera horno,0,Variable meteorológica.,0.5
-SRAD,Planta de asfalto,0,Variable meteorológica.,0.5
-SRAD,Secadores,0,Variable meteorológica.,0.5
-SRAD,Molino,0,Variable meteorológica.,0.5
-SRAD,Trituradora,0,Variable meteorológica.,0.5
-SRAD,Chimenea,0,Variable meteorológica.,0.5
-SRAD,No aplica (área de operación),0,Variable meteorológica.,0.5
-SRAD,Batería de coquización,0,Variable meteorológica.,0.5
-SRAD,Reactor,0,Variable meteorológica.,0.5

@@ -8,9 +8,6 @@ Calidad del aire,NO,Óxido Nítrico,μgr/m³,Gas precursor de NO₂ y ozono,
 Calidad del aire,NOX,Óxidos de Nitrógeno,μgr/m³,Combinación de NO y NO₂,
 Calidad del aire,CO,Monóxido de Carbono,μgr/m³,Gas tóxico que puede afectar el transporte de oxígeno en la sangre.,1 hora: ≤35.000 μg/m³
 Clima,Temp,Temperatura,°C,Parámetro climático natural.,
-Clima,SRAD,Brillo solar,watt/m²,Cantidad de radiación solar recibida.,
 Clima,RAIN,Precipitación,mm,Cantidad de lluvia caída.,0 - 10
-Clima,RH,Humedad relativa,%,Porcentaje de vapor de agua en el aire.,0 - 100
 Clima,WDS,Viento - velocidad,m/s,Velocidad del viento.,
 Clima,WDD,Viento - dirección,°N,Dirección de procedencia del viento.,0 - 360
-Clima,BP,Presión barométrica,hPa,Fuerza de la atmósfera en la superficie terrestre.,
