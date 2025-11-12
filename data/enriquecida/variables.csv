@@ -1,7 +1,6 @@
 ﻿Módulo,Variable,Nombre,Unidad,Descripción,Valores referencia
 Calidad del aire,PM10,Partículas en Suspensión ≤10 μm,μgr/m³,Contaminante atmosférico que puede afectar la salud respiratoria.,24 horas: ≤100 μg/m³
 Calidad del aire,PM2.5,Partículas en Suspensión ≤2.5 μm,μgr/m³,"Contaminante atmosférico más fino que PM10, con mayor capacidad de penetrar en el sistema respiratorio.",24 horas: ≤50 μg/m³
-Calidad del aire,O3,Ozono,μgr/m³,Contaminante secundario que afecta la salud respiratoria.,8 horas: ≤100 μg/m³
 Calidad del aire,SO2,Dióxido de Azufre,μgr/m³,Gas contaminante que puede causar irritación en las vías respiratorias.,24 horas: ≤50 μg/m³
 Calidad del aire,NO2,Dióxido de Nitrógeno,μgr/m³,Gas contaminante que puede afectar la función pulmonar.,1 hora: ≤200 μg/m³
 Calidad del aire,NO,Óxido Nítrico,μgr/m³,Gas precursor de NO₂ y ozono,

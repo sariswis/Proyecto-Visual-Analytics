@@ -83,15 +83,3 @@ NOX,Hulla,6,Moderada — hulla similar a carbón.,0.6
 NOX,Mezcla,6,Moderada — mezcla variable.,0.6
 NOX,Madera,5,Moderada-baja — biomasa produce NOx.,0.6
 NOX,Leña,4,Moderada-baja — leña similar.,0.6
-O3,Sin definir,2,Baja — sin definir.,0.6
-O3,Carbón,4,Moderada — contribución vía precursores (NOx/VOCs).,0.6
-O3,Otros,5,Moderada — depende de VOCs emitidos.,0.6
-O3,Gas,5,Moderada — gas puede emitir precursores y favorecer O₃.,0.6
-O3,ACPM,6,Alta — diesel/ACPM emiten NOx (precursores) que favorecen O₃.,0.6
-O3,No aplica,2,No corresponde a emisiones primarias.,0.6
-O3,Fuel Oil No.8,6,Alta — fuel-oil emite NOx y algunos VOCs que participan en formación de O₃.,0.6
-O3,Coque,6,Alta — coque puede liberar precursores.,0.6
-O3,Hulla,5,Moderada — contribución a precusores NOx/VOCs.,0.6
-O3,Mezcla,5,Moderada — mezcla variable en precursores.,0.6
-O3,Madera,5,"Moderada — biomasa emite NMVOCs, contribuye a O₃.",0.6
-O3,Leña,4,"Baja-moderada — biomasa contribuye, pero menor que fósiles.",0.6

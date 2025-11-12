@@ -83,15 +83,3 @@ NOX,Chimenea,7,Chimenea descarga los NOx generados por la unidad de combustión.
 NOX,No aplica (área de operación),5,Vehículos y equipos de combustión en área de operación generan NOx difuso significativo.,0.4
 NOX,Batería de coquización,9,Proceso térmico de coque produce NOx alto.,0.4
 NOX,Reactor,3,Posible en reacciones a alta temp o procesos particulares.,0.4
-O3,Sin definir,0,"Ozono troposférico es secundario (se forma por reacciones fotoquímicas con NOx y VOCs), no directamente emitido por fuente.",0.4
-O3,Horno,0,Hornos no emiten O₃ directamente (pueden emitir precursores NOx/VOCs pero O₃ es secundario).,0.4
-O3,Caldera,0,No emisión directa de O₃ (puede aportar precursores).,0.4
-O3,Caldera horno,0,No emisión directa de O₃ (puede aportar precursores).,0.4
-O3,Planta de asfalto,1,Emisión de VOCs/NOx como precursores puede favorecer formación de ozono localmente.,0.4
-O3,Secadores,0,No emisión directa de O₃.,0.4
-O3,Molino,0,No emisión directa de O₃.,0.4
-O3,Trituradora,0,No emisión directa de O₃.,0.4
-O3,Chimenea,0,No emisión directa de O₃.,0.4
-O3,No aplica (área de operación),1,"Emisiones de precursores (NOx, VOCs) de vehículos y operaciones pueden contribuir indirectamente a formación de O₃.",0.4
-O3,Batería de coquización,1,Puede liberar precursores (VOCs) que en presencia de NOx/sol forman ozono secundario.,0.4
-O3,Reactor,0,No emisión directa de O₃ (posible emisión de precursores según proceso).,0.4
