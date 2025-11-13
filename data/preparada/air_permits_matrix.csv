@@ -1,4 +1,4 @@
-ID,Variable,ProbabilidadEmision
+IDEmpresa,Variable,ProbabilidadEmision
 1,CO,0.5777777777777778
 1,NO,0.7111111111111111
 1,NO2,0.7111111111111111
