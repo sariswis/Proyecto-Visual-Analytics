@@ -1,12 +1,12 @@
-﻿Módulo,Variable,Nombre,Unidad,Descripción,Valores referencia
-Calidad del aire,PM10,Partículas en Suspensión ≤10 μm,μgr/m³,Contaminante atmosférico que puede afectar la salud respiratoria.,24 horas: ≤100 μg/m³
-Calidad del aire,PM2.5,Partículas en Suspensión ≤2.5 μm,μgr/m³,"Contaminante atmosférico más fino que PM10, con mayor capacidad de penetrar en el sistema respiratorio.",24 horas: ≤50 μg/m³
-Calidad del aire,SO2,Dióxido de Azufre,μgr/m³,Gas contaminante que puede causar irritación en las vías respiratorias.,24 horas: ≤50 μg/m³
-Calidad del aire,NO2,Dióxido de Nitrógeno,μgr/m³,Gas contaminante que puede afectar la función pulmonar.,1 hora: ≤200 μg/m³
-Calidad del aire,NO,Óxido Nítrico,μgr/m³,Gas precursor de NO₂ y ozono,
-Calidad del aire,NOX,Óxidos de Nitrógeno,μgr/m³,Combinación de NO y NO₂,
-Calidad del aire,CO,Monóxido de Carbono,μgr/m³,Gas tóxico que puede afectar el transporte de oxígeno en la sangre.,1 hora: ≤35.000 μg/m³
-Clima,Temp,Temperatura,°C,Parámetro climático natural.,
-Clima,RAIN,Precipitación,mm,Cantidad de lluvia caída.,0 - 10
-Clima,WDS,Viento - velocidad,m/s,Velocidad del viento.,
-Clima,WDD,Viento - dirección,°N,Dirección de procedencia del viento.,0 - 360
+﻿Módulo,Variable,Nombre,Unidad,Descripción,Valores referencia,Rango promedio Km
+Calidad del aire,PM10,Partículas en Suspensión ≤10 μm,μgr/m³,Contaminante atmosférico que puede afectar la salud respiratoria.,24 horas: ≤100 μg/m³,17
+Calidad del aire,PM2.5,Partículas en Suspensión ≤2.5 μm,μgr/m³,"Contaminante atmosférico más fino que PM10, con mayor capacidad de penetrar en el sistema respiratorio.",24 horas: ≤50 μg/m³,30
+Calidad del aire,SO2,Dióxido de Azufre,μgr/m³,Gas contaminante que puede causar irritación en las vías respiratorias.,24 horas: ≤50 μg/m³,15
+Calidad del aire,NO2,Dióxido de Nitrógeno,μgr/m³,Gas contaminante que puede afectar la función pulmonar.,1 hora: ≤200 μg/m³,8
+Calidad del aire,NO,Óxido Nítrico,μgr/m³,Gas precursor de NO₂ y ozono,,6
+Calidad del aire,NOX,Óxidos de Nitrógeno,μgr/m³,Combinación de NO y NO₂,,12
+Calidad del aire,CO,Monóxido de Carbono,μgr/m³,Gas tóxico que puede afectar el transporte de oxígeno en la sangre.,1 hora: ≤35.000 μg/m³,5
+Clima,Temp,Temperatura,°C,Parámetro climático natural.,,
+Clima,RAIN,Precipitación,mm,Cantidad de lluvia caída.,0 - 10,
+Clima,WDS,Viento - velocidad,m/s,Velocidad del viento.,,
+Clima,WDD,Viento - dirección,°N,Dirección de procedencia del viento.,0 - 360,
