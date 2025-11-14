@@ -1,76 +1,76 @@
-,IDExpediente,Estado,Regional,Departamento,Municipio,Vereda,Class,TipoCombustible,TipoFuenteEmision,Latitud,Longitud,PrecisionUbicacion
-19,124002,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,,Otros,Reactor,4.5282229,-74.2314842,Media
-35,136448,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Gas,Horno,4.5827314,-74.211754,Media
-38,136886,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,,No aplica,Molino,4.5282229,-74.2314842,Media
-40,137218,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,,Carbón,Caldera,4.5282229,-74.2314842,Media
-44,139882,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,,Carbón,Horno,4.5272987,-74.1930212,Media
-60,148522,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,,Gas,Horno,4.5282229,-74.2314842,Media
-71,154642,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,,Gas,Horno,4.5272987,-74.1930212,Media
-83,166542,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,LA UNIÓN,,Fuel Oil No.8,Horno,4.5071967,-74.2683929,Media
-96,170762,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,VERGANZO,,Carbón,Caldera,4.9700386,-73.9740574,Media
-134,187436,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Carbón,Horno,4.5827314,-74.211754,Media
-138,190770,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHUSACA,,Carbón,Caldera,4.5454998,-74.2442234,Media
-139,190772,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHUSACA,,Carbón,Caldera,4.5454998,-74.2442234,Media
-188,251262,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,PUEBLO VIEJO,,Carbón,Horno,5.3244472,-73.7416109,Baja
-190,252170,Seguimiento y Control,Ubate,Cundinamarca,SIMIJACA,HATO CHICO,,Leña,Horno,5.5152751,-73.8376865,Baja
-197,253924,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,PEÑAS,,Carbón,Horno,5.3244472,-73.7416109,Baja
-199,253958,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,,Hulla,Horno,5.2316116,-73.7567465,Baja
-206,259752,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,,Gas,Horno,4.5827314,-74.211754,Media
-208,262148,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,,Carbón,Horno,5.2316116,-73.7567465,Baja
-210,268628,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,,Carbón,Horno,5.2316116,-73.7567465,Baja
-214,272546,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,,Carbón,Horno,5.4291381,-73.6187546,Media
-215,272546,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,,Carbón,Horno,5.4291381,-73.6187546,Media
-219,274218,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,,Carbón,Horno,4.5272987,-74.1930212,Media
-221,281510,En Trámite,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-228,110204,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,MANTA,FUCHATOQUE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.994663,-73.5509364,Baja
-378,220312,Sancionatorio,Soacha,Cundinamarca,SOACHA,PANAMÁ,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5642217,-74.210658,Media
-395,230416,Sancionatorio,Soacha,Cundinamarca,SIBATE,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.4660057,-74.262724,Media
-406,233196,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-411,235362,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,Media
-413,236852,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-418,237026,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.566108,-74.1853782,Media
-436,246748,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-443,249470,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-457,253996,Sancionatorio,Gualiva,Cundinamarca,NIMAIMA,RESGUARDO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.125392,-74.3853502,Baja
-470,257900,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4969333,-73.6252566,Baja
-475,259382,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4291381,-73.6187546,Media
-476,261630,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.6182733,-73.8167476,Media
-481,265736,Sancionatorio,Ubate,Cundinamarca,TAUSA,RASGATA ALTO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.1949265,-73.9563076,Baja
-482,266510,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-490,268660,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,Media
-491,268676,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,Media
-492,269936,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,PEÑAS,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2316116,-73.7567465,Baja
-494,270832,Sancionatorio,Soacha,Cundinamarca,SOACHA,BOSATAMA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.618357,-74.2344657,Media
-496,272168,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,Media
-497,272170,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,Media
-498,272438,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,USAQUEN,EL PÁRAMO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.695219,-74.0309322,Baja
-499,273090,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,CONCUBITA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,Baja
-501,274106,Sancionatorio,Soacha,Cundinamarca,SIBATE,CHUSACA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.5454998,-74.2442234,Media
-503,275304,Sancionatorio,Sumapaz,Cundinamarca,SILVANIA,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.4039016,-74.3889251,Media
-504,275692,Sancionatorio,Ubate,Cundinamarca,GUACHETA,RABANAL,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.4251105,-73.5569701,Media
-505,275776,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,LA LAGUNA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.2316116,-73.7567465,Baja
-507,277174,Sancionatorio,Soacha,Cundinamarca,SOACHA,PANAMÁ,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5642217,-74.210658,Media
-508,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,Baja
-509,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,Baja
-510,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,Baja
-515,278408,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,Media
-516,279376,Sancionatorio,Ubate,Cundinamarca,GUACHETA,SANTUARIO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.3244472,-73.7416109,Baja
-517,280458,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,Media
-519,281502,Sancionatorio,Sumapaz,Cundinamarca,GRANADA,CARRIZAL,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5202808,-74.3520944,Baja
-521,281696,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.3046383,-74.8030739,Media
-522,282068,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,CENTRO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.5029082,-73.8520601,Media
-523,282348,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO ALTO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.4883574,-74.148341,Media
-524,282350,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-525,282352,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-526,282354,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-527,282356,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-528,282358,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-529,282360,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-530,282542,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,Media
-532,283576,Sancionatorio,Alto Magdalena,Cundinamarca,TOCAIMA,MORRO AZUL,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.4579274,-74.6342234,Baja
-535,288962,Sancionatorio,Ubate,Cundinamarca,SUSA,LA GLORIETA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4387941,-73.839607,Baja
-536,289234,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.4969333,-73.6252566,Baja
-537,289754,Sancionatorio,Gualiva,Cundinamarca,VILLETA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.0112575,-74.4702304,Media
-539,291446,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4969333,-73.6252566,Media
-542,292322,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.3046383,-74.8030739,Media
-543,292674,Sancionatorio,Bogotá y Municipio de la Calera,Distrito Capital,CIUDAD BOLIVAR,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5082769,-74.1481857,Media
+,IDExpediente,Estado,Regional,Departamento,Municipio,Vereda,Class,TipoCombustible,TipoFuenteEmision,Latitud,Longitud,Localidad,PrecisionUbicacion
+19,124002,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,Sin sanción,Otros,Reactor,4.5218565,-74.24165,,Media
+35,136448,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,Sin sanción,Gas,Horno,4.5827314,-74.211754,,Media
+38,136886,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,Sin sanción,No aplica,Molino,4.5218565,-74.24165,,Media
+40,137218,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,Sin sanción,Carbón,Caldera,4.5218565,-74.24165,,Media
+44,139882,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,Sin sanción,Carbón,Horno,4.5272987,-74.1930212,,Media
+60,148522,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHACUA,Sin sanción,Gas,Horno,4.5218565,-74.24165,,Media
+71,154642,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,Sin sanción,Gas,Horno,4.5272987,-74.1930212,,Media
+83,166542,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,LA UNIÓN,Sin sanción,Fuel Oil No.8,Horno,4.5071967,-74.2683929,,Media
+96,170762,Seguimiento y Control,Sabana Centro,Cundinamarca,TOCANCIPA,VERGANZO,Sin sanción,Carbón,Caldera,4.9700386,-73.9740574,,Media
+134,187436,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,Sin sanción,Carbón,Horno,4.5827314,-74.211754,,Media
+138,190770,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHUSACA,Sin sanción,Carbón,Caldera,4.5454998,-74.2442234,,Media
+139,190772,Seguimiento y Control,Soacha,Cundinamarca,SIBATE,CHUSACA,Sin sanción,Carbón,Caldera,4.5454998,-74.2442234,,Media
+188,251262,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,PUEBLO VIEJO,Sin sanción,Carbón,Horno,5.3244472,-73.7416109,,Baja
+190,252170,Seguimiento y Control,Ubate,Cundinamarca,SIMIJACA,HATO CHICO,Sin sanción,Leña,Horno,5.5152751,-73.8376865,,Baja
+197,253924,Seguimiento y Control,Ubate,Cundinamarca,GUACHETA,PEÑAS,Sin sanción,Carbón,Horno,5.3244472,-73.7416109,,Baja
+199,253958,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,Sin sanción,Hulla,Horno,5.2316116,-73.7567465,,Baja
+206,259752,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,AREA URBANA,Sin sanción,Gas,Horno,4.5827314,-74.211754,,Media
+208,262148,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,Sin sanción,Carbón,Horno,5.2316116,-73.7567465,,Baja
+210,268628,Seguimiento y Control,Ubate,Cundinamarca,CUCUNUBA,PUEBLO VIEJO,Sin sanción,Carbón,Horno,5.2316116,-73.7567465,,Baja
+214,272546,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,Sin sanción,Carbón,Horno,5.4291381,-73.6187546,,Media
+215,272546,Seguimiento y Control,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,Sin sanción,Carbón,Horno,5.4291381,-73.6187546,,Media
+219,274218,Seguimiento y Control,Soacha,Cundinamarca,SOACHA,FUSUNGA,Sin sanción,Carbón,Horno,4.5272987,-74.1930212,,Media
+221,281510,En Trámite,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Sin sanción,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+228,110204,Sancionatorio,Almeidas y Municipio de Guatavita,Cundinamarca,MANTA,FUCHATOQUE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.994663,-73.5509364,,Baja
+378,220312,Sancionatorio,Soacha,Cundinamarca,SOACHA,PANAMÁ,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5642217,-74.210658,,Media
+395,230416,Sancionatorio,Soacha,Cundinamarca,SIBATE,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.4660057,-74.262724,,Media
+406,233196,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+411,235362,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,,Media
+413,236852,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+418,237026,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.566108,-74.1853782,,Media
+436,246748,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+443,249470,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+457,253996,Sancionatorio,Gualiva,Cundinamarca,NIMAIMA,RESGUARDO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.125392,-74.3853502,,Baja
+470,257900,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4969333,-73.6252566,,Baja
+475,259382,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,FIRITA PEÑA ARRIBA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4291381,-73.6187546,,Media
+476,261630,Sancionatorio,Chiquinquira,Boyacá,CHIQUINQUIRA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.6182733,-73.8167476,,Media
+481,265736,Sancionatorio,Ubate,Cundinamarca,TAUSA,RASGATA ALTO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.1949265,-73.9563076,,Baja
+482,266510,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+490,268660,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+491,268676,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+492,269936,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,PEÑAS,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2316116,-73.7567465,,Baja
+494,270832,Sancionatorio,Soacha,Cundinamarca,SOACHA,BOSATAMA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.618357,-74.2344657,,Media
+496,272168,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,,Media
+497,272170,Sancionatorio,Soacha,Cundinamarca,SOACHA,CIUDADELA SUCRE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.566108,-74.1853782,,Media
+498,272438,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,EL PÁRAMO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.695219,-74.0309322,USAQUEN,Baja
+499,273090,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,CONCUBITA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,,Baja
+501,274106,Sancionatorio,Soacha,Cundinamarca,SIBATE,CHUSACA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.5454998,-74.2442234,,Media
+503,275304,Sancionatorio,Sumapaz,Cundinamarca,SILVANIA,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.4039016,-74.3889251,,Media
+504,275692,Sancionatorio,Ubate,Cundinamarca,GUACHETA,RABANAL,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.4251105,-73.5569701,,Media
+505,275776,Sancionatorio,Ubate,Cundinamarca,CUCUNUBA,LA LAGUNA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.2316116,-73.7567465,,Baja
+507,277174,Sancionatorio,Soacha,Cundinamarca,SOACHA,PANAMÁ,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5642217,-74.210658,,Media
+508,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,,Baja
+509,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,,Baja
+510,277840,Sancionatorio,Ubate,Cundinamarca,SUTATAUSA,PEÑAS DE BOQUERÓN,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.2377338,-73.8549404,,Baja
+515,278408,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+516,279376,Sancionatorio,Ubate,Cundinamarca,GUACHETA,SANTUARIO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.3244472,-73.7416109,,Baja
+517,280458,Sancionatorio,Soacha,Cundinamarca,SOACHA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5827314,-74.211754,,Media
+519,281502,Sancionatorio,Sumapaz,Cundinamarca,GRANADA,CARRIZAL,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5202808,-74.3520944,,Baja
+521,281696,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.3046383,-74.8030739,,Media
+522,282068,Sancionatorio,Ubate,Cundinamarca,SIMIJACA,CENTRO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.5029082,-73.8520601,,Media
+523,282348,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO ALTO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.4883574,-74.148341,CIUDAD BOLIVAR,Media
+524,282350,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+525,282352,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+526,282354,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+527,282356,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+528,282358,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+529,282360,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+530,282542,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
+532,283576,Sancionatorio,Alto Magdalena,Cundinamarca,TOCAIMA,MORRO AZUL,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.4579274,-74.6342234,,Baja
+535,288962,Sancionatorio,Ubate,Cundinamarca,SUSA,LA GLORIETA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4387941,-73.839607,,Baja
+536,289234,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,RESGUARDO OCCIDENTE,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,5.4969333,-73.6252566,,Baja
+537,289754,Sancionatorio,Gualiva,Cundinamarca,VILLETA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.0112575,-74.4702304,,Media
+539,291446,Sancionatorio,Chiquinquira,Boyacá,RAQUIRA,AREA URBANA,Por emisiones atmosféricas sin cumplir con los requisitos de ley,Sin definir,Sin definir,5.4969333,-73.6252566,,Media
+542,292322,Sancionatorio,Alto Magdalena,Cundinamarca,GIRARDOT,AREA URBANA,Emitir por encima de los parámetros establecidos en la norma,Sin definir,Sin definir,4.3046383,-74.8030739,,Media
+543,292674,Sancionatorio,Bogotá y Municipio de la Calera,Bogotá,BOGOTA,MOCHUELO BAJO,Por emisiones atmosféricas sin permiso o no cumplimiento con los términos del permiso,Sin definir,Sin definir,4.5082769,-74.1481857,CIUDAD BOLIVAR,Media
