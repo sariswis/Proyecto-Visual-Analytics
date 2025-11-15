@@ -10,6 +10,8 @@ Matriz Estación - Empresa (Dataset 8): `data\preparada\stations_permits_matrix.
 
 Empresas con fuentes de emisión (Dataset 2 preparado): `data\preparada\emission_permits.csv`
 
+Mapa de municipios (Dataset 9): `data\preparada\municipios_final.geojson`
+
 ## Opcionales
 
 Matriz Empresa - Variable (Dataset 7): `data\preparada\variable_permits_matrix.csv`
