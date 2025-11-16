@@ -1,0 +1,438 @@
+class MapManager {
+    constructor(containerId) {
+        this.containerId = containerId;
+        this.svg = null;
+        this.g = null;
+        this.projection = null;
+        this.path = null;
+        this.zoom = null;
+        this.tooltip = null;
+        this.currentTransform = d3.zoomIdentity;
+        this.stationColorScale = null;
+        this.activeStations = [];
+        this.geoData = null;
+        this.fuentesData = [];
+        this.stationsData = [];
+        this.stationsPermitsMatrix = [];
+        this.contaminanteSeleccionado = '';
+    }
+
+    init(geoData, fuentesData, stationsData, stationsPermitsMatrix) {
+        this.geoData = geoData;
+        this.fuentesData = fuentesData;
+        this.stationsData = stationsData;
+        this.stationsPermitsMatrix = stationsPermitsMatrix;
+        
+        this.setupColorScales();
+        this.setupSVG();
+        this.setupTooltip();
+        this.setupProjection();
+        this.setupZoom();
+        this.drawMap();
+        this.setupControls();
+        
+        return this;
+    }
+
+    setupColorScales() {
+        if (this.stationsData && this.stationsData.length > 0) {
+            const combinedColors = [
+                ...d3.schemeCategory10,
+                ...d3.schemeAccent,
+                ...d3.schemeDark2,
+                ...d3.schemePaired,
+                ...d3.schemeSet1,
+                ...d3.schemeSet2,
+                ...d3.schemeSet3
+            ];
+            
+            const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
+            
+            this.stationColorScale = d3.scaleOrdinal(uniqueColors)
+                .domain(this.stationsData.map(d => d.id));
+        } else {
+            const combinedColors = [
+                ...d3.schemeCategory10,
+                ...d3.schemeAccent,
+                ...d3.schemeDark2,
+                ...d3.schemePaired
+            ];
+            const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
+            
+            this.stationColorScale = d3.scaleOrdinal(uniqueColors)
+                .domain(['1', '2', '3', '4', '5']);
+        }
+    }
+
+    setupSVG() {
+        this.svg = d3.select(this.containerId);
+        const width = 735;
+        const height = 385;
+        
+        this.svg
+            .attr('width', width)
+            .attr('height', height)
+            .style('background-color', '#f8f9fa')
+            .style('border', '1px solid #ddd')
+            .style('border-radius', '4px');
+        
+        this.svg.selectAll('*').remove();
+        this.g = this.svg.append('g');
+    }
+
+    setupTooltip() {
+        d3.select('.map-tooltip').remove();
+        
+        this.tooltip = d3.select('body').append('div')
+            .attr('class', 'map-tooltip')
+            .style('opacity', 0)
+            .style('position', 'absolute')
+            .style('background', 'rgba(0, 0, 0, 0.85)')
+            .style('color', 'white')
+            .style('padding', '12px')
+            .style('border-radius', '6px')
+            .style('border', '1px solid #333')
+            .style('font-family', 'Poppins, sans-serif')
+            .style('font-size', '12px')
+            .style('pointer-events', 'none')
+            .style('z-index', '1000')
+            .style('box-shadow', '0 4px 8px rgba(0,0,0,0.3)')
+            .style('max-width', '300px')
+            .style('line-height', '1.4')
+            .style('backdrop-filter', 'blur(2px)');
+    }
+
+    setupProjection() {
+        if (!this.geoData) {
+            console.error('No hay datos geoJSON para la proyección');
+            return;
+        }
+
+        try {
+            const width = 735;
+            const height = 385;
+
+            this.projection = d3.geoMercator()
+                .fitSize([width, height], this.geoData);
+
+            this.path = d3.geoPath().projection(this.projection);
+            
+        } catch (error) {
+            console.error('Error configurando la proyección:', error);
+            
+            this.projection = d3.geoMercator()
+                .center([-74.0, 4.6])
+                .scale(8000)
+                .translate([735 / 2, 385 / 2]);
+                
+            this.path = d3.geoPath().projection(this.projection);
+        }
+    }
+
+    setupZoom() {
+        this.zoom = d3.zoom()
+            .scaleExtent([0.5, 20])
+            .on('zoom', (event) => {
+                this.currentTransform = event.transform;
+                this.g.attr('transform', event.transform);
+                // NO llamamos a updatePointSizes aquí - el zoom ya escala todo el grupo
+            });
+
+        this.svg.call(this.zoom);
+    }
+
+    drawMap() {
+        if (!this.geoData || !this.geoData.features) {
+            console.error('No hay datos geoJSON para dibujar');
+            return;
+        }
+
+        // Dibujar municipios
+        const municipios = this.g.selectAll('.municipio')
+            .data(this.geoData.features);
+
+        municipios.enter()
+            .append('path')
+            .attr('class', 'municipio')
+            .attr('d', this.path)
+            .style('fill', '#e9ecef')
+            .style('stroke', '#adb5bd')
+            .style('stroke-width', '0.5px');
+
+        // Dibujar estaciones
+        this.drawStations();
+        
+        // Dibujar fuentes
+        this.drawFuentes();
+    }
+
+    drawStations() {
+        if (!this.stationsData || this.stationsData.length === 0) {
+            console.warn('No hay datos de estaciones para dibujar');
+            return;
+        }
+
+        const estacionesActivas = this.stationsData.filter(station => 
+            this.activeStations.includes(station.id) && 
+            !isNaN(station.latitude) && !isNaN(station.longitude)
+        );
+
+        console.log(`Dibujando ${estacionesActivas.length} estaciones activas`);
+
+        this.g.selectAll('.estacion-punto').remove();
+
+        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(36); // Tamaño base
+
+        const estaciones = this.g.selectAll('.estacion-punto')
+            .data(estacionesActivas, d => d.id);
+
+        estaciones.enter()
+            .append('path')
+            .attr('class', 'estacion-punto')
+            .attr('d', triangleSymbol)
+            .attr('transform', d => {
+                const coords = this.projection([d.longitude, d.latitude]);
+                if (!coords) return 'translate(0,0)';
+                return `translate(${coords[0]}, ${coords[1]})`;
+            })
+            .attr('fill', d => this.stationColorScale(d.id))
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 0.8)
+            .style('cursor', 'pointer')
+            .on('mouseover', (event, d) => {
+                d3.select(event.target).attr('stroke-width', 1.2);
+                this.showTooltip(event, d, 'estacion');
+            })
+            .on('mouseout', (event, d) => {
+                d3.select(event.target).attr('stroke-width', 0.8);
+                this.hideTooltip();
+            })
+            .on('mousemove', (event) => this.moveTooltip(event));
+    }
+
+    drawFuentes() {
+        if (!this.fuentesData || this.fuentesData.length === 0) {
+            console.warn('No hay datos de fuentes para dibujar');
+            return;
+        }
+
+        const fuentesConEstacionesActivas = this.fuentesData.filter(fuente => {
+            const relaciones = this.getRelacionesPorFuenteYContaminante(fuente.ID, this.contaminanteSeleccionado);
+            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
+            return relacionesActivas.length > 0 && !isNaN(fuente.Latitud) && !isNaN(fuente.Longitud);
+        });
+
+        console.log(`Mostrando ${fuentesConEstacionesActivas.length} fuentes para contaminante: ${this.contaminanteSeleccionado || 'Todos'}`);
+
+        this.g.selectAll('.fuente-group').remove();
+
+        const fuenteGroups = this.g.selectAll('.fuente-group')
+            .data(fuentesConEstacionesActivas, d => d.ID);
+
+        const gruposEnter = fuenteGroups.enter()
+            .append('g')
+            .attr('class', 'fuente-group')
+            .attr('transform', d => {
+                const coords = this.projection([d.Longitud, d.Latitud]);
+                if (!coords) return 'translate(0,0)';
+                return `translate(${coords[0]}, ${coords[1]})`;
+            })
+            .style('cursor', 'pointer')
+            .on('mouseover', (event, d) => {
+                d3.select(event.target).selectAll('path, circle').style('opacity', 0.8);
+                this.showTooltip(event, d, 'fuente');
+            })
+            .on('mouseout', (event, d) => {
+                d3.select(event.target).selectAll('path, circle').style('opacity', 1);
+                this.hideTooltip();
+            })
+            .on('mousemove', (event) => this.moveTooltip(event));
+
+        gruposEnter.each((d, i, nodes) => {
+            const group = d3.select(nodes[i]);
+            const relaciones = this.getRelacionesPorFuenteYContaminante(d.ID, this.contaminanteSeleccionado);
+            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
+            
+            this.dibujarFuenteDividida(group, relacionesActivas);
+        });
+
+        fuenteGroups.exit().remove();
+    }
+
+    getRelacionesPorFuenteYContaminante(fuenteId, contaminante) {
+        if (!this.stationsPermitsMatrix) return [];
+        
+        let relaciones = this.stationsPermitsMatrix.filter(rel => 
+            rel.IDEmpresa === fuenteId && rel.DistanciaKm <= 15
+        );
+        
+        if (contaminante) {
+            relaciones = relaciones.filter(rel => rel.Variable === contaminante);
+        }
+        
+        return relaciones;
+    }
+
+    filtrarRelacionesPorEstacionesActivas(relaciones) {
+        if (this.activeStations.length === 0) return [];
+        return relaciones.filter(rel => 
+            this.activeStations.includes(rel.IDEstación)
+        );
+    }
+
+    dibujarFuenteDividida(group, relacionesActivas) {
+        if (relacionesActivas.length === 0) return;
+
+        const estacionesUnicas = [...new Set(relacionesActivas.map(r => r.IDEstación))];
+        const numEstaciones = estacionesUnicas.length;
+        
+        // TAMAÑO CONSTANTE para todas las fuentes - 3px en zoom normal
+        const baseRadius = 1.5;
+        
+        if (numEstaciones === 1) {
+            const estacionId = estacionesUnicas[0];
+            group.append('circle')
+                .attr('r', baseRadius)
+                .attr('fill', this.stationColorScale(estacionId))
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 0.4);
+        } else {
+            const anguloPorcion = (2 * Math.PI) / numEstaciones;
+            
+            estacionesUnicas.forEach((estacionId, index) => {
+                const startAngle = index * anguloPorcion;
+                const endAngle = (index + 1) * anguloPorcion;
+                
+                const x1 = baseRadius * Math.cos(startAngle);
+                const y1 = baseRadius * Math.sin(startAngle);
+                const x2 = baseRadius * Math.cos(endAngle);
+                const y2 = baseRadius * Math.sin(endAngle);
+                
+                const largeArc = (endAngle - startAngle) > Math.PI ? 1 : 0;
+                
+                const pathData = [
+                    `M 0 0`,
+                    `L ${x1} ${y1}`,
+                    `A ${baseRadius} ${baseRadius} 0 ${largeArc} 1 ${x2} ${y2}`,
+                    `Z`
+                ].join(' ');
+                
+                group.append('path')
+                    .attr('d', pathData)
+                    .attr('fill', this.stationColorScale(estacionId))
+                    .attr('stroke', '#fff')
+                    .attr('stroke-width', 0.4);
+            });
+        }
+    }
+
+    showTooltip(event, data, type) {
+        let content = '';
+        
+        if (type === 'estacion') {
+            content = `
+                <div style="font-weight: bold; color: #4ecdc4; margin-bottom: 5px;">Estación ${data.id}</div>
+                <div>Latitud: ${data.latitude.toFixed(4)}</div>
+                <div>Longitud: ${data.longitude.toFixed(4)}</div>
+            `;
+        } else if (type === 'fuente') {
+            const relaciones = this.getRelacionesPorFuenteYContaminante(data.ID, this.contaminanteSeleccionado);
+            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
+            let relacionesHTML = '';
+            
+            if (relacionesActivas.length > 0) {
+                relacionesHTML = `<div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Estaciones relacionadas${this.contaminanteSeleccionado ? ` (${this.contaminanteSeleccionado})` : ''}:</div>`;
+                const agrupadas = this.agruparRelacionesPorEstacion(relacionesActivas);
+                
+                agrupadas.forEach(rel => {
+                    relacionesHTML += `
+                        <div style="margin-top: 4px;">
+                            <div>• Estación ${rel.estacionId}: ${rel.distancia.toFixed(2)} km</div>
+                            ${rel.variable ? `<div style="margin-left: 10px; font-size: 11px;">Variable: ${rel.variable}</div>` : ''}
+                            ${rel.incidencia ? `<div style="margin-left: 10px; font-size: 11px;">Incidencia: ${rel.incidencia}</div>` : ''}
+                        </div>
+                    `;
+                });
+            } else {
+                relacionesHTML = `<div style="margin-top: 8px; font-style: italic; color: #ccc;">No hay estaciones relacionadas${this.contaminanteSeleccionado ? ` para ${this.contaminanteSeleccionado}` : ''}</div>`;
+            }
+            
+            content = `
+                <div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">${data.TipoFuenteEmision}</div>
+                <div>Expediente: ${data.IDExpediente}</div>
+                <div>Municipio: ${data.Municipio}</div>
+                <div>Combustible: ${data.TipoCombustible}</div>
+                <div>Estado: ${data.Estado}</div>
+                ${relacionesHTML}
+            `;
+        }
+
+        this.tooltip.html(content)
+            .style('opacity', 1);
+
+        this.moveTooltip(event);
+    }
+
+    agruparRelacionesPorEstacion(relaciones) {
+        const agrupadas = [];
+        const estacionesUnicas = [...new Set(relaciones.map(r => r.IDEstación))];
+        
+        estacionesUnicas.forEach(estacionId => {
+            const relsEstacion = relaciones.filter(r => r.IDEstación === estacionId);
+            const mejorRel = relsEstacion.reduce((prev, current) => 
+                (prev.DistanciaKm < current.DistanciaKm) ? prev : current
+            );
+            agrupadas.push({
+                estacionId: estacionId,
+                distancia: mejorRel.DistanciaKm,
+                variable: mejorRel.Variable,
+                incidencia: mejorRel.Incidencia
+            });
+        });
+        
+        return agrupadas;
+    }
+
+    hideTooltip() {
+        this.tooltip.style('opacity', 0);
+    }
+
+    moveTooltip(event) {
+        this.tooltip
+            .style('left', (event.pageX + 15) + 'px')
+            .style('top', (event.pageY - 15) + 'px');
+    }
+
+    setupControls() {
+        d3.select('#zoom-in').on('click', () => {
+            this.svg.transition().duration(300).call(
+                this.zoom.scaleBy, 1.5
+            );
+        });
+
+        d3.select('#zoom-out').on('click', () => {
+            this.svg.transition().duration(300).call(
+                this.zoom.scaleBy, 0.75
+            );
+        });
+
+        d3.select('#reset-view').on('click', () => {
+            this.svg.transition().duration(300).call(
+                this.zoom.transform, d3.zoomIdentity
+            );
+        });
+    }
+
+    updateData(filteredData, activeStations = [], contaminante = '') {
+        console.log('Actualizando mapa con', filteredData.length, 'fuentes,', activeStations.length, 'estaciones activas, contaminante:', contaminante);
+        
+        this.fuentesData = filteredData;
+        this.activeStations = activeStations;
+        this.contaminanteSeleccionado = contaminante;
+        
+        this.g.selectAll('.fuente-group').remove();
+        this.g.selectAll('.estacion-punto').remove();
+        this.drawStations();
+        this.drawFuentes();
+    }
+}
