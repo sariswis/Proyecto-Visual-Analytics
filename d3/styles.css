@@ -646,3 +646,60 @@ body {
     pointer-events: none;
     font-family: 'Poppins', sans-serif;
 }
+
+/* Tercera gráfica: Comparación 2024 vs 2025 - IZQUIERDA */
+.comparison-chart {
+    position: absolute;
+    top: 515px; /* 485px (altura primer mapa) + 30px */
+    left: 0;
+    width: 570px; /* (1180px - 40px) / 2 */
+    height: 453px; /* Altura máxima disponible: 968px - 515px */
+    background-color: #ffffff;
+}
+
+/* Cuarta gráfica: Variables entre estaciones - DERECHA */
+.variables-chart {
+    position: absolute;
+    top: 515px; /* Misma posición vertical que la tercera */
+    left: 610px; /* 570px (ancho tercera) + 40px */
+    width: 570px; /* Mismo ancho que la tercera */
+    height: 453px; /* Misma altura que la tercera */
+    background-color: #ffffff;
+}
+
+/* Contenedores de visualización para las nuevas gráficas */
+.comparison-visualization,
+.variables-visualization {
+    position: relative;
+    width: 100%;
+    height: 420px; /* 453px - 33px para el título */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f8f9fa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Placeholder para contenido temporal */
+.placeholder-content {
+    text-align: center;
+    color: #666;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+.placeholder-content p {
+    margin: 0;
+}
+
+/* Títulos de las nuevas gráficas */
+.comparison-chart h2,
+.variables-chart h2 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: #333333;
+    padding: 0px 0px 10px 0px;
+    margin: 0;
+}

@@ -118,6 +118,7 @@
                     <div id="map-tooltip" class="map-tooltip"></div>
                 </div>
             </div>
+
             <!-- Segunda gráfica: Mapa de concentración de contaminantes -->
             <div class="chart-container concentration-chart">
                 <h2>Concentración de agentes contaminantes</h2>
@@ -139,15 +140,39 @@
                     <div id="concentration-map-tooltip" class="map-tooltip"></div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="modules/DataLoader.js"></script>
-    <script src="modules/FilterManager.js"></script>
-    <script src="modules/MapManager.js"></script>
-    <script src="modules/ConcentrationMapManager.js"></script>
-    <script src="app.js"></script>
+            <!-- Tercera gráfica: Concentración contaminantes 2024 vs 2025 -->
+            <div class="chart-container comparison-chart">
+                <h2>Concentración contaminantes 2024 vs 2025</h2>
+
+                <!-- Contenedor para la visualización de comparación -->
+                <div class="comparison-visualization">
+                    <!-- Espacio reservado para la gráfica de comparación -->
+                    <div class="placeholder-content">
+                        <p>Gráfica de comparación 2024 vs 2025</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cuarta gráfica: Variables de aire entre estaciones -->
+            <div class="chart-container variables-chart">
+                <h2>Variables de aire entre estaciones</h2>
+
+                <!-- Contenedor para la visualización de variables -->
+                <div class="variables-visualization">
+                    <!-- Espacio reservado para la gráfica de variables -->
+                    <div class="placeholder-content">
+                        <p>Gráfica de variables entre estaciones</p>
+                    </div>
+                </div>
+            </div>
+
+            <script src="https://d3js.org/d3.v7.min.js"></script>
+            <script src="modules/DataLoader.js"></script>
+            <script src="modules/FilterManager.js"></script>
+            <script src="modules/MapManager.js"></script>
+            <script src="modules/ConcentrationMapManager.js"></script>
+            <script src="app.js"></script>
 </body>
 
 </html>
