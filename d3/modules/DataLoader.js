@@ -4,6 +4,7 @@ class DataLoader {
         this.fuentesData = [];
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
+        this.measurementsData = [];
     }
 
     async loadAllData() {
@@ -12,17 +13,19 @@ class DataLoader {
                 this.loadGeoData(),
                 this.loadFuentesData(),
                 this.loadStationsData(),
-                this.loadStationsPermitsMatrix()
+                this.loadStationsPermitsMatrix(),
+                this.loadMeasurementsData()
             ]);
             return {
                 geoData: this.geoData,
                 fuentesData: this.fuentesData,
                 stationsData: this.stationsData,
-                stationsPermitsMatrix: this.stationsPermitsMatrix
+                stationsPermitsMatrix: this.stationsPermitsMatrix,
+                measurementsData: this.measurementsData
             };
         } catch (error) {
             console.error('Error cargando datos:', error);
-            return this.loadExampleData();
+            throw error; // Eliminamos el fallback a datos de ejemplo
         }
     }
 
@@ -34,42 +37,42 @@ class DataLoader {
 
     async loadFuentesData() {
         const rawData = await d3.csv('../data/preparada/emission_permits.csv');
-        
+
         this.fuentesData = rawData.map(fuente => ({
             ...fuente,
             Latitud: parseFloat(fuente.Latitud),
             Longitud: parseFloat(fuente.Longitud),
             ID: parseInt(fuente.ID)
-        })).filter(fuente => 
-            !isNaN(fuente.Latitud) && 
+        })).filter(fuente =>
+            !isNaN(fuente.Latitud) &&
             !isNaN(fuente.Longitud) &&
-            fuente.Latitud !== 0 && 
+            fuente.Latitud !== 0 &&
             fuente.Longitud !== 0
         );
-        
+
         console.log('Datos de fuentes cargados:', this.fuentesData);
         return this.fuentesData;
     }
 
     async loadStationsData() {
         const rawData = await d3.csv('../data/preparada/stations.csv');
-        
+
         this.stationsData = rawData.map(station => ({
             id: station.id,
             latitude: parseFloat(station.latitude),
             longitude: parseFloat(station.longitude)
-        })).filter(station => 
-            !isNaN(station.latitude) && 
+        })).filter(station =>
+            !isNaN(station.latitude) &&
             !isNaN(station.longitude)
         );
-        
+
         console.log('Datos de estaciones cargados:', this.stationsData);
         return this.stationsData;
     }
 
     async loadStationsPermitsMatrix() {
         const rawData = await d3.csv('../data/preparada/stations_permits_matrix.csv');
-        
+
         this.stationsPermitsMatrix = rawData.map(row => ({
             IDEstación: row.IDEstación,
             IDEmpresa: parseInt(row.IDEmpresa),
@@ -77,78 +80,32 @@ class DataLoader {
             Variable: row.Variable,
             Incidencia: row.Incidencia
         }));
-        
+
         console.log('Matriz de relaciones cargada:', this.stationsPermitsMatrix);
         return this.stationsPermitsMatrix;
     }
 
-    loadExampleData() {
-        console.log('Cargando datos de ejemplo...');
-        
-        this.geoData = {
-            "type": "FeatureCollection",
-            "name": "municipios_final",
-            "features": [
-                {
-                    "type": "Feature",
-                    "properties": { 
-                        "Código departamento": "25", 
-                        "Departamento": "Cundinamarca", 
-                        "Código municipio": "001", 
-                        "Municipio": "MOSQUERA", 
-                        "DIVIPOLA": "25001" 
-                    },
-                    "geometry": {
-                        "type": "Polygon",
-                        "coordinates": [[
-                            [-74.22656074120917, 4.703417522164974],
-                            [-74.216560, 4.700000],
-                            [-74.220000, 4.710000],
-                            [-74.230000, 4.710000],
-                            [-74.22656074120917, 4.703417522164974]
-                        ]]
-                    }
-                }
-            ]
-        };
+    async loadMeasurementsData() {
+        const rawData = await d3.csv('../data/preparada/measurements.csv');
 
-        this.fuentesData = [
-            {
-                "ID": 1,
-                "IDExpediente": "73640",
-                "Estado": "Seguimiento y Control",
-                "Regional": "Sabana Occidente",
-                "Departamento": "Cundinamarca",
-                "Municipio": "MOSQUERA",
-                "Localidad": "",
-                "Vereda": "CENTRO",
-                "Class": "Sin sanción",
-                "TipoCombustible": "Otros",
-                "TipoFuenteEmision": "Horno",
-                "Latitud": 4.703417522164974,
-                "Longitud": -74.22656074120917,
-                "PrecisionUbicacion": "Alta"
-            }
-        ];
+        this.measurementsData = rawData.map(measurement => ({
+            date_time: new Date(measurement.date_time),
+            variable: measurement.variable,
+            value: parseFloat(measurement.value),
+            station: measurement.station,
+            unit_measurement: measurement.unit_measurement
+        })).filter(measurement =>
+            !isNaN(measurement.value) &&
+            measurement.value !== null &&
+            measurement.date_time instanceof Date &&
+            !isNaN(measurement.date_time)
+        );
 
-        this.stationsData = [
-            { id: "1", latitude: 4.7034, longitude: -74.2265 },
-            { id: "2", latitude: 4.7100, longitude: -74.2200 }
-        ];
-
-        this.stationsPermitsMatrix = [
-            { IDEstación: "1", IDEmpresa: 1, DistanciaKm: 0.5, Variable: "PM2.5", Incidencia: "Alta" }
-        ];
-
-        return {
-            geoData: this.geoData,
-            fuentesData: this.fuentesData,
-            stationsData: this.stationsData,
-            stationsPermitsMatrix: this.stationsPermitsMatrix
-        };
+        console.log('Datos de mediciones cargados:', this.measurementsData);
+        return this.measurementsData;
     }
 
-    // MÉTODOS CORREGIDOS - deben estar dentro de la clase
+    // MÉTODOS UTILES
     getUniqueValues(data, field) {
         if (!data || !Array.isArray(data)) return [];
         return [...new Set(data.map(item => item[field]))].filter(Boolean).sort();
@@ -160,5 +117,35 @@ class DataLoader {
             .map(f => f.properties.Municipio)
             .filter(Boolean)
             .sort();
+    }
+
+    // Método útil para obtener las variables únicas de las mediciones
+    getMeasurementVariables() {
+        return this.getUniqueValues(this.measurementsData, 'variable');
+    }
+
+    // Método útil para obtener las estaciones únicas de las mediciones
+    getMeasurementStations() {
+        return this.getUniqueValues(this.measurementsData, 'station');
+    }
+
+    // Método útil para filtrar mediciones por variable y estación
+    getMeasurementsByVariableAndStation(variable, station) {
+        if (!this.measurementsData) return [];
+        return this.measurementsData.filter(m =>
+            m.variable === variable &&
+            m.station === station
+        );
+    }
+
+    // Método útil para obtener el rango de fechas de las mediciones
+    getMeasurementsDateRange() {
+        if (!this.measurementsData || this.measurementsData.length === 0) return null;
+
+        const dates = this.measurementsData.map(m => m.date_time);
+        return {
+            min: new Date(Math.min(...dates)),
+            max: new Date(Math.max(...dates))
+        };
     }
 }

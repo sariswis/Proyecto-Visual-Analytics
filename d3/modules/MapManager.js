@@ -22,7 +22,7 @@ class MapManager {
         this.fuentesData = fuentesData;
         this.stationsData = stationsData;
         this.stationsPermitsMatrix = stationsPermitsMatrix;
-        
+
         this.setupColorScales();
         this.setupSVG();
         this.setupTooltip();
@@ -30,7 +30,7 @@ class MapManager {
         this.setupZoom();
         this.drawMap();
         this.setupControls();
-        
+
         return this;
     }
 
@@ -45,9 +45,9 @@ class MapManager {
                 ...d3.schemeSet2,
                 ...d3.schemeSet3
             ];
-            
+
             const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
-            
+
             this.stationColorScale = d3.scaleOrdinal(uniqueColors)
                 .domain(this.stationsData.map(d => d.id));
         } else {
@@ -58,7 +58,7 @@ class MapManager {
                 ...d3.schemePaired
             ];
             const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
-            
+
             this.stationColorScale = d3.scaleOrdinal(uniqueColors)
                 .domain(['1', '2', '3', '4', '5']);
         }
@@ -67,22 +67,22 @@ class MapManager {
     setupSVG() {
         this.svg = d3.select(this.containerId);
         const width = 735;
-        const height = 385;
-        
+        const height = 350;
+
         this.svg
             .attr('width', width)
             .attr('height', height)
             .style('background-color', '#f8f9fa')
             .style('border', '1px solid #ddd')
             .style('border-radius', '4px');
-        
+
         this.svg.selectAll('*').remove();
         this.g = this.svg.append('g');
     }
 
     setupTooltip() {
         d3.select('.map-tooltip').remove();
-        
+
         this.tooltip = d3.select('body').append('div')
             .attr('class', 'map-tooltip')
             .style('opacity', 0)
@@ -116,15 +116,15 @@ class MapManager {
                 .fitSize([width, height], this.geoData);
 
             this.path = d3.geoPath().projection(this.projection);
-            
+
         } catch (error) {
             console.error('Error configurando la proyección:', error);
-            
+
             this.projection = d3.geoMercator()
                 .center([-74.0, 4.6])
                 .scale(8000)
                 .translate([735 / 2, 385 / 2]);
-                
+
             this.path = d3.geoPath().projection(this.projection);
         }
     }
@@ -161,7 +161,7 @@ class MapManager {
 
         // Dibujar estaciones
         this.drawStations();
-        
+
         // Dibujar fuentes
         this.drawFuentes();
     }
@@ -172,8 +172,8 @@ class MapManager {
             return;
         }
 
-        const estacionesActivas = this.stationsData.filter(station => 
-            this.activeStations.includes(station.id) && 
+        const estacionesActivas = this.stationsData.filter(station =>
+            this.activeStations.includes(station.id) &&
             !isNaN(station.latitude) && !isNaN(station.longitude)
         );
 
@@ -252,7 +252,7 @@ class MapManager {
             const group = d3.select(nodes[i]);
             const relaciones = this.getRelacionesPorFuenteYContaminante(d.ID, this.contaminanteSeleccionado);
             const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
-            
+
             this.dibujarFuenteDividida(group, relacionesActivas);
         });
 
@@ -261,21 +261,21 @@ class MapManager {
 
     getRelacionesPorFuenteYContaminante(fuenteId, contaminante) {
         if (!this.stationsPermitsMatrix) return [];
-        
-        let relaciones = this.stationsPermitsMatrix.filter(rel => 
+
+        let relaciones = this.stationsPermitsMatrix.filter(rel =>
             rel.IDEmpresa === fuenteId && rel.DistanciaKm <= 15
         );
-        
+
         if (contaminante) {
             relaciones = relaciones.filter(rel => rel.Variable === contaminante);
         }
-        
+
         return relaciones;
     }
 
     filtrarRelacionesPorEstacionesActivas(relaciones) {
         if (this.activeStations.length === 0) return [];
-        return relaciones.filter(rel => 
+        return relaciones.filter(rel =>
             this.activeStations.includes(rel.IDEstación)
         );
     }
@@ -285,10 +285,10 @@ class MapManager {
 
         const estacionesUnicas = [...new Set(relacionesActivas.map(r => r.IDEstación))];
         const numEstaciones = estacionesUnicas.length;
-        
+
         // TAMAÑO CONSTANTE para todas las fuentes - 3px en zoom normal
         const baseRadius = 1.5;
-        
+
         if (numEstaciones === 1) {
             const estacionId = estacionesUnicas[0];
             group.append('circle')
@@ -298,25 +298,25 @@ class MapManager {
                 .attr('stroke-width', 0.4);
         } else {
             const anguloPorcion = (2 * Math.PI) / numEstaciones;
-            
+
             estacionesUnicas.forEach((estacionId, index) => {
                 const startAngle = index * anguloPorcion;
                 const endAngle = (index + 1) * anguloPorcion;
-                
+
                 const x1 = baseRadius * Math.cos(startAngle);
                 const y1 = baseRadius * Math.sin(startAngle);
                 const x2 = baseRadius * Math.cos(endAngle);
                 const y2 = baseRadius * Math.sin(endAngle);
-                
+
                 const largeArc = (endAngle - startAngle) > Math.PI ? 1 : 0;
-                
+
                 const pathData = [
                     `M 0 0`,
                     `L ${x1} ${y1}`,
                     `A ${baseRadius} ${baseRadius} 0 ${largeArc} 1 ${x2} ${y2}`,
                     `Z`
                 ].join(' ');
-                
+
                 group.append('path')
                     .attr('d', pathData)
                     .attr('fill', this.stationColorScale(estacionId))
@@ -328,7 +328,7 @@ class MapManager {
 
     showTooltip(event, data, type) {
         let content = '';
-        
+
         if (type === 'estacion') {
             content = `
                 <div style="font-weight: bold; color: #4ecdc4; margin-bottom: 5px;">Estación ${data.id}</div>
@@ -339,11 +339,11 @@ class MapManager {
             const relaciones = this.getRelacionesPorFuenteYContaminante(data.ID, this.contaminanteSeleccionado);
             const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
             let relacionesHTML = '';
-            
+
             if (relacionesActivas.length > 0) {
                 relacionesHTML = `<div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Estaciones relacionadas${this.contaminanteSeleccionado ? ` (${this.contaminanteSeleccionado})` : ''}:</div>`;
                 const agrupadas = this.agruparRelacionesPorEstacion(relacionesActivas);
-                
+
                 agrupadas.forEach(rel => {
                     relacionesHTML += `
                         <div style="margin-top: 4px;">
@@ -356,7 +356,7 @@ class MapManager {
             } else {
                 relacionesHTML = `<div style="margin-top: 8px; font-style: italic; color: #ccc;">No hay estaciones relacionadas${this.contaminanteSeleccionado ? ` para ${this.contaminanteSeleccionado}` : ''}</div>`;
             }
-            
+
             content = `
                 <div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">${data.TipoFuenteEmision}</div>
                 <div>Expediente: ${data.IDExpediente}</div>
@@ -376,10 +376,10 @@ class MapManager {
     agruparRelacionesPorEstacion(relaciones) {
         const agrupadas = [];
         const estacionesUnicas = [...new Set(relaciones.map(r => r.IDEstación))];
-        
+
         estacionesUnicas.forEach(estacionId => {
             const relsEstacion = relaciones.filter(r => r.IDEstación === estacionId);
-            const mejorRel = relsEstacion.reduce((prev, current) => 
+            const mejorRel = relsEstacion.reduce((prev, current) =>
                 (prev.DistanciaKm < current.DistanciaKm) ? prev : current
             );
             agrupadas.push({
@@ -389,7 +389,7 @@ class MapManager {
                 incidencia: mejorRel.Incidencia
             });
         });
-        
+
         return agrupadas;
     }
 
@@ -425,11 +425,11 @@ class MapManager {
 
     updateData(filteredData, activeStations = [], contaminante = '') {
         console.log('Actualizando mapa con', filteredData.length, 'fuentes,', activeStations.length, 'estaciones activas, contaminante:', contaminante);
-        
+
         this.fuentesData = filteredData;
         this.activeStations = activeStations;
         this.contaminanteSeleccionado = contaminante;
-        
+
         this.g.selectAll('.fuente-group').remove();
         this.g.selectAll('.estacion-punto').remove();
         this.drawStations();

@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calidad de aire en Cundinamarca</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
     <!-- Contenedor principal del dashboard -->
     <div class="dashboard-container">
         <!-- Contenido del dashboard con las dimensiones específicas -->
         <div class="dashboard-content">
-            
             <!-- Título principal -->
             <div class="title-section">
                 <h1>Calidad de aire en Cundinamarca</h1>
             </div>
-            
+
             <!-- Panel de filtros principales -->
             <div class="filters-panel">
                 <div class="filters-header">
                     <h2>Filtro</h2>
                 </div>
-                
+
                 <!-- Filtro: Agente Contaminante (selección simple) -->
                 <div class="filter-row">
                     <span class="filter-label">Agente Contaminante</span>
@@ -34,7 +35,7 @@
                         <div class="dropdown-arrow">▼</div>
                     </div>
                 </div>
-                
+
                 <!-- Filtro: Estación (selección múltiple con checkboxes) -->
                 <div class="filter-row">
                     <span class="filter-label">Estación</span>
@@ -48,7 +49,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Filtro: Municipio (selección múltiple con checkboxes) -->
                 <div class="filter-row">
                     <span class="filter-label">Municipio</span>
@@ -62,22 +63,27 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Texto informativo -->
                 <div class="info-section">
-                    <p>Se está visualizando información de <span id="estaciones-count">0</span> estaciones</p>
+                    <p>
+                        Se está visualizando información de
+                        <span id="estaciones-count">0</span> estaciones
+                    </p>
                 </div>
-                
+
                 <!-- Botón de reset -->
                 <div class="reset-button-container">
-                    <button class="reset-button" id="reset-filters">Resetear Filtros</button>
+                    <button class="reset-button" id="reset-filters">
+                        Resetear Filtros
+                    </button>
                 </div>
             </div>
-            
+
             <!-- Primera gráfica: Mapa con fuentes fijas -->
             <div class="chart-container map-chart">
                 <h2>Fuentes fijas que afectan mediciones cercanas</h2>
-                
+
                 <!-- Filtros específicos del mapa -->
                 <div class="map-filters">
                     <div class="map-filter-row">
@@ -89,7 +95,7 @@
                             <div class="dropdown-arrow">▼</div>
                         </div>
                     </div>
-                    
+
                     <div class="map-filter-row">
                         <span class="filter-label">Combustible</span>
                         <div class="dropdown-container">
@@ -100,7 +106,7 @@
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Contenedor para la visualización del mapa -->
                 <div class="map-visualization">
                     <div class="map-controls">
@@ -112,6 +118,27 @@
                     <div id="map-tooltip" class="map-tooltip"></div>
                 </div>
             </div>
+            <!-- Segunda gráfica: Mapa de concentración de contaminantes -->
+            <div class="chart-container concentration-chart">
+                <h2>Concentración de agentes contaminantes</h2>
+
+                <!-- Contenedor para la visualización del mapa de concentración -->
+                <div class="concentration-visualization">
+                    <div class="map-controls">
+                        <button id="concentration-zoom-in" class="map-control-btn">
+                            +
+                        </button>
+                        <button id="concentration-zoom-out" class="map-control-btn">
+                            -
+                        </button>
+                        <button id="concentration-reset-view" class="map-control-btn">
+                            ⤢
+                        </button>
+                    </div>
+                    <svg id="concentration-map-svg" width="100%" height="100%"></svg>
+                    <div id="concentration-map-tooltip" class="map-tooltip"></div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -119,6 +146,8 @@
     <script src="modules/DataLoader.js"></script>
     <script src="modules/FilterManager.js"></script>
     <script src="modules/MapManager.js"></script>
+    <script src="modules/ConcentrationMapManager.js"></script>
     <script src="app.js"></script>
 </body>
+
 </html>

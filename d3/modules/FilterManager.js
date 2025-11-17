@@ -18,37 +18,37 @@ class FilterManager {
         this.dataLoader = dataLoader;
         this.fuentesData = fuentesData;
         this.onFiltersChange = onFiltersChange;
-        
+
         this.setupDropdowns();
         this.setupEventListeners();
-        
+
         // Activar todas las estaciones por defecto
         this.activarTodasEstaciones();
         // Activar todos los municipios por defecto
         this.activarTodosMunicipios();
-        
+
         // Aplicar filtros iniciales
         this.applyFilters();
     }
 
     setupDropdowns() {
         console.log('DataLoader en FilterManager:', this.dataLoader);
-        
+
         // Obtener contaminantes dinámicos de stations_permits_matrix
-        const contaminantes = this.dataLoader.stationsPermitsMatrix ? 
-            [...new Set(this.dataLoader.stationsPermitsMatrix.map(item => item.Variable))].filter(Boolean).sort() : 
+        const contaminantes = this.dataLoader.stationsPermitsMatrix ?
+            [...new Set(this.dataLoader.stationsPermitsMatrix.map(item => item.Variable))].filter(Boolean).sort() :
             ['PM2.5', 'PM10', 'CO', 'NO2', 'SO2', 'O3'];
-        
+
         // Usar dataLoader para obtener datos dinámicos
         const tiposFuente = this.dataLoader.getUniqueValues(this.fuentesData, 'TipoFuenteEmision');
         const combustibles = this.dataLoader.getUniqueValues(this.fuentesData, 'TipoCombustible');
-        
+
         // Obtener municipios de emission_permits.csv
         this.todosLosMunicipios = this.dataLoader.getUniqueValues(this.fuentesData, 'Municipio').sort();
 
         // Obtener estaciones de los datos cargados
-        this.todasLasEstaciones = this.dataLoader.stationsData ? 
-            this.dataLoader.stationsData.map(station => `Estación ${station.id}`) : 
+        this.todasLasEstaciones = this.dataLoader.stationsData ?
+            this.dataLoader.stationsData.map(station => `Estación ${station.id}`) :
             ['Estación Centro', 'Estación Norte', 'Estación Sur', 'Estación Occidental'];
 
         console.log('Contaminantes dinámicos:', contaminantes);
@@ -81,7 +81,7 @@ class FilterManager {
             console.error(`Elemento no encontrado: ${id}`);
             return;
         }
-        
+
         // Limpiar TODAS las opciones existentes si es sin "Seleccione"
         if (sinSeleccione) {
             select.innerHTML = '';
@@ -91,7 +91,7 @@ class FilterManager {
                 select.removeChild(select.lastChild);
             }
         }
-        
+
         options.forEach(option => {
             const optionElement = document.createElement('option');
             optionElement.value = option;
@@ -106,7 +106,7 @@ class FilterManager {
             console.error(`Contenedor no encontrado: ${type}-options`);
             return;
         }
-        
+
         container.innerHTML = '';
 
         // Agregar la opción "Todas" si está habilitada
@@ -120,7 +120,7 @@ class FilterManager {
             `;
             container.appendChild(opcionTodas);
         }
-        
+
         options.forEach(option => {
             const optionElement = document.createElement('div');
             optionElement.className = 'dropdown-option';
@@ -188,7 +188,7 @@ class FilterManager {
     initCustomDropdown(type, hasTodasOption = false) {
         const trigger = document.getElementById(`${type}-trigger`);
         const options = document.getElementById(`${type}-options`);
-        
+
         if (!trigger || !options) {
             console.error(`Elementos no encontrados para dropdown: ${type}`);
             return;
@@ -253,7 +253,7 @@ class FilterManager {
 
                 this.updateSelectedText(type, selectedText);
                 this.applyFilters();
-                
+
                 if (type === 'estacion') {
                     this.updateEstacionesCount();
                 }
@@ -347,7 +347,7 @@ class FilterManager {
         const selected = this.filters[type];
         const todasLasOpciones = type === 'estacion' ? this.todasLasEstaciones : this.todosLosMunicipios;
         const labelTodas = type === 'estacion' ? 'Todas las estaciones' : 'Todos los municipios';
-        
+
         if (selected.length === 0) {
             selectedTextElement.textContent = 'Seleccione';
         } else if (selected.length === 1) {
@@ -381,28 +381,28 @@ class FilterManager {
             fuente: '',
             combustible: ''
         };
-        
+
         // Reset UI
         const contaminanteSelect = document.getElementById('contaminante');
         const fuenteSelect = document.getElementById('fuente');
         const combustibleSelect = document.getElementById('combustible');
-        
+
         if (contaminanteSelect) contaminanteSelect.value = 'CO';
         if (fuenteSelect) fuenteSelect.value = '';
         if (combustibleSelect) combustibleSelect.value = '';
-        
+
         // Actualizar checkboxes según los filtros reseteados
         this.marcarTodasCheckboxes('estacion', true);
         this.marcarOpcionTodas('estacion', true);
         this.marcarTodasCheckboxes('municipio', true);
         this.marcarOpcionTodas('municipio', true);
-        
+
         // Actualizar textos
         document.querySelectorAll('.selected-text').forEach(text => {
             const type = text.closest('.custom-dropdown-trigger').id.replace('-trigger', '');
             this.updateSelectedText(type, text);
         });
-        
+
         this.updateEstacionesCount();
         this.applyFilters();
     }
@@ -416,19 +416,19 @@ class FilterManager {
         }
 
         if (this.filters.fuente) {
-            filteredData = filteredData.filter(fuente => 
+            filteredData = filteredData.filter(fuente =>
                 fuente.TipoFuenteEmision === this.filters.fuente
             );
         }
 
         if (this.filters.combustible) {
-            filteredData = filteredData.filter(fuente => 
+            filteredData = filteredData.filter(fuente =>
                 fuente.TipoCombustible === this.filters.combustible
             );
         }
 
         if (this.filters.municipio.length > 0) {
-            filteredData = filteredData.filter(fuente => 
+            filteredData = filteredData.filter(fuente =>
                 this.filters.municipio.includes(fuente.Municipio)
             );
         }
@@ -446,16 +446,16 @@ class FilterManager {
 
         console.log(`Datos filtrados: ${filteredData.length} de ${this.fuentesData.length}, Estaciones activas: ${activeStations}, Contaminante: ${this.filters.contaminante}, Municipios: ${this.filters.municipio.length}`);
 
-        // Llamar al callback con datos filtrados y estaciones activas
+        // Llamar al callback con datos filtrados, estaciones activas, contaminante Y municipios
         if (this.onFiltersChange) {
-            this.onFiltersChange(filteredData, activeStations, this.filters.contaminante);
+            this.onFiltersChange(filteredData, activeStations, this.filters.contaminante, this.filters.municipio);
         }
     }
 
     filterByContaminante(data, contaminante) {
         return data.filter(fuente => {
-            const relaciones = this.dataLoader.stationsPermitsMatrix.filter(rel => 
-                rel.IDEmpresa === fuente.ID && 
+            const relaciones = this.dataLoader.stationsPermitsMatrix.filter(rel =>
+                rel.IDEmpresa === fuente.ID &&
                 rel.Variable === contaminante
             );
             return relaciones.length > 0;
@@ -466,8 +466,8 @@ class FilterManager {
         console.log('Filtrando por estaciones activas:', estacionesSeleccionadas);
 
         return data.filter(fuente => {
-            const relaciones = this.dataLoader.stationsPermitsMatrix.filter(rel => 
-                rel.IDEmpresa === fuente.ID && 
+            const relaciones = this.dataLoader.stationsPermitsMatrix.filter(rel =>
+                rel.IDEmpresa === fuente.ID &&
                 rel.DistanciaKm <= 15 &&
                 estacionesSeleccionadas.includes(rel.IDEstación)
             );
