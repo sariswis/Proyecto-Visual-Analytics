@@ -4,6 +4,7 @@ class Dashboard {
         this.mapManager = new MapManager('#map-svg');
         this.concentrationMapManager = new ConcentrationMapManager('#concentration-map-svg');
         this.variablesChartManager = new VariablesChartManager('#variables-chart');
+        this.comparisonChartManager = new ComparisonChartManager('#comparison-chart');
         this.filterManager = new FilterManager();
 
         this.init();
@@ -38,6 +39,9 @@ class Dashboard {
                 data.stationsData,
                 data.measurementsData
             );
+
+            // Inicializar gráfica comparativa 2024 vs 2025
+            this.comparisonChartManager.init(data.measurementsData);
 
             // Sincronizar transformaciones de zoom/pan entre mapas
             this.mapManager.setTransformSyncHandler((transform) => {
@@ -80,6 +84,9 @@ class Dashboard {
 
                 // Actualizar gráfica de variables
                 this.variablesChartManager.updateData(contaminante, activeStations);
+
+                // Actualizar comparativo anual
+                this.comparisonChartManager.updateData(contaminante);
             });
 
         } catch (error) {

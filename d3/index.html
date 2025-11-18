@@ -147,10 +147,9 @@
 
                 <!-- Contenedor para la visualización de comparación -->
                 <div class="comparison-visualization">
-                    <!-- Espacio reservado para la gráfica de comparación -->
-                    <div class="placeholder-content">
-                        <p>Gráfica de comparación 2024 vs 2025</p>
-                    </div>
+                    <svg id="comparison-chart" width="100%" height="100%"></svg>
+                    <div id="comparison-tooltip" class="chart-tooltip"></div>
+                    <div class="chart-message" id="comparison-message"></div>
                 </div>
             </div>
 
@@ -184,6 +183,7 @@
             <script src="modules/FilterManager.js"></script>
             <script src="modules/MapManager.js"></script>
             <script src="modules/ConcentrationMapManager.js"></script>
+            <script src="modules/ComparisonChartManager.js"></script>
             <script src="modules/VariablesChartManager.js"></script>
             <script src="app.js"></script>
 </body>

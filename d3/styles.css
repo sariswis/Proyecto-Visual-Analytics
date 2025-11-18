@@ -445,7 +445,7 @@ body {
   position: relative;
   width: 100%;
   height: 365px;
-  border: 2.95px solid #ddd;
+  border: 2.9px solid #ddd;
   overflow: hidden;
   background-color: #ddd;
   border-radius: 0px 0px 8px 8px;
@@ -514,7 +514,7 @@ body {
   height: 935px; /* 968px (altura contenedor) - 33px (altura aproximada del título) */
   overflow: hidden;
   background-color: #f8f9fa;
-  border: 1px solid rgba(0, 0, 0, 0);
+  border: 1px solid rgba(255, 255, 255, 0);
 }
 
 /* Controles específicos para el mapa de concentración */
@@ -560,32 +560,11 @@ body {
 /* Estilos específicos para círculos de concentración */
 .concentration-circle {
   transition: opacity 0.2s ease, stroke-width 0.2s ease;
-  transform-box: fill-box;
-  transform-origin: center;
-  animation: concentrationPulse 2.8s ease-in-out infinite;
 }
 
 .concentration-circle:hover {
   stroke-width: 2.5px;
   opacity: 1 !important;
-}
-
-@keyframes concentrationPulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.75;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.55));
-  }
-  50% {
-    transform: scale(1.25);
-    opacity: 1;
-    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.85));
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.75;
-    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.55));
-  }
 }
 
 /* Asegurar que el tooltip esté por encima de todo */
@@ -663,15 +642,12 @@ body {
     border: 1px solid rgba(0, 0, 0, 0);
     border-radius: 4px;
     overflow: hidden; /* IMPORTANTE: mantener hidden para que no se salga */
-    background-color: #f8f9fa;
+    background-color: #ffffff;
 }
 
 /* Estilos para círculos sin aumento en hover */
 .concentration-circle {
     transition: opacity 0.2s ease, stroke-width 0.2s ease;
-    transform-box: fill-box;
-    transform-origin: center;
-    animation: concentrationPulse 2.8s ease-in-out infinite;
 }
 
 .concentration-circle:hover {
@@ -721,9 +697,52 @@ body {
 }
 
 .comparison-visualization {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    background: #f8f9fa;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.comparison-visualization svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.comparison-visualization .grid-line {
+    stroke: #c9cdd2;
+    stroke-dasharray: 4 4;
+    opacity: 0.7;
+}
+
+.comparison-visualization .x-axis text,
+.comparison-visualization .y-axis text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    fill: #666;
+}
+
+.comparison-visualization .x-axis path,
+.comparison-visualization .x-axis line,
+.comparison-visualization .y-axis path,
+.comparison-visualization .y-axis line {
+    stroke: #bcbec4;
+}
+
+.comparison-line {
+    fill: none;
+    stroke-width: 3.5;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.08));
+}
+
+.comparison-point {
+    stroke: #ffffff;
+    stroke-width: 1.5px;
+}
+
+.comparison-legend text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px;
+    fill: #404040;
 }
 
 .variables-visualization {
