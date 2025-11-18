@@ -64,6 +64,10 @@ class MapManager {
         }
     }
 
+    getStationColorScale() {
+        return this.stationColorScale;
+    }
+
     setupSVG() {
         this.svg = d3.select(this.containerId);
         const width = 735;

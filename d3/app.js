@@ -3,6 +3,7 @@ class Dashboard {
         this.dataLoader = new DataLoader();
         this.mapManager = new MapManager('#map-svg');
         this.concentrationMapManager = new ConcentrationMapManager('#concentration-map-svg');
+        this.variablesChartManager = new VariablesChartManager('#variables-chart');
         this.filterManager = new FilterManager();
 
         this.init();
@@ -29,6 +30,7 @@ class Dashboard {
                 data.stationsData,
                 data.stationsPermitsMatrix
             );
+            const stationColorScale = this.mapManager.getStationColorScale();
 
             // Inicializar segundo mapa (concentraciones)
             this.concentrationMapManager.init(
@@ -36,6 +38,9 @@ class Dashboard {
                 data.stationsData,
                 data.measurementsData
             );
+
+            // Inicializar gráfica de variables entre estaciones
+            this.variablesChartManager.init(data.measurementsData, stationColorScale);
 
             this.filterManager.init(this.dataLoader, data.fuentesData, (filteredData, activeStations, contaminante, municipios) => {
                 console.log('Actualizando mapa con datos filtrados:', filteredData.length, 'estaciones activas:', activeStations, 'contaminante:', contaminante, 'municipios:', municipios);
@@ -45,6 +50,9 @@ class Dashboard {
 
                 // Actualizar segundo mapa con el contaminante seleccionado, estaciones activas y municipios
                 this.concentrationMapManager.updateData(contaminante, activeStations, municipios);
+
+                // Actualizar gráfica de variables
+                this.variablesChartManager.updateData(contaminante, activeStations);
             });
 
         } catch (error) {

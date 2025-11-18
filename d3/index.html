@@ -156,14 +156,26 @@
 
             <!-- Cuarta gráfica: Variables de aire entre estaciones -->
             <div class="chart-container variables-chart">
-                <h2>Variables de aire entre estaciones</h2>
+                <div class="variables-header">
+                    <h2>Variables de aire entre estaciones</h2>
+                </div>
 
                 <!-- Contenedor para la visualización de variables -->
                 <div class="variables-visualization">
-                    <!-- Espacio reservado para la gráfica de variables -->
-                    <div class="placeholder-content">
-                        <p>Gráfica de variables entre estaciones</p>
+                    <div class="variables-year-control">
+                        <label for="variables-year-filter">Periodo</label>
+                        <div class="dropdown-container year-dropdown">
+                            <select id="variables-year-filter" class="dropdown single-select">
+                                <option value="2024">2024</option>
+                                <option value="2025">2025</option>
+                                <option value="average">Promedio 2024-2025</option>
+                            </select>
+                            <div class="dropdown-arrow">▼</div>
+                        </div>
                     </div>
+                    <svg id="variables-chart" width="100%" height="100%"></svg>
+                    <div id="variables-tooltip" class="chart-tooltip"></div>
+                    <div class="chart-message" id="variables-message"></div>
                 </div>
             </div>
 
@@ -172,6 +184,7 @@
             <script src="modules/FilterManager.js"></script>
             <script src="modules/MapManager.js"></script>
             <script src="modules/ConcentrationMapManager.js"></script>
+            <script src="modules/VariablesChartManager.js"></script>
             <script src="app.js"></script>
 </body>
 
