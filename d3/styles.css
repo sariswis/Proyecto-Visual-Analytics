@@ -35,13 +35,13 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 445px;
+  width: 455px;
   height: 70px;
   background-color: #dedede;
   display: flex;
   align-items: center;
-  padding-left: 20px;
-  border-radius: 8px 0 0 0;
+  padding-left: 30px;
+  border-radius: 8px;
 }
 
 .title-section h1 {
@@ -57,14 +57,14 @@ body {
   position: absolute;
   top: 92px;
   left: 0;
-  width: 445px;
+  width: 455px;
   height: 390px;
   background-color: #dedede;
-  border-radius: 0 0 0 8px;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Distribución uniforme */
-  padding: 30px 20px; /* Padding general */
+  justify-content: space-between; 
+  padding: 30px 30px; 
 }
 
 .filters-header h2 {
@@ -93,7 +93,7 @@ body {
 /* Dropdown estándar (para selección simple) */
 .dropdown-container {
   position: relative;
-  width: 185px;
+  width: 198px;
 }
 
 .dropdown {
@@ -130,7 +130,7 @@ body {
 /* Dropdown personalizado con checkboxes */
 .custom-dropdown-container {
   position: relative;
-  width: 185px;
+  width: 198px;
 }
 
 .custom-dropdown-trigger {
@@ -241,7 +241,7 @@ body {
 .map-chart {
   position: absolute;
   top: 0;
-  left: 485px;
+  left: 490px;
   width: 735px;
   height: 485px;
   background-color: #ffffff;
@@ -259,29 +259,37 @@ body {
 
 /* Filtros específicos del mapa */
 .map-filters {
-  height: 80px;
+  height: 60px;
   width: 100%;
   background-color: #dedede;
   display: flex;
   align-items: center;
   padding: 20px 30px;
-  border-bottom: 1px solid #eee;
+  border-radius: 8px 8px 0px 0px;
+  margin-top: 18px;
+  padding: 24px 44px 24px 20px;
 }
 
 .map-filter-row {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
+  justify-content: flex-start;  
+  gap: 20px;                   
+  margin-left: 15px;
 }
 
+/* Label alineado a la derecha y con ancho fijo para que todos queden parejos */
 .map-filter-row .filter-label {
-  margin-right: 10px;
+  display: block;
+  min-width: 40px;              
+  text-align: right;            
+  padding: 0;
+  margin: 0;
 }
 
 .map-filter-row .dropdown-container {
-  width: 180px;
+  width: 160px;
 }
 
 #map-svg {
@@ -429,10 +437,10 @@ body {
   position: relative;
   width: 100%;
   height: 365px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  border: 2.5px solid #ddd;
   overflow: hidden;
-  background-color: #f8f9fa;
+  background-color: #ffffff;
+  border-radius: 0px 0px 8px 8px;
 }
 
 /* Controles del mapa */
@@ -517,6 +525,7 @@ body {
   width: 100%;
   height: 100%;
   display: block;
+  
 }
 
 /* Tooltip específico para el mapa de concentración */
