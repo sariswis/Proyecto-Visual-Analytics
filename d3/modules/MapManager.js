@@ -15,6 +15,15 @@ class MapManager {
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
         this.contaminanteSeleccionado = '';
+        this.onTransformChange = null;
+        this.isApplyingExternalTransform = false;
+        this.viewWidth = 1;
+        this.viewHeight = 1;
+        this.contentWidth = 1;
+        this.contentHeight = 1;
+        this.offsetX = 0;
+        this.offsetY = 0;
+        this.projection = null;
     }
 
     init(geoData, fuentesData, stationsData, stationsPermitsMatrix) {
@@ -82,6 +91,12 @@ class MapManager {
 
         this.svg.selectAll('*').remove();
         this.g = this.svg.append('g');
+        this.viewWidth = width;
+        this.viewHeight = height;
+        this.contentWidth = width;
+        this.contentHeight = height;
+        this.offsetX = 0;
+        this.offsetY = 0;
     }
 
     setupTooltip() {
@@ -139,10 +154,38 @@ class MapManager {
             .on('zoom', (event) => {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);
-                // NO llamamos a updatePointSizes aquí - el zoom ya escala todo el grupo
+                if (!this.isApplyingExternalTransform && typeof this.onTransformChange === 'function') {
+                    this.onTransformChange(event.transform);
+                }
             });
 
         this.svg.call(this.zoom);
+    }
+
+    setTransformSyncHandler(handler) {
+        this.onTransformChange = handler;
+    }
+
+    applyExternalTransform(transform) {
+        if (!this.zoom || !this.svg || !transform) return;
+        this.isApplyingExternalTransform = true;
+        this.svg.call(this.zoom.transform, transform);
+        this.isApplyingExternalTransform = false;
+    }
+
+    getViewDimensions() {
+        return {
+            fullWidth: this.viewWidth || 1,
+            fullHeight: this.viewHeight || 1,
+            contentWidth: this.contentWidth || this.viewWidth || 1,
+            contentHeight: this.contentHeight || this.viewHeight || 1,
+            offsetX: this.offsetX || 0,
+            offsetY: this.offsetY || 0
+        };
+    }
+
+    getProjection() {
+        return this.projection;
     }
 
     drawMap() {
