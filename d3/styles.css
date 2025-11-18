@@ -560,11 +560,32 @@ body {
 /* Estilos específicos para círculos de concentración */
 .concentration-circle {
   transition: opacity 0.2s ease, stroke-width 0.2s ease;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: concentrationPulse 2.8s ease-in-out infinite;
 }
 
 .concentration-circle:hover {
   stroke-width: 2.5px;
   opacity: 1 !important;
+}
+
+@keyframes concentrationPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.75;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.55));
+  }
+  50% {
+    transform: scale(1.25);
+    opacity: 1;
+    filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.85));
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.75;
+    filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.55));
+  }
 }
 
 /* Asegurar que el tooltip esté por encima de todo */
@@ -648,6 +669,9 @@ body {
 /* Estilos para círculos sin aumento en hover */
 .concentration-circle {
     transition: opacity 0.2s ease, stroke-width 0.2s ease;
+    transform-box: fill-box;
+    transform-origin: center;
+    animation: concentrationPulse 2.8s ease-in-out infinite;
 }
 
 .concentration-circle:hover {
