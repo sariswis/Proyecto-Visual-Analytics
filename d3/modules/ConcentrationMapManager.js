@@ -220,7 +220,32 @@ class ConcentrationMapManager {
             .attr('d', this.path)
             .style('fill', '#e9ecef')
             .style('stroke', '#adb5bd')
-            .style('stroke-width', '0.5px');
+            .style('stroke-width', '0.5px')
+            .style('cursor', 'pointer')
+            .on('mouseover', (event, d) => {
+                if (!this.tooltip) this.setupTooltip();
+                
+                this.tooltip
+                    .style('opacity', 1)
+                    .html(`
+                        <div style="font-weight: bold; margin-bottom: 5px;">
+                            ${d.properties.Departamento || 'N/A'}
+                        </div>
+                        <div>${d.properties.Municipio || 'N/A'}</div>
+                    `);
+            })
+            .on('mouseout', () => {
+                if (this.tooltip) {
+                    this.tooltip.style('opacity', 0);
+                }
+            })
+            .on('mousemove', (event) => {
+                if (this.tooltip) {
+                    this.tooltip
+                        .style('left', (event.pageX + 15) + 'px')
+                        .style('top', (event.pageY - 15) + 'px');
+                }
+            });
     }
 
     setupControls() {
