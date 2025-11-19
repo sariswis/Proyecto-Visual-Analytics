@@ -9,6 +9,7 @@ class ConcentrationMapManager {
         this.tooltip = null;
         this.currentTransform = d3.zoomIdentity;
         this.geoData = null;
+        this.geoDataDepartamentos = null;
         this.stationsData = [];
         this.measurementsData = [];
         this.contaminanteSeleccionado = '';
@@ -31,8 +32,9 @@ class ConcentrationMapManager {
         this.projection = null;
     }
 
-    init(geoData, stationsData, measurementsData) {
+    init(geoData, geoDataDepartamentos, stationsData, measurementsData) {
         this.geoData = geoData;
+        this.geoDataDepartamentos = geoDataDepartamentos;
         this.stationsData = stationsData;
         this.measurementsData = measurementsData;
 
@@ -205,10 +207,22 @@ class ConcentrationMapManager {
     }
 
     drawMap() {
-        if (!this.geoData || !this.geoData.features) {
+        if (!this.geoData || !this.geoData.features || !this.geoDataDepartamentos || !this.geoDataDepartamentos.features) {
             console.error('No hay datos geoJSON para dibujar');
             return;
         }
+
+        // Dibujar departamentos
+        const departamentos = this.g.selectAll('.municipio')
+            .data(this.geoDataDepartamentos.features);
+
+        departamentos.enter()
+            .append('path')
+            .attr('class', 'municipio')
+            .attr('d', this.path)
+            .style('fill', '#e9ecef')
+            .style('stroke', '#adb5bd')
+            .style('stroke-width', '2px')
 
         // Dibujar municipios
         const municipios = this.g.selectAll('.municipio')
@@ -218,7 +232,7 @@ class ConcentrationMapManager {
             .append('path')
             .attr('class', 'municipio')
             .attr('d', this.path)
-            .style('fill', '#e9ecef')
+            .style('fill', '#ffffff00')
             .style('stroke', '#adb5bd')
             .style('stroke-width', '0.5px')
             .style('cursor', 'pointer')

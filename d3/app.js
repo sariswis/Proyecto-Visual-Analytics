@@ -18,6 +18,7 @@ class Dashboard {
 
             console.log('Datos cargados:', {
                 geoData: data.geoData?.features?.length,
+                geoDataDepartamentos: data.geoDataDepartamentos?.features?.length,
                 fuentesData: data.fuentesData?.length,
                 stationsData: data.stationsData?.length,
                 stationsPermitsMatrix: data.stationsPermitsMatrix?.length,
@@ -27,6 +28,7 @@ class Dashboard {
             // Inicializar primer mapa (fuentes fijas)
             this.mapManager.init(
                 data.geoData,
+                data.geoDataDepartamentos,
                 data.fuentesData,
                 data.stationsData,
                 data.stationsPermitsMatrix
@@ -36,6 +38,7 @@ class Dashboard {
             // Inicializar segundo mapa (concentraciones)
             this.concentrationMapManager.init(
                 data.geoData,
+                data.geoDataDepartamentos,
                 data.stationsData,
                 data.measurementsData
             );
