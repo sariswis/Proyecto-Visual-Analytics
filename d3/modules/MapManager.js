@@ -12,6 +12,8 @@ class MapManager {
         this.activeStations = [];
         this.geoData = null;
         this.geoDataDepartamentos = null;
+        this.geoDataVias = null;
+        this.showRoads = false;
         this.fuentesData = [];
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
@@ -27,9 +29,10 @@ class MapManager {
         this.projection = null;
     }
 
-    init(geoData, geoDataDepartamentos,fuentesData, stationsData, stationsPermitsMatrix) {
+    init(geoData, geoDataDepartamentos, geoDataVias, fuentesData, stationsData, stationsPermitsMatrix) {
         this.geoData = geoData;
         this.geoDataDepartamentos = geoDataDepartamentos;
+        this.geoDataVias = geoDataVias;
         this.fuentesData = fuentesData;
         this.stationsData = stationsData;
         this.stationsPermitsMatrix = stationsPermitsMatrix;
@@ -192,12 +195,12 @@ class MapManager {
         }
 
         // Dibujar departamentos
-        const departamentos = this.g.selectAll('.municipio')
+        const departamentos = this.g.selectAll('.departamento')
             .data(this.geoDataDepartamentos.features);
 
         departamentos.enter()
             .append('path')
-            .attr('class', 'municipio')
+            .attr('class', 'departamento')
             .attr('d', this.path)
             .style('fill', '#e9ecef')
             .style('stroke', '#adb5bd')
@@ -239,11 +242,52 @@ class MapManager {
                 }
             });
 
+        // Dibujar vías
+        const vias = this.g.selectAll('.via')
+            .data(this.geoDataVias.features);
+            
+        vias.enter()
+            .append('path')
+            .attr('class', 'via')
+            .attr('d', this.path)
+            .style('fill', '#ffffff00')
+            .style('stroke', '#f38f2d')
+            .style('stroke-width', '0.2px')
+            .style('cursor', 'pointer')
+            .style('opacity', 0);
+
         // Dibujar estaciones
         this.drawStations();
 
         // Dibujar fuentes
         this.drawFuentes();
+    }
+
+    handleRoadMouseOver(event, d) {
+        if (!this.tooltip) this.setupTooltip();
+                
+        this.tooltip
+            .style('opacity', 1)
+            .html(`
+                <div style="font-weight: bold; margin-bottom: 5px;">
+                    ${d.properties.Tipo || 'N/A'}
+                </div>
+                <div>${d.properties.Nombre || 'N/A'}</div>
+            `);
+    }
+
+    handleRoadMouseOut(event, d) {
+        if (this.tooltip) {
+            this.tooltip.style('opacity', 0);
+        }
+    }
+
+    handleRoadMouseMove(event, d) {
+        if (this.tooltip) {
+            this.tooltip
+                .style('left', (event.pageX + 15) + 'px')
+                .style('top', (event.pageY - 15) + 'px');
+        }
     }
 
     drawStations() {
@@ -499,6 +543,29 @@ class MapManager {
             this.svg.transition().duration(300).call(
                 this.zoom.transform, d3.zoomIdentity
             );
+        });
+
+        d3.select('#show-roads').on('click', () => { 
+            this.showRoads = !this.showRoads;
+
+            const vias = this.g.selectAll('.via');
+
+            if (this.showRoads) {
+                vias.style('opacity', 1);
+
+                vias
+                    .on('mouseover', this.handleRoadMouseOver.bind(this))
+                    .on('mouseout', this.handleRoadMouseOut.bind(this))
+                    .on('mousemove', this.handleRoadMouseMove.bind(this));
+                
+            } else {
+                vias.style('opacity', 0);
+
+                vias
+                    .on('mouseover', null)
+                    .on('mouseout', null)
+                    .on('mousemove', null)
+            }
         });
     }
 

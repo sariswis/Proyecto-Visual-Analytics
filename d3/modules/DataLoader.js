@@ -2,6 +2,7 @@ class DataLoader {
     constructor() {
         this.geoData = null;
         this.geoDataDepartamentos = null;
+        this.geoDataVias = null;
         this.fuentesData = [];
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
@@ -13,6 +14,7 @@ class DataLoader {
             await Promise.all([
                 this.loadGeoData(),
                 this.loadGeoDataDepartamentos(),
+                this.loadGeoDataVias(),
                 this.loadFuentesData(),
                 this.loadStationsData(),
                 this.loadStationsPermitsMatrix(),
@@ -21,6 +23,7 @@ class DataLoader {
             return {
                 geoData: this.geoData,
                 geoDataDepartamentos: this.geoDataDepartamentos,
+                geoDataVias: this.geoDataVias,
                 fuentesData: this.fuentesData,
                 stationsData: this.stationsData,
                 stationsPermitsMatrix: this.stationsPermitsMatrix,
@@ -42,6 +45,12 @@ class DataLoader {
         this.geoDataDepartamentos = await d3.json('../data/preparada/departamentos_final.geojson');
         console.log('GeoJSON departamentos cargado:', this.geoDataDepartamentos);
         return this.geoDataDepartamentos;
+    }
+
+    async loadGeoDataVias() {
+        this.geoDataVias = await d3.json('../data/preparada/vias_final.geojson');
+        console.log('GeoJSON vías cargado:', this.geoDataVias);
+        return this.geoDataVias;
     }
 
     async loadFuentesData() {

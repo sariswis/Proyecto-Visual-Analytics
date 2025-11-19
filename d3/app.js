@@ -19,6 +19,7 @@ class Dashboard {
             console.log('Datos cargados:', {
                 geoData: data.geoData?.features?.length,
                 geoDataDepartamentos: data.geoDataDepartamentos?.features?.length,
+                geoDataVias: data.geoDataVias?.features?.length,
                 fuentesData: data.fuentesData?.length,
                 stationsData: data.stationsData?.length,
                 stationsPermitsMatrix: data.stationsPermitsMatrix?.length,
@@ -29,6 +30,7 @@ class Dashboard {
             this.mapManager.init(
                 data.geoData,
                 data.geoDataDepartamentos,
+                data.geoDataVias,
                 data.fuentesData,
                 data.stationsData,
                 data.stationsPermitsMatrix
@@ -39,6 +41,7 @@ class Dashboard {
             this.concentrationMapManager.init(
                 data.geoData,
                 data.geoDataDepartamentos,
+                data.geoDataVias,
                 data.stationsData,
                 data.measurementsData
             );
