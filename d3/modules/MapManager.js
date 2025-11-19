@@ -47,12 +47,8 @@ class MapManager {
         if (this.stationsData && this.stationsData.length > 0) {
             const combinedColors = [
                 ...d3.schemeCategory10,
-                ...d3.schemeAccent,
                 ...d3.schemeDark2,
                 ...d3.schemePaired,
-                ...d3.schemeSet1,
-                ...d3.schemeSet2,
-                ...d3.schemeSet3
             ];
 
             const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
@@ -62,9 +58,8 @@ class MapManager {
         } else {
             const combinedColors = [
                 ...d3.schemeCategory10,
-                ...d3.schemeAccent,
                 ...d3.schemeDark2,
-                ...d3.schemePaired
+                ...d3.schemePaired,
             ];
             const uniqueColors = [...new Set(combinedColors)].slice(0, 25);
 

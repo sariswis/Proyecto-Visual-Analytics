@@ -7,7 +7,7 @@ class VariablesChartManager {
         this.lastVariable = null;
         this.lastStations = [];
         this.selectedYear = '2024';
-        this.monthLabels = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
+        this.monthLabels = ['Ene', 'Feb', 'Mar', 'Abr', 'May'];
         this.usesExternalColors = false;
 
         this.initChart();
@@ -44,7 +44,7 @@ class VariablesChartManager {
         this.yAxisGroup = this.chartGroup.append('g').attr('class', 'y-axis axis');
         this.legendGroup = this.svg.append('g').attr('class', 'legend-group');
 
-        this.xScale = d3.scaleLinear().domain([0, 11]);
+        this.xScale = d3.scaleLinear().domain([0, 4]);
         this.yScale = d3.scaleLinear();
         this.colorScale = d3.scaleOrdinal(
             d3.quantize(t => d3.interpolateGreys(0.25 + t * 0.55), 10).reverse()
@@ -169,7 +169,7 @@ class VariablesChartManager {
         }
 
         const xAxis = d3.axisBottom(this.xScale)
-            .tickValues(d3.range(0, 12))
+            .tickValues(d3.range(0, 5))
             .tickFormat(d => this.monthLabels[d] || '');
         const yAxis = d3.axisLeft(this.yScale).ticks(6);
 
@@ -415,7 +415,7 @@ class VariablesChartManager {
             stationAggregation = yearMap.get(year) || new Map();
         }
 
-        const monthsRange = d3.range(0, 12);
+        const monthsRange = d3.range(0, 5);
         const aggregated = [];
 
         stationAggregation.forEach((monthsMap, station) => {

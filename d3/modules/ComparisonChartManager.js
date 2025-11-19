@@ -5,8 +5,8 @@ class ComparisonChartManager {
         this.margin = { top: 40, right: 130, bottom: 45, left: 65 };
         this.monthLabels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo'];
         this.colors = {
-            '2024': '#94a3b8',
-            '2025': '#475569'
+            '2024': '#17bfcf',
+            '2025': '#1e77b4'
         };
         this.visibleMonths = this.monthLabels.length;
 
