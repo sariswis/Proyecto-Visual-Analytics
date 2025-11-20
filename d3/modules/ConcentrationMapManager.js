@@ -175,6 +175,9 @@ class ConcentrationMapManager {
             .on('zoom', (event) => {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);
+                
+                this.scaleMarkers(event.transform.k);
+                
                 if (!this.isApplyingExternalTransform && typeof this.onTransformChange === 'function') {
                     this.onTransformChange(event.transform);
                 }
@@ -443,7 +446,11 @@ class ConcentrationMapManager {
         circles.enter()
             .append('circle')
             .attr('class', 'concentration-circle')
-            .attr('r', d => this.radiusScale ? this.radiusScale(d.average) : 8)
+            .attr('r', d => {
+                const baseRadius = this.radiusScale ? this.radiusScale(d.average) : 8;
+                return baseRadius / this.currentTransform.k;
+            })
+            .attr('data-base-radius', d => this.radiusScale ? this.radiusScale(d.average) : 8)
             .attr('cx', d => {
                 const station = this.stationsData.find(s => s.id === d.station);
                 if (station && this.projection) {
@@ -462,10 +469,13 @@ class ConcentrationMapManager {
             })
             .attr('fill', d => this.colorScale ? this.colorScale(d.average) : '#fb6a4a')
             .attr('stroke', '#fff')
+            .attr('vector-effect', 'non-scaling-stroke')
             .attr('stroke-width', 1.5)
             .attr('opacity', 0.8)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
+                d3.select(event.target).attr('stroke-width', 3);  // <- AGREGAR ESTA LÍNEA
+                
                 if (!this.tooltip) this.setupTooltip();
 
                 const station = this.stationsData.find(s => s.id === d.station);
@@ -488,7 +498,9 @@ class ConcentrationMapManager {
                     ${infoFiltros}
                 `);
             })
-            .on('mouseout', () => {
+            .on('mouseout', (event) => {  // <- CAMBIAR 'event' en lugar de vacío
+                d3.select(event.target).attr('stroke-width', 1.5);  // <- AGREGAR ESTA LÍNEA
+                
                 if (this.tooltip) {
                     this.tooltip.style('opacity', 0);
                 }
@@ -500,6 +512,17 @@ class ConcentrationMapManager {
                         .style('top', (event.pageY - 15) + 'px');
                 }
             });
+    }
+
+    scaleMarkers(zoomScale) {
+        const inverseScale = 1 / zoomScale;
+        
+        // Escalar círculos de concentración
+        this.g.selectAll('.concentration-circle')
+            .attr('r', function() {
+                const baseRadius = parseFloat(d3.select(this).attr('data-base-radius'));
+                return baseRadius * inverseScale;
+            })
     }
 
     // Método para mostrar mensaje cuando no hay datos
