@@ -394,7 +394,6 @@ class ConcentrationMapManager {
 
         const valores = promedios.map(d => d.average);
 
-        // Calcular percentiles para categorías de color
         const percentiles = [0, 0.25, 0.5, 0.75, 1];
         const thresholds = percentiles.map(p => Math.round(d3.quantile(valores, p)));
 
@@ -465,7 +464,7 @@ class ConcentrationMapManager {
             .attr('opacity', 0.8)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 3);  // <- AGREGAR ESTA LÍNEA
+                d3.select(event.target).attr('stroke-width', 3);
                 
                 if (!this.tooltip) this.setupTooltip();
 
@@ -489,8 +488,8 @@ class ConcentrationMapManager {
                     ${infoFiltros}
                 `);
             })
-            .on('mouseout', (event) => {  // <- CAMBIAR 'event' en lugar de vacío
-                d3.select(event.target).attr('stroke-width', 1.5);  // <- AGREGAR ESTA LÍNEA
+            .on('mouseout', (event) => {
+                d3.select(event.target).attr('stroke-width', 1.5);
                 
                 if (this.tooltip) {
                     this.tooltip.style('opacity', 0);
@@ -548,7 +547,6 @@ class ConcentrationMapManager {
     drawColorLegend() {
         const colorLegend = this.legendLeft.append('g');
 
-        // Título de leyenda de colores
         colorLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
@@ -583,7 +581,6 @@ class ConcentrationMapManager {
                 .attr('stroke', '#333');
             // Quitamos: .attr('stroke', '#333') y .attr('stroke-width', 0.5)
 
-            // Etiqueta
             item.append('text')
                 .attr('x', 25)
                 .attr('y', 11)
@@ -598,7 +595,6 @@ class ConcentrationMapManager {
     drawSizeLegend(unit) {
         const sizeLegend = this.legendRight.append('g');
 
-        // Título de leyenda de tamaños
         sizeLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
@@ -611,7 +607,7 @@ class ConcentrationMapManager {
         if (!this.radiusScale) return;
 
         const domain  = this.radiusScale.domain();
-        const radii   = this.radiusScale.range();  // CAMBIO: sizes -> radii
+        const radii   = this.radiusScale.range();
         const labels = [
             `≤ ${domain[0].toFixed(0)}`,
             `${domain[0].toFixed(0)} - ${domain[1].toFixed(0)}`,
@@ -622,22 +618,20 @@ class ConcentrationMapManager {
         const rowGap = 40;   
         const offsetX = 0;  
 
-        radii.forEach((radius, i) => {  // CAMBIO: sizes -> radii, y radius directamente en vez de calcularlo
+        radii.forEach((radius, i) => {
 
             const item = sizeLegend.append('g')
                 .attr('transform', `translate(${offsetX}, ${rowStartY + i * rowGap})`);
 
-            // Círculo de ejemplo
             item.append('circle')
                 .attr('cx', 10)
                 .attr('cy', 10)
-                .attr('r', radius)  // CAMBIO: usar radius directamente
+                .attr('r', radius)
                 .attr('fill', '#b2b2b2ff')
                 .attr('stroke', '#8a8a8aff')
                 .attr('stroke-width', 0.4)
                 .attr('opacity', 1);
 
-            // Etiqueta (un poco más lejos del círculo)
             item.append('text')
                 .attr('x', 40)
                 .attr('y', 13)

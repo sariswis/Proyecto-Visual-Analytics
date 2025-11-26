@@ -122,7 +122,7 @@ class ComparisonChartManager {
 
         this.xAxisGroup.call(xAxis);
         
-        // LABEL EJE X
+        // Eje X
         this.xAxisLabel = this.xAxisLabel || this.chartGroup.append('text')
         .attr('class', 'x-axis-label')
         .attr('text-anchor', 'middle')
@@ -135,7 +135,7 @@ class ComparisonChartManager {
 
         this.yAxisGroup.call(yAxis);
 
-        // LABEL EJE Y
+        // Eje Y
         this.yAxisLabel = this.yAxisLabel || this.chartGroup.append('text')
             .attr('class', 'y-axis-label')
             .attr('text-anchor', 'middle')

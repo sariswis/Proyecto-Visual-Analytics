@@ -424,7 +424,7 @@ class MapManager {
             .attr('r', d => {
                 const incidencia = incidenciaMap[d.ID];
                 const baseRadius = this.incidenciaRadiusScale(incidencia.averageIncidencia);
-                return baseRadius / this.currentTransform.k;  // <- APLICAR ESCALA INVERSA INICIAL
+                return baseRadius / this.currentTransform.k;
             })
             .attr('data-base-radius', d => {
                 const incidencia = incidenciaMap[d.ID];
@@ -433,15 +433,15 @@ class MapManager {
             .attr('fill', '#ff7f0f')
             .attr('stroke', '#fff')
             .attr('vector-effect', 'non-scaling-stroke')
-            .attr('stroke-width', 0.8)  // <- APLICAR ESCALA INVERSA INICIAL
+            .attr('stroke-width', 0.8)
             .attr('opacity', 0.8)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 1.5);  // <- CAMBIO AQUÍ
+                d3.select(event.target).attr('stroke-width', 1.5);
                 this.showTooltip(event, d, 'fuente', incidenciaMap[d.ID]);
             })
             .on('mouseout', (event) => {
-                d3.select(event.target).attr('stroke-width', 0.8);  // <- CAMBIO AQUÍ
+                d3.select(event.target).attr('stroke-width', 0.8);
                 this.hideTooltip();
             })
             .on('mousemove', (event) => this.moveTooltip(event));
@@ -517,10 +517,9 @@ class MapManager {
 
         const valores = promedios.map(d => d.averageIncidencia);
 
-        // Escala de radios
         const maxRadius = 12;
         const minRadius = 3;
-        const niveles = 4; // numero de niveles
+        const niveles = 4;
         const radios = d3.range(niveles).map(i =>
             minRadius + (i / (niveles - 1)) * (maxRadius - minRadius)
         );
@@ -610,63 +609,63 @@ class MapManager {
     }
 
     drawFuenteLegend() {
-    if (!this.legendRight) return;
-    
-    this.legendRight.selectAll('*').remove();
-    
-    // Título
-    this.legendRight.append('text')
-        .attr('x', 0)
-        .attr('y', 20)
-        .text('Incidencia de la fuente:')
-        .style('font-size', '14px')
-        .style('font-weight', 'bold')
-        .style('fill', '#333');
-    
-    if (!this.incidenciaRadiusScale) return;
-    
-    // Obtener los tamaños únicos del range de la escala
-    const radios = this.incidenciaRadiusScale.range();
-    const uniqueRadios = [...new Set(radios)].sort((a, b) => a - b);
-    
-    // Obtener los umbrales de la escala
-    const thresholds = this.incidenciaRadiusScale.thresholds();
-    const domain = this.incidenciaRadiusScale.domain();
-    
-    // Dibujar círculos de menor a mayor en línea horizontal
-    let offsetX = 180;
-    uniqueRadios.forEach((radio, i) => {
-        // Círculo primero
-        this.legendRight.append('circle')
-            .attr('cx', offsetX + radio)
-            .attr('cy', 15)
-            .attr('r', radio)
-            .attr('fill', '#ff7f0f')
-            .attr('stroke', '#fff')
-            .attr('stroke-width', 0.8)
-            .attr('opacity', 0.8);
+        if (!this.legendRight) return;
         
-        // Texto del rango después del círculo
-        let rangoTexto = '';
-        if (i === 0) {
-            rangoTexto = `0-${thresholds[0]?.toFixed(2) || domain[1].toFixed(2)}`;
-        } else if (i === uniqueRadios.length - 1) {
-            rangoTexto = `${thresholds[i-1]?.toFixed(2) || 0}+`;
-        } else {
-            rangoTexto = `${thresholds[i-1]?.toFixed(2)}-${thresholds[i]?.toFixed(2)}`;
-        }
+        this.legendRight.selectAll('*').remove();
         
+        // Título
         this.legendRight.append('text')
-            .attr('x', offsetX + radio * 2 + 8)
+            .attr('x', 0)
             .attr('y', 20)
-            .text(rangoTexto)
-            .style('font-size', '13px')
-            .style('fill', '#666');
+            .text('Incidencia de la fuente:')
+            .style('font-size', '14px')
+            .style('font-weight', 'bold')
+            .style('fill', '#333');
         
-        const textoWidth = rangoTexto.length * 7.5;
-        offsetX += radio * 2 + textoWidth + 20; // Espaciado más compacto
-    });
-}
+        if (!this.incidenciaRadiusScale) return;
+        
+        // Obtener los tamaños únicos del range de la escala
+        const radios = this.incidenciaRadiusScale.range();
+        const uniqueRadios = [...new Set(radios)].sort((a, b) => a - b);
+        
+        // Obtener los umbrales de la escala
+        const thresholds = this.incidenciaRadiusScale.thresholds();
+        const domain = this.incidenciaRadiusScale.domain();
+        
+        // Dibujar círculos de menor a mayor en línea horizontal
+        let offsetX = 180;
+        uniqueRadios.forEach((radio, i) => {
+            // Círculo primero
+            this.legendRight.append('circle')
+                .attr('cx', offsetX + radio)
+                .attr('cy', 15)
+                .attr('r', radio)
+                .attr('fill', '#ff7f0f')
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 0.8)
+                .attr('opacity', 0.8);
+            
+            // Texto del rango después del círculo
+            let rangoTexto = '';
+            if (i === 0) {
+                rangoTexto = `0-${thresholds[0]?.toFixed(2) || domain[1].toFixed(2)}`;
+            } else if (i === uniqueRadios.length - 1) {
+                rangoTexto = `${thresholds[i-1]?.toFixed(2) || 0}+`;
+            } else {
+                rangoTexto = `${thresholds[i-1]?.toFixed(2)}-${thresholds[i]?.toFixed(2)}`;
+            }
+            
+            this.legendRight.append('text')
+                .attr('x', offsetX + radio * 2 + 8)
+                .attr('y', 20)
+                .text(rangoTexto)
+                .style('font-size', '13px')
+                .style('fill', '#666');
+            
+            const textoWidth = rangoTexto.length * 7.5;
+            offsetX += radio * 2 + textoWidth + 20;
+        });
+    }
 
     setupControls() {
         d3.select('#zoom-in').on('click', () => {
