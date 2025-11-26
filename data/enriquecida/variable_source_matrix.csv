@@ -83,3 +83,15 @@ NOX,Chimenea,7,Chimenea descarga los NOx generados por la unidad de combustión.
 NOX,No aplica (área de operación),5,Vehículos y equipos de combustión en área de operación generan NOx difuso significativo.,0.4
 NOX,Batería de coquización,9,Proceso térmico de coque produce NOx alto.,0.4
 NOX,Reactor,3,Posible en reacciones a alta temp o procesos particulares.,0.4
+WDS,Sin definir,1,No hay.,0.5
+WDS,Horno,1,No hay.,0.5
+WDS,Caldera,1,No hay.,0.5
+WDS,Caldera horno,1,No hay.,0.5
+WDS,Planta de asfalto,1,No hay.,0.5
+WDS,Secadores,1,No hay.,0.5
+WDS,Molino,1,No hay.,0.5
+WDS,Trituradora,1,No hay.,0.5
+WDS,Chimenea,1,No hay.,0.5
+WDS,No aplica (área de operación),1,No hay.,0.5
+WDS,Batería de coquización,1,No hay.,0.5
+WDS,Reactor,1,No hay.,0.5

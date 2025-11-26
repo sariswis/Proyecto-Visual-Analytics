@@ -8,5 +8,5 @@ Calidad del aire,NOX,Óxidos de Nitrógeno,μgr/m³,Combinación de NO y NO₂,,
 Calidad del aire,CO,Monóxido de Carbono,μgr/m³,Gas tóxico que puede afectar el transporte de oxígeno en la sangre.,1 hora: ≤35.000 μg/m³,5
 Clima,Temp,Temperatura,°C,Parámetro climático natural.,,
 Clima,RAIN,Precipitación,mm,Cantidad de lluvia caída.,0 - 10,
-Clima,WDS,Viento - velocidad,m/s,Velocidad del viento.,,
+Clima,WDS,Viento - velocidad,m/s,Velocidad del viento.,,6
 Clima,WDD,Viento - dirección,°N,Dirección de procedencia del viento.,0 - 360,

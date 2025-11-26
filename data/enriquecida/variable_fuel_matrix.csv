@@ -83,3 +83,15 @@ NOX,Hulla,6,Moderada — hulla similar a carbón.,0.6
 NOX,Mezcla,6,Moderada — mezcla variable.,0.6
 NOX,Madera,5,Moderada-baja — biomasa produce NOx.,0.6
 NOX,Leña,4,Moderada-baja — leña similar.,0.6
+WDS,Sin definir,1,No hay.,0.5
+WDS,Carbón,1,No hay.,0.5
+WDS,Otros,1,No hay.,0.5
+WDS,Gas,1,No hay.,0.5
+WDS,ACPM,1,No hay.,0.5
+WDS,No aplica,1,No hay.,0.5
+WDS,Fuel Oil No.8,1,No hay.,0.5
+WDS,Coque,1,No hay.,0.5
+WDS,Hulla,1,No hay.,0.5
+WDS,Mezcla,1,No hay.,0.5
+WDS,Madera,1,No hay.,0.5
+WDS,Leña,1,No hay.,0.5
