@@ -23,7 +23,8 @@ class Dashboard {
                 fuentesData: data.fuentesData?.length,
                 stationsData: data.stationsData?.length,
                 stationsPermitsMatrix: data.stationsPermitsMatrix?.length,
-                measurementsData: data.measurementsData?.length
+                measurementsData: data.measurementsData?.length,
+                variablesOfStation: Object.keys(data.variablesOfStation).length
             });
 
             // Inicializar primer mapa (fuentes fijas)
@@ -33,7 +34,8 @@ class Dashboard {
                 data.geoDataVias,
                 data.fuentesData,
                 data.stationsData,
-                data.stationsPermitsMatrix
+                data.stationsPermitsMatrix,
+                data.variablesOfStation
             );
             const stationColorScale = this.mapManager.getStationColorScale();
 

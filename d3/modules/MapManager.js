@@ -17,6 +17,7 @@ class MapManager {
         this.fuentesData = [];
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
+        this.variablesOfStation = {};
         this.contaminanteSeleccionado = '';
         this.onTransformChange = null;
         this.isApplyingExternalTransform = false;
@@ -29,13 +30,14 @@ class MapManager {
         this.projection = null;
     }
 
-    init(geoData, geoDataDepartamentos, geoDataVias, fuentesData, stationsData, stationsPermitsMatrix) {
+    init(geoData, geoDataDepartamentos, geoDataVias, fuentesData, stationsData, stationsPermitsMatrix, variablesOfStation) {
         this.geoData = geoData;
         this.geoDataDepartamentos = geoDataDepartamentos;
         this.geoDataVias = geoDataVias;
         this.fuentesData = fuentesData;
         this.stationsData = stationsData;
         this.stationsPermitsMatrix = stationsPermitsMatrix;
+        this.variablesOfStation = variablesOfStation;
 
         this.setupColorScales();
         this.setupSVG();
@@ -456,8 +458,12 @@ class MapManager {
         if (type === 'estacion') {
             content = `
                 <div style="font-weight: bold; color: #4ecdc4; margin-bottom: 5px;">Estación ${data.id}</div>
-                <div>Latitud: ${data.latitude.toFixed(4)}</div>
-                <div>Longitud: ${data.longitude.toFixed(4)}</div>
+                <div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Variables medidas:</div>
+                <div style="margin-top: 4px;">
+                    ${(this.variablesOfStation[data.id] || []).map(v => 
+                        `<div style="margin-left: 10px; font-size: 11px;">• ${v}</div>`
+                    ).join('') || '<div style="margin-left: 10px; font-size: 11px;">N/A</div>'}
+                </div>
             `;
         } else if (type === 'fuente') {
             const relaciones = this.getRelacionesPorFuenteYContaminante(data.ID, this.contaminanteSeleccionado);

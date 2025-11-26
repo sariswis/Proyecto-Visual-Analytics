@@ -7,6 +7,7 @@ class DataLoader {
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
         this.measurementsData = [];
+        this.variablesOfStation = {};
     }
 
     async loadAllData() {
@@ -20,6 +21,9 @@ class DataLoader {
                 this.loadStationsPermitsMatrix(),
                 this.loadMeasurementsData()
             ]);
+            
+            await this.loadVariablesOfStation();
+            
             return {
                 geoData: this.geoData,
                 geoDataDepartamentos: this.geoDataDepartamentos,
@@ -27,7 +31,8 @@ class DataLoader {
                 fuentesData: this.fuentesData,
                 stationsData: this.stationsData,
                 stationsPermitsMatrix: this.stationsPermitsMatrix,
-                measurementsData: this.measurementsData
+                measurementsData: this.measurementsData,
+                variablesOfStation: this.variablesOfStation
             };
         } catch (error) {
             console.error('Error cargando datos:', error);
@@ -121,6 +126,17 @@ class DataLoader {
 
         console.log('Datos de mediciones cargados:', this.measurementsData);
         return this.measurementsData;
+    }
+
+    async loadVariablesOfStation() {
+        for (const station of this.stationsData) {
+            const stationId = station.id;
+            const variables = this.getUniqueValues(
+                this.measurementsData.filter(m => m.station === stationId),
+                'variable'
+            );
+            this.variablesOfStation[stationId] = variables;
+        }
     }
 
     // MÉTODOS UTILES
