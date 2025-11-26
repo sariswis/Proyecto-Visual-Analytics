@@ -152,7 +152,7 @@ class MapManager {
 
     setupZoom() {
         this.zoom = d3.zoom()
-            .scaleExtent([0.5, 20])
+            .scaleExtent([0.8, 150])
             .on('zoom', (event) => {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);

@@ -113,7 +113,7 @@ class Dashboard {
         if (!sourceDims || !targetDims) return null;
 
         const clamp = (val, min, max) => Math.max(min, Math.min(max, val));
-        const k = clamp(transform.k || 1, 0.5, 20);
+        const k = clamp(transform.k || 1, 0.8, 150);
 
         const sourceWidth = sourceDims.contentWidth || sourceDims.fullWidth || 1;
         const sourceHeight = sourceDims.contentHeight || sourceDims.fullHeight || 1;
