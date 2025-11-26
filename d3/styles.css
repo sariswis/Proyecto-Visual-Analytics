@@ -316,19 +316,6 @@ body {
 .municipio:hover {
   fill: #dee2e6;
 }
-.fuente-punto {
-  fill: #ff6b6b;
-  stroke: #fff;
-  stroke-width: 1;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.fuente-punto:hover {
-  fill: #ff5252;
-  stroke-width: 2;
-  r: 6;
-}
 
 .fuente-industrial {
   fill: #ff6b6b;
@@ -424,18 +411,9 @@ body {
   transition: all 0.2s ease;
 }
 
-.fuente-punto:hover {
-  r: 6;
-  stroke-width: 2;
-}
-
 /* Estilos para las estaciones */
 .estacion-punto {
   transition: all 0.2s ease;
-}
-
-.estacion-punto:hover {
-  stroke-width: 2px !important;
 }
 
 /* Estilos para fuentes divididas */
@@ -563,7 +541,6 @@ body {
 }
 
 .concentration-circle:hover {
-  stroke-width: 2.5px;
   opacity: 1 !important;
 }
 
@@ -654,7 +631,6 @@ body {
 }
 
 .concentration-circle:hover {
-    stroke-width: 2px;
     opacity: 1;
     filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.85));
 }

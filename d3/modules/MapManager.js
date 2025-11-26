@@ -323,14 +323,14 @@ class MapManager {
             })
             .attr('fill', d => this.stationColorScale(d.id))
             .attr('stroke', '#fff')
-            .attr('stroke-width', 0.8)
+            .attr('stroke-width', 0.6)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 1.2);
+                d3.select(event.target).attr('stroke-width', 0.8);
                 this.showTooltip(event, d, 'estacion');
             })
             .on('mouseout', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 0.8);
+                d3.select(event.target).attr('stroke-width', 0.6);
                 this.hideTooltip();
             })
             .on('mousemove', (event) => this.moveTooltip(event));
