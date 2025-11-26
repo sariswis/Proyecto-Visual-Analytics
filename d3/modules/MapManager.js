@@ -130,7 +130,7 @@ class MapManager {
             .attr('transform', 'translate(10, 10)');
 
         this.legendRight = this.legendBanner.append('g')
-            .attr('transform', 'translate(110, 10)');
+            .attr('transform', 'translate(150, 10)');
     }
 
     setupTooltip() {
@@ -518,9 +518,9 @@ class MapManager {
         const valores = promedios.map(d => d.averageIncidencia);
 
         // Escala de radios
-        const maxRadius = 10;
-        const minRadius = 2;
-        const niveles = 5; // numero de niveles
+        const maxRadius = 12;
+        const minRadius = 3;
+        const niveles = 4; // numero de niveles
         const radios = d3.range(niveles).map(i =>
             minRadius + (i / (niveles - 1)) * (maxRadius - minRadius)
         );
@@ -618,7 +618,7 @@ class MapManager {
     this.legendRight.append('text')
         .attr('x', 0)
         .attr('y', 20)
-        .text('Fuente (Incidencia):')
+        .text('Incidencia de la fuente:')
         .style('font-size', '14px')
         .style('font-weight', 'bold')
         .style('fill', '#333');
@@ -634,7 +634,7 @@ class MapManager {
     const domain = this.incidenciaRadiusScale.domain();
     
     // Dibujar círculos de menor a mayor en línea horizontal
-    let offsetX = 160;
+    let offsetX = 180;
     uniqueRadios.forEach((radio, i) => {
         // Círculo primero
         this.legendRight.append('circle')
