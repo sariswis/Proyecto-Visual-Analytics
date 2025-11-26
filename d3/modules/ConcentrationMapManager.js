@@ -92,23 +92,12 @@ class ConcentrationMapManager {
             .attr('fill', '#DEDEDE');
         // Quitamos: .attr('stroke', '#000000') y .attr('stroke-width', 1)
 
-        // Título del banner
-        this.legendBanner.append('text')
-            .attr('x', width / 2)
-            .attr('y', 30)
-            .attr('text-anchor', 'middle')
-            .text('Leyenda de concentraciones')
-            .style('font-family', 'Poppins, sans-serif')
-            .style('font-size', '14px')
-            .style('font-weight', '600')
-            .style('fill', '#000000');
-
         // Grupos para las leyendas (izquierda y derecha)
         this.legendLeft = this.legendBanner.append('g')
-            .attr('transform', 'translate(55, 46)');
+            .attr('transform', 'translate(50, 20)');
 
         this.legendRight = this.legendBanner.append('g')
-            .attr('transform', 'translate(325, 46)');
+            .attr('transform', 'translate(290, 20)');
     }
 
     setupTooltip() {
@@ -407,20 +396,22 @@ class ConcentrationMapManager {
 
         // Calcular percentiles para categorías de color
         const percentiles = [0, 0.25, 0.5, 0.75, 1];
-        const thresholds = percentiles.map(p => d3.quantile(valores, p));
+        const thresholds = percentiles.map(p => Math.round(d3.quantile(valores, p)));
 
         // Escala de colores (4 categorías)
         this.colorScale = d3.scaleThreshold()
             .domain(thresholds.slice(1, 4))
             .range(['#8FE200', '#FFEA00', '#FFA601', '#cb181d']);
 
-        // Escala de radios (tamaño de círculos)
-        const maxRadius = 12;
-        const minRadius = 5;
-        this.radiusScale = d3.scaleLinear()
-            .domain([0, d3.max(valores)])
-            .range([minRadius, maxRadius])
-            .clamp(true);
+        // Escala de radios con 3 bins (pequeño, mediano, grande)
+        const radiusThresholds = [
+            Math.round(d3.quantile(valores, 0.33)),
+            Math.round(d3.quantile(valores, 0.67))
+        ];
+        
+        this.radiusScale = d3.scaleThreshold()
+            .domain(radiusThresholds)
+            .range([8, 14, 20]);
     }
 
     drawCircles(promedios) {
@@ -550,7 +541,8 @@ class ConcentrationMapManager {
         this.drawColorLegend();
 
         // Leyenda de tamaños (derecha)
-        this.drawSizeLegend();
+        const unit = this.measurementsData.find(m => m.variable === this.contaminanteSeleccionado)?.unit_measurement || '';
+        this.drawSizeLegend(unit);
     }
 
     drawColorLegend() {
@@ -568,13 +560,12 @@ class ConcentrationMapManager {
 
         if (!this.colorScale) return;
 
-        const thresholds = this.colorScale.domain();
         const colors = this.colorScale.range();
         const labels = [
-            `≤ ${thresholds[0].toFixed(2)}`,
-            `${thresholds[0].toFixed(2)} - ${thresholds[1].toFixed(2)}`,
-            `${thresholds[1].toFixed(2)} - ${thresholds[2].toFixed(2)}`,
-            `> ${thresholds[2].toFixed(2)}`
+            'Q1',
+            'Q2',
+            'Q3',
+            'Q4'
         ];
 
         colors.forEach((color, i) => {
@@ -604,14 +595,14 @@ class ConcentrationMapManager {
         });
     }
 
-    drawSizeLegend() {
+    drawSizeLegend(unit) {
         const sizeLegend = this.legendRight.append('g');
 
         // Título de leyenda de tamaños
         sizeLegend.append('text')
             .attr('x', 0)
-            .attr('y', 15)
-            .text('Tamaño por concentración')
+            .attr('y', 12)
+            .text(`Tamaño por concentración (${unit})`)
             .style('font-family', 'Poppins, sans-serif')
             .style('font-size', '12px')
             .style('font-weight', '600')
@@ -619,27 +610,36 @@ class ConcentrationMapManager {
 
         if (!this.radiusScale) return;
 
-        const domain = this.radiusScale.domain();
-        const sizes = [domain[0], domain[1] / 2, domain[1]];
-        const labels = sizes.map(d => d.toFixed(2));
+        const domain  = this.radiusScale.domain();
+        const radii   = this.radiusScale.range();  // CAMBIO: sizes -> radii
+        const labels = [
+            `≤ ${domain[0].toFixed(0)}`,
+            `${domain[0].toFixed(0)} - ${domain[1].toFixed(0)}`,
+            `> ${domain[1].toFixed(0)}`
+        ];
 
-        sizes.forEach((size, i) => {
-            const radius = this.radiusScale(size);
+        const rowStartY = 22;  
+        const rowGap = 40;   
+        const offsetX = 0;  
+
+        radii.forEach((radius, i) => {  // CAMBIO: sizes -> radii, y radius directamente en vez de calcularlo
+
             const item = sizeLegend.append('g')
-                .attr('transform', `translate(0, ${24 + i * 25})`);
+                .attr('transform', `translate(${offsetX}, ${rowStartY + i * rowGap})`);
 
-            // Círculo de ejemplo SIN BORDE
+            // Círculo de ejemplo
             item.append('circle')
-                .attr('cx', 15)
+                .attr('cx', 10)
                 .attr('cy', 10)
-                .attr('r', radius)
-                .attr('fill', '#fb6a4a')
-                .attr('opacity', 0.8);
-            // Quitamos: .attr('stroke', '#333') y .attr('stroke-width', 0.5)
+                .attr('r', radius)  // CAMBIO: usar radius directamente
+                .attr('fill', '#b2b2b2ff')
+                .attr('stroke', '#8a8a8aff')
+                .attr('stroke-width', 0.4)
+                .attr('opacity', 1);
 
-            // Etiqueta
+            // Etiqueta (un poco más lejos del círculo)
             item.append('text')
-                .attr('x', 35)
+                .attr('x', 40)
                 .attr('y', 13)
                 .text(labels[i])
                 .style('font-family', 'Poppins, sans-serif')
@@ -648,58 +648,7 @@ class ConcentrationMapManager {
                 .style('font-weight', '400');
         });
     }
-
-    drawSizeLegend() {
-    const sizeLegend = this.legendRight.append('g');
-
-    // Título de leyenda de tamaños
-    sizeLegend.append('text')
-        .attr('x', 0)
-        .attr('y', 12)
-        .text('Tamaño por concentración')
-        .style('font-family', 'Poppins, sans-serif')
-        .style('font-size', '12px')
-        .style('font-weight', '600')
-        .style('fill', '#000000');
-
-    if (!this.radiusScale) return;
-
-    const domain  = this.radiusScale.domain();
-    const sizes   = [domain[0], domain[1] / 2, domain[1]];
-    const labels  = sizes.map(d => d.toFixed(2));
-
-    const rowStartY = 22;  
-    const rowGap = 30;   
-    const offsetX = 0;  
-
-    sizes.forEach((size, i) => {
-        const radius = this.radiusScale(size);
-
-        const item = sizeLegend.append('g')
-            .attr('transform', `translate(${offsetX}, ${rowStartY + i * rowGap})`);
-
-        // Círculo de ejemplo
-        item.append('circle')
-            .attr('cx', 10)
-            .attr('cy', 10)
-            .attr('r', radius)
-            .attr('fill', '#b2b2b2ff')
-            .attr('stroke', '#8a8a8aff')
-            .attr('stroke-width', 0.4)
-            .attr('opacity', 1);
-
-        // Etiqueta (un poco más lejos del círculo)
-        item.append('text')
-            .attr('x', 40)   // más grande = más espacio horizontal
-            .attr('y', 13)
-            .text(labels[i])
-            .style('font-family', 'Poppins, sans-serif')
-            .style('font-size', '11px')
-            .style('fill', '#000000')
-            .style('font-weight', '400');
-    });
-}
-
+    
     updateData(contaminante, activeStations = [], municipios = []) {
         console.log(`Actualizando mapa de concentración con contaminante: ${contaminante}, estaciones: ${activeStations}, municipios: ${municipios}`);
 
