@@ -29,6 +29,7 @@ class FilterManager {
 
         // Aplicar filtros iniciales
         this.applyFilters();
+        this.actualizarTitulos(this.filters.contaminante)
     }
 
     setupDropdowns() {
@@ -142,6 +143,7 @@ class FilterManager {
         if (contaminanteSelect) {
             contaminanteSelect.addEventListener('change', (e) => {
                 this.filters.contaminante = e.target.value;
+                this.actualizarTitulos(e.target.value);
                 this.applyFilters();
             });
         }
@@ -341,6 +343,25 @@ class FilterManager {
                 checkbox.checked = estado;
             }
         });
+    }
+
+    actualizarTitulos(variableSeleccionada) {
+        const tituloMapa = document.getElementById('map-title');
+        const tituloConcentration = document.getElementById('concentration-map-title');
+        const tituloComparison = document.getElementById('comparison-chart-title');
+
+        if (variableSeleccionada == 'WDS') {
+            // --- CASO METEOROLOGÍA (WDS) ---
+            tituloMapa.textContent = "Capacidad de dilución del viento sobre fuentes cercanas";
+            tituloConcentration.textContent = `Niveles promedio registrados`;
+            tituloComparison.textContent = `Comportamiento histórico 2024 vs 2025`;
+            
+        } else {
+            // --- CASO CONTAMINANTES (PM10, PM2.5, etc) ---
+            tituloMapa.textContent = "Fuentes fijas que afectan mediciones cercanas";
+            tituloConcentration.textContent = "Concentración de agentes contaminantes";
+            tituloComparison.textContent = "Concentración de contaminantes 2024 vs 2025";
+        }
     }
 
     updateSelectedText(type, selectedTextElement) {

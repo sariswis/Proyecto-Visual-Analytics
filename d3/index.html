@@ -27,7 +27,7 @@
 
                 <!-- Filtro: Agente Contaminante (selección simple) -->
                 <div class="filter-row">
-                    <span class="filter-label">Agente contaminante</span>
+                    <span class="filter-label">Variable</span>
                     <div class="dropdown-container">
                         <select id="contaminante" class="dropdown single-select">
                             <option value="">Seleccione</option>
@@ -82,7 +82,7 @@
 
             <!-- Primera gráfica: Mapa con fuentes fijas -->
             <div class="chart-container map-chart">
-                <h2>Fuentes fijas que afectan mediciones cercanas</h2>
+                <h2 id="map-title">Fuentes fijas que afectan mediciones cercanas</h2>
 
                 <!-- Filtros específicos del mapa -->
                 <div class="map-filters">
@@ -122,7 +122,7 @@
 
             <!-- Segunda gráfica: Mapa de concentración de contaminantes -->
             <div class="chart-container concentration-chart">
-                <h2>Concentración de agentes contaminantes</h2>
+                <h2 id="concentration-map-title">Concentración de agentes contaminantes</h2>
 
                 <!-- Contenedor para la visualización del mapa de concentración -->
                 <div class="concentration-visualization">
@@ -147,7 +147,7 @@
 
             <!-- Tercera gráfica: Concentración contaminantes 2024 vs 2025 -->
             <div class="chart-container comparison-chart">
-                <h2>Concentración contaminantes 2024 vs 2025</h2>
+                <h2 id="comparison-chart-title">Concentración de contaminantes 2024 vs 2025</h2>
 
                 <!-- Contenedor para la visualización de comparación -->
                 <div class="comparison-visualization">
@@ -160,7 +160,7 @@
             <!-- Cuarta gráfica: Variables de aire entre estaciones -->
             <div class="chart-container variables-chart">
                 <div class="variables-header">
-                    <h2>Variables de aire entre estaciones</h2>
+                    <h2>Comparación entre estaciones</h2>
                 </div>
 
                 <!-- Contenedor para la visualización de variables -->
