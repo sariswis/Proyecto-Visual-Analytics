@@ -174,7 +174,31 @@ class VariablesChartManager {
         const yAxis = d3.axisLeft(this.yScale).ticks(6);
 
         this.xAxisGroup.call(xAxis);
+
+        // Eje X
+        this.xAxisLabel = this.xAxisLabel || this.chartGroup.append('text')
+        .attr('class', 'x-axis-label')
+        .attr('text-anchor', 'middle')
+        .attr('font-size', 12)
+        .attr('y', this.height + 35);
+        
+        this.xAxisLabel
+        .attr('x', this.width / 2)
+        .text('Mes');
+
         this.yAxisGroup.call(yAxis);
+
+        // Eje Y
+        this.yAxisLabel = this.yAxisLabel || this.chartGroup.append('text')
+            .attr('class', 'y-axis-label')
+            .attr('text-anchor', 'middle')
+            .attr('font-size', 12)
+            .attr('transform', `rotate(-90)`)
+            .attr('x', -this.height / 2)
+            .attr('y', -45);
+
+        this.yAxisLabel
+            .text('Unidad (' + (filteredData[0]?.unit_measurement || '') + ')');
 
         const grid = this.gridGroup.selectAll('.grid-line')
             .data(this.yScale.ticks(6));

@@ -17,6 +17,7 @@ class MapManager {
         this.fuentesData = [];
         this.stationsData = [];
         this.stationsPermitsMatrix = [];
+        this.variablesOfStation = {};
         this.contaminanteSeleccionado = '';
         this.onTransformChange = null;
         this.isApplyingExternalTransform = false;
@@ -27,15 +28,19 @@ class MapManager {
         this.offsetX = 0;
         this.offsetY = 0;
         this.projection = null;
+        this.incidenciaRadiusScale = null;
+        this.legendBanner = null;
+        this.bannerHeight = 75;
     }
 
-    init(geoData, geoDataDepartamentos, geoDataVias, fuentesData, stationsData, stationsPermitsMatrix) {
+    init(geoData, geoDataDepartamentos, geoDataVias, fuentesData, stationsData, stationsPermitsMatrix, variablesOfStation) {
         this.geoData = geoData;
         this.geoDataDepartamentos = geoDataDepartamentos;
         this.geoDataVias = geoDataVias;
         this.fuentesData = fuentesData;
         this.stationsData = stationsData;
         this.stationsPermitsMatrix = stationsPermitsMatrix;
+        this.variablesOfStation = variablesOfStation;
 
         this.setupColorScales();
         this.setupSVG();
@@ -97,6 +102,35 @@ class MapManager {
         this.contentHeight = height;
         this.offsetX = 0;
         this.offsetY = 0;
+
+        this.setupLegendBanner();
+    }
+
+    setupLegendBanner() {
+        const width = 735;
+        const height = 385;
+
+        // Posicionar el banner más arriba para que no se corte
+        const bannerY = height - this.bannerHeight;
+
+        // Crear grupo para el banner
+        this.legendBanner = this.svg.append('g')
+            .attr('class', 'legend-banner')
+            .attr('transform', `translate(0, ${bannerY})`);
+
+        // Fondo del banner SIN BORDE
+        this.legendBanner.append('rect')
+            .attr('width', width)
+            .attr('height', this.bannerHeight)
+            .attr('fill', '#DEDEDE');
+        // Quitamos: .attr('stroke', '#000000') y .attr('stroke-width', 1)
+
+        // Grupos para las leyendas (izquierda y derecha)
+        this.legendLeft = this.legendBanner.append('g')
+            .attr('transform', 'translate(10, 10)');
+
+        this.legendRight = this.legendBanner.append('g')
+            .attr('transform', 'translate(150, 10)');
     }
 
     setupTooltip() {
@@ -150,10 +184,14 @@ class MapManager {
 
     setupZoom() {
         this.zoom = d3.zoom()
-            .scaleExtent([0.5, 20])
+            .scaleExtent([0.8, 150])
             .on('zoom', (event) => {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);
+                
+                // Escalar inversamente las marcas
+                this.scaleMarkers(event.transform.k);
+                
                 if (!this.isApplyingExternalTransform && typeof this.onTransformChange === 'function') {
                     this.onTransformChange(event.transform);
                 }
@@ -305,7 +343,7 @@ class MapManager {
 
         this.g.selectAll('.estacion-punto').remove();
 
-        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(36); // Tamaño base
+        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(70); // Tamaño base
 
         const estaciones = this.g.selectAll('.estacion-punto')
             .data(estacionesActivas, d => d.id);
@@ -317,18 +355,18 @@ class MapManager {
             .attr('transform', d => {
                 const coords = this.projection([d.longitude, d.latitude]);
                 if (!coords) return 'translate(0,0)';
-                return `translate(${coords[0]}, ${coords[1]})`;
+                return `translate(${coords[0]}, ${coords[1]}) scale(${1 / Math.sqrt(this.currentTransform.k)})`;
             })
             .attr('fill', d => this.stationColorScale(d.id))
             .attr('stroke', '#fff')
-            .attr('stroke-width', 0.8)
+            .attr('stroke-width', 0.6)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 1.2);
+                d3.select(event.target).attr('stroke-width', 0.8);
                 this.showTooltip(event, d, 'estacion');
             })
             .on('mouseout', (event, d) => {
-                d3.select(event.target).attr('stroke-width', 0.8);
+                d3.select(event.target).attr('stroke-width', 0.6);
                 this.hideTooltip();
             })
             .on('mousemove', (event) => this.moveTooltip(event));
@@ -340,153 +378,182 @@ class MapManager {
             return;
         }
 
-        const fuentesConEstacionesActivas = this.fuentesData.filter(fuente => {
-            const relaciones = this.getRelacionesPorFuenteYContaminante(fuente.ID, this.contaminanteSeleccionado);
-            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
-            return relacionesActivas.length > 0 && !isNaN(fuente.Latitud) && !isNaN(fuente.Longitud);
+        // Calcular incidencia promedio
+        const promediosIncidencia = this.calculateAverageIncidencia();
+        
+        if (promediosIncidencia.length === 0) {
+            console.warn('No hay datos de incidencia para mostrar');
+            this.g.selectAll('.fuente-circle').remove();
+            return;
+        }
+
+        // Crear escalas
+        this.createIncidenciaScales(promediosIncidencia);
+
+        // Crear mapa de incidencias para acceso rápido
+        const incidenciaMap = {};
+        promediosIncidencia.forEach(p => {
+            incidenciaMap[p.fuenteId] = p;
         });
 
-        console.log(`Mostrando ${fuentesConEstacionesActivas.length} fuentes para contaminante: ${this.contaminanteSeleccionado || 'Todos'}`);
+        // Filtrar fuentes que tienen incidencia calculada
+        const fuentesConIncidencia = this.fuentesData.filter(fuente => 
+            incidenciaMap[fuente.ID] && !isNaN(fuente.Latitud) && !isNaN(fuente.Longitud)
+        );
 
-        this.g.selectAll('.fuente-group').remove();
+        console.log(`Mostrando ${fuentesConIncidencia.length} fuentes con incidencia`);
 
-        const fuenteGroups = this.g.selectAll('.fuente-group')
-            .data(fuentesConEstacionesActivas, d => d.ID);
+        // Limpiar fuentes anteriores
+        this.g.selectAll('.fuente-circle').remove();
 
-        const gruposEnter = fuenteGroups.enter()
-            .append('g')
-            .attr('class', 'fuente-group')
-            .attr('transform', d => {
+        // Dibujar círculos
+        const circles = this.g.selectAll('.fuente-circle')
+            .data(fuentesConIncidencia, d => d.ID);
+
+        circles.enter()
+            .append('circle')
+            .attr('class', 'fuente-circle')
+            .attr('cx', d => {
                 const coords = this.projection([d.Longitud, d.Latitud]);
-                if (!coords) return 'translate(0,0)';
-                return `translate(${coords[0]}, ${coords[1]})`;
+                return coords ? coords[0] : 0;
             })
+            .attr('cy', d => {
+                const coords = this.projection([d.Longitud, d.Latitud]);
+                return coords ? coords[1] : 0;
+            })
+            .attr('r', d => {
+                const incidencia = incidenciaMap[d.ID];
+                const baseRadius = this.incidenciaRadiusScale(incidencia.averageIncidencia);
+                return baseRadius / this.currentTransform.k;
+            })
+            .attr('data-base-radius', d => {
+                const incidencia = incidenciaMap[d.ID];
+                return this.incidenciaRadiusScale(incidencia.averageIncidencia);
+            })
+            .attr('fill', '#ff7f0f')
+            .attr('stroke', '#fff')
+            .attr('vector-effect', 'non-scaling-stroke')
+            .attr('stroke-width', 0.8)
+            .attr('opacity', 0.8)
             .style('cursor', 'pointer')
             .on('mouseover', (event, d) => {
-                d3.select(event.target).selectAll('path, circle').style('opacity', 0.8);
-                this.showTooltip(event, d, 'fuente');
+                d3.select(event.target).attr('stroke-width', 1.5);
+                this.showTooltip(event, d, 'fuente', incidenciaMap[d.ID]);
             })
-            .on('mouseout', (event, d) => {
-                d3.select(event.target).selectAll('path, circle').style('opacity', 1);
+            .on('mouseout', (event) => {
+                d3.select(event.target).attr('stroke-width', 0.8);
                 this.hideTooltip();
             })
             .on('mousemove', (event) => this.moveTooltip(event));
+    }
 
-        gruposEnter.each((d, i, nodes) => {
-            const group = d3.select(nodes[i]);
-            const relaciones = this.getRelacionesPorFuenteYContaminante(d.ID, this.contaminanteSeleccionado);
-            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
+    scaleMarkers(zoomScale) {
+        // Escalar estaciones (triángulos)
+        this.g.selectAll('.estacion-punto')
+            .attr('transform', function() {
+                const currentTransform = d3.select(this).attr('transform');
+                const translateMatch = currentTransform.match(/translate\(([^,]+),([^)]+)\)/);
+                if (translateMatch) {
+                    const x = translateMatch[1];
+                    const y = translateMatch[2];
+                    return `translate(${x}, ${y}) scale(${1 / Math.sqrt(zoomScale)})`;
+                }
+                return currentTransform;
+            });
+        
+        // Escalar fuentes (círculos) - radio y stroke
+        this.g.selectAll('.fuente-circle')
+            .attr('r', function() {
+                const baseRadius = parseFloat(d3.select(this).attr('data-base-radius'));
+                return baseRadius * 1 / zoomScale;
+            })
+    }
 
-            this.dibujarFuenteDividida(group, relacionesActivas);
+    calculateAverageIncidencia() {
+        if (!this.stationsPermitsMatrix || this.stationsPermitsMatrix.length === 0) {
+            return [];
+        }
+
+        // Agrupar por fuente y calcular promedio de incidencia
+        const incidenciaPorFuente = {};
+        
+        let relaciones = this.stationsPermitsMatrix;
+        
+        // Filtrar por contaminante si hay uno seleccionado
+        if (this.contaminanteSeleccionado) {
+            relaciones = relaciones.filter(rel => rel.Variable === this.contaminanteSeleccionado);
+        }
+        
+        // Filtrar por estaciones activas
+        if (this.activeStations.length > 0) {
+            relaciones = relaciones.filter(rel => this.activeStations.includes(rel.IDEstación));
+        }
+
+        relaciones.forEach(rel => {
+            if (!incidenciaPorFuente[rel.IDEmpresa]) {
+                incidenciaPorFuente[rel.IDEmpresa] = {
+                    sum: 0,
+                    count: 0
+                };
+            }
+            incidenciaPorFuente[rel.IDEmpresa].sum += parseFloat(rel.Incidencia) || 0;
+            incidenciaPorFuente[rel.IDEmpresa].count += 1;
         });
 
-        fuenteGroups.exit().remove();
+        // Convertir a array con promedio
+        const promedios = Object.keys(incidenciaPorFuente).map(fuenteId => ({
+            fuenteId: fuenteId,
+            averageIncidencia: incidenciaPorFuente[fuenteId].sum / incidenciaPorFuente[fuenteId].count,
+            count: incidenciaPorFuente[fuenteId].count
+        }));
+
+        return promedios;
     }
 
-    getRelacionesPorFuenteYContaminante(fuenteId, contaminante) {
-        if (!this.stationsPermitsMatrix) return [];
-
-        let relaciones = this.stationsPermitsMatrix.filter(rel =>
-            rel.IDEmpresa === fuenteId && rel.DistanciaKm <= 15
-        );
-
-        if (contaminante) {
-            relaciones = relaciones.filter(rel => rel.Variable === contaminante);
+    createIncidenciaScales(promedios) {
+        if (!promedios || promedios.length === 0) {
+            return;
         }
 
-        return relaciones;
-    }
+        const valores = promedios.map(d => d.averageIncidencia);
 
-    filtrarRelacionesPorEstacionesActivas(relaciones) {
-        if (this.activeStations.length === 0) return [];
-        return relaciones.filter(rel =>
-            this.activeStations.includes(rel.IDEstación)
+        const maxRadius = 12;
+        const minRadius = 3;
+        const niveles = 4;
+        const radios = d3.range(niveles).map(i =>
+            minRadius + (i / (niveles - 1)) * (maxRadius - minRadius)
         );
+
+        this.incidenciaRadiusScale = d3.scaleQuantize()
+            .domain([0, d3.max(valores)])
+            .range(radios);
+
     }
 
-    dibujarFuenteDividida(group, relacionesActivas) {
-        if (relacionesActivas.length === 0) return;
-
-        const estacionesUnicas = [...new Set(relacionesActivas.map(r => r.IDEstación))];
-        const numEstaciones = estacionesUnicas.length;
-
-        // TAMAÑO CONSTANTE para todas las fuentes - 3px en zoom normal
-        const baseRadius = 1.5;
-
-        if (numEstaciones === 1) {
-            const estacionId = estacionesUnicas[0];
-            group.append('circle')
-                .attr('r', baseRadius)
-                .attr('fill', this.stationColorScale(estacionId))
-                .attr('stroke', '#fff')
-                .attr('stroke-width', 0.4);
-        } else {
-            const anguloPorcion = (2 * Math.PI) / numEstaciones;
-
-            estacionesUnicas.forEach((estacionId, index) => {
-                const startAngle = index * anguloPorcion;
-                const endAngle = (index + 1) * anguloPorcion;
-
-                const x1 = baseRadius * Math.cos(startAngle);
-                const y1 = baseRadius * Math.sin(startAngle);
-                const x2 = baseRadius * Math.cos(endAngle);
-                const y2 = baseRadius * Math.sin(endAngle);
-
-                const largeArc = (endAngle - startAngle) > Math.PI ? 1 : 0;
-
-                const pathData = [
-                    `M 0 0`,
-                    `L ${x1} ${y1}`,
-                    `A ${baseRadius} ${baseRadius} 0 ${largeArc} 1 ${x2} ${y2}`,
-                    `Z`
-                ].join(' ');
-
-                group.append('path')
-                    .attr('d', pathData)
-                    .attr('fill', this.stationColorScale(estacionId))
-                    .attr('stroke', '#fff')
-                    .attr('stroke-width', 0.4);
-            });
-        }
-    }
-
-    showTooltip(event, data, type) {
+    showTooltip(event, data, type, incidenciaData = null) {
         let content = '';
 
         if (type === 'estacion') {
             content = `
                 <div style="font-weight: bold; color: #4ecdc4; margin-bottom: 5px;">Estación ${data.id}</div>
-                <div>Latitud: ${data.latitude.toFixed(4)}</div>
-                <div>Longitud: ${data.longitude.toFixed(4)}</div>
+                <div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Variables medidas:</div>
+                <div style="margin-top: 4px;">
+                    ${(this.variablesOfStation[data.id] || []).map(v => 
+                        `<div style="margin-left: 10px; font-size: 11px;">• ${v}</div>`
+                    ).join('') || '<div style="margin-left: 10px; font-size: 11px;">N/A</div>'}
+                </div>
             `;
         } else if (type === 'fuente') {
-            const relaciones = this.getRelacionesPorFuenteYContaminante(data.ID, this.contaminanteSeleccionado);
-            const relacionesActivas = this.filtrarRelacionesPorEstacionesActivas(relaciones);
-            let relacionesHTML = '';
-
-            if (relacionesActivas.length > 0) {
-                relacionesHTML = `<div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Estaciones relacionadas${this.contaminanteSeleccionado ? ` (${this.contaminanteSeleccionado})` : ''}:</div>`;
-                const agrupadas = this.agruparRelacionesPorEstacion(relacionesActivas);
-
-                agrupadas.forEach(rel => {
-                    relacionesHTML += `
-                        <div style="margin-top: 4px;">
-                            <div>• Estación ${rel.estacionId}: ${rel.distancia.toFixed(2)} km</div>
-                            ${rel.variable ? `<div style="margin-left: 10px; font-size: 11px;">Variable: ${rel.variable}</div>` : ''}
-                            ${rel.incidencia ? `<div style="margin-left: 10px; font-size: 11px;">Incidencia: ${rel.incidencia}</div>` : ''}
-                        </div>
-                    `;
-                });
-            } else {
-                relacionesHTML = `<div style="margin-top: 8px; font-style: italic; color: #ccc;">No hay estaciones relacionadas${this.contaminanteSeleccionado ? ` para ${this.contaminanteSeleccionado}` : ''}</div>`;
-            }
-
             content = `
                 <div style="font-weight: bold; color: #ff6b6b; margin-bottom: 5px;">${data.TipoFuenteEmision}</div>
                 <div>Expediente: ${data.IDExpediente}</div>
                 <div>Combustible: ${data.TipoCombustible}</div>
                 <div>Estado: ${data.Estado}</div>
-                ${relacionesHTML}
+                ${incidenciaData ? `
+                    <div style="margin-top: 8px; font-weight: bold; color: #ffd93d;">Incidencia Promedio: ${incidenciaData.averageIncidencia.toFixed(4)}</div>
+                    <div style="font-size: 11px;">Basado en ${incidenciaData.count} relaciones</div>
+                ` : ''}
+                ${this.contaminanteSeleccionado ? `<div style="font-size: 11px;">Contaminante: ${this.contaminanteSeleccionado}</div>` : ''}
             `;
         }
 
@@ -494,26 +561,6 @@ class MapManager {
             .style('opacity', 1);
 
         this.moveTooltip(event);
-    }
-
-    agruparRelacionesPorEstacion(relaciones) {
-        const agrupadas = [];
-        const estacionesUnicas = [...new Set(relaciones.map(r => r.IDEstación))];
-
-        estacionesUnicas.forEach(estacionId => {
-            const relsEstacion = relaciones.filter(r => r.IDEstación === estacionId);
-            const mejorRel = relsEstacion.reduce((prev, current) =>
-                (prev.DistanciaKm < current.DistanciaKm) ? prev : current
-            );
-            agrupadas.push({
-                estacionId: estacionId,
-                distancia: mejorRel.DistanciaKm,
-                variable: mejorRel.Variable,
-                incidencia: mejorRel.Incidencia
-            });
-        });
-
-        return agrupadas;
     }
 
     hideTooltip() {
@@ -524,6 +571,100 @@ class MapManager {
         this.tooltip
             .style('left', (event.pageX + 15) + 'px')
             .style('top', (event.pageY - 15) + 'px');
+    }
+
+    drawLegend() {
+        // Limpiar leyendas anteriores
+        if (this.legendLeft) this.legendLeft.selectAll('*').remove();
+        if (this.legendRight) this.legendRight.selectAll('*').remove();
+
+        this.drawStationLegend();
+
+        this.drawFuenteLegend();
+    }
+
+    drawStationLegend() {
+        if (!this.legendLeft) return;
+        
+        this.legendLeft.selectAll('*').remove();
+        
+        // Título
+        this.legendLeft.append('text')
+            .attr('x', 0)
+            .attr('y', 20)
+            .text('Estación:')
+            .style('font-size', '14px')
+            .style('font-weight', 'bold')
+            .style('fill', '#333');
+        
+        // Triángulo
+        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(100);
+        
+        this.legendLeft.append('path')
+            .attr('d', triangleSymbol)
+            .attr('transform', 'translate(80, 17)')
+            .attr('fill', this.stationColorScale(this.stationsData[0]?.id || '1'))
+            .attr('stroke', '#fff')
+            .attr('stroke-width', 0.6);
+    }
+
+    drawFuenteLegend() {
+        if (!this.legendRight) return;
+        
+        this.legendRight.selectAll('*').remove();
+        
+        // Título
+        this.legendRight.append('text')
+            .attr('x', 0)
+            .attr('y', 20)
+            .text('Incidencia de la fuente:')
+            .style('font-size', '14px')
+            .style('font-weight', 'bold')
+            .style('fill', '#333');
+        
+        if (!this.incidenciaRadiusScale) return;
+        
+        // Obtener los tamaños únicos del range de la escala
+        const radios = this.incidenciaRadiusScale.range();
+        const uniqueRadios = [...new Set(radios)].sort((a, b) => a - b);
+        
+        // Obtener los umbrales de la escala
+        const thresholds = this.incidenciaRadiusScale.thresholds();
+        const domain = this.incidenciaRadiusScale.domain();
+        
+        // Dibujar círculos de menor a mayor en línea horizontal
+        let offsetX = 180;
+        uniqueRadios.forEach((radio, i) => {
+            // Círculo primero
+            this.legendRight.append('circle')
+                .attr('cx', offsetX + radio)
+                .attr('cy', 15)
+                .attr('r', radio)
+                .attr('fill', '#ff7f0f')
+                .attr('stroke', '#fff')
+                .attr('stroke-width', 0.8)
+                .attr('opacity', 0.8);
+            
+            // Texto del rango después del círculo
+            let rangoTexto = '';
+            if (i === 0) {
+                rangoTexto = `0-${thresholds[0]?.toFixed(2) || domain[1].toFixed(2)}`;
+            } else if (i === uniqueRadios.length - 1) {
+                rangoTexto = `${thresholds[i-1]?.toFixed(2) || 0}+`;
+            } else {
+                rangoTexto = `${thresholds[i-1]?.toFixed(2)}-${thresholds[i]?.toFixed(2)}`;
+            }
+            
+            this.legendRight.append('text')
+                .attr('x', offsetX + radio * 2 + 8)
+                .attr('y', 20)
+                .text(rangoTexto)
+                .style('font-size', '13px')
+                .style('fill', '#666');
+            
+            const textoWidth = rangoTexto.length * 7.5;
+            offsetX += radio * 2 + textoWidth + 20;
+        });
     }
 
     setupControls() {
@@ -578,7 +719,8 @@ class MapManager {
 
         this.g.selectAll('.fuente-group').remove();
         this.g.selectAll('.estacion-punto').remove();
-        this.drawStations();
         this.drawFuentes();
+        this.drawStations();
+        this.drawLegend();
     }
 }
