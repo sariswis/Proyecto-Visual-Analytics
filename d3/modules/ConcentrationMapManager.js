@@ -47,7 +47,7 @@ class ConcentrationMapManager {
         this.setupZoom();
         this.drawMap();
         this.setupControls();
-
+        this.setupScale();
         return this;
     }
 
@@ -165,6 +165,7 @@ class ConcentrationMapManager {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);
                 
+                this.updateScale();
                 this.scaleMarkers(event.transform.k);
                 
                 if (!this.isApplyingExternalTransform && typeof this.onTransformChange === 'function') {
@@ -794,5 +795,126 @@ class ConcentrationMapManager {
 
         console.log(`Promedios calculados para ${contaminante}:`, promedios);
         return promedios;
+    }
+
+    setupScale() {
+        // Creamos un grupo para la escala. 
+        this.scaleGroup = this.svg.append('g')
+            .attr('class', 'map-scale-container')
+            .attr('transform', `translate(${this.viewWidth - 120}, ${this.viewHeight - 230})`); // Posición: Abajo a la derecha
+
+        // Fondo semi-transparente (opcional, para legibilidad)
+        this.scaleGroup.append('rect')
+            .attr('class', 'scale-bg')
+            .attr('fill', 'rgba(255, 255, 255, 0.7)')
+            .attr('height', 20)
+            .attr('y', -15);
+
+        // La barra de escala (línea negra)
+        this.scaleGroup.append('rect')
+            .attr('class', 'scale-bar')
+            .attr('height', 4)
+            .attr('y', 0)
+            .attr('fill', '#333');
+
+        // Línea de borde
+        this.scaleGroup.append('line')
+            .attr('class', 'scale-tick-left')
+            .attr('stroke', '#333')
+            .attr('stroke-width', 2)
+            .attr('y1', -4)
+            .attr('y2', 4)
+            .attr('x1', 0)
+            .attr('x2', 0);
+            
+        this.scaleGroup.append('line')
+            .attr('class', 'scale-tick-right')
+            .attr('stroke', '#333')
+            .attr('stroke-width', 2)
+            .attr('y1', -4)
+            .attr('y2', 4);
+
+        // El texto de la distancia
+        this.scaleGroup.append('text')
+            .attr('class', 'scale-text')
+            .attr('y', -8)
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', '10px')
+            .attr('fill', '#333')
+            .style('font-weight', 'bold');
+            
+        this.updateScale();
+    }
+
+    updateScale() {
+        if (!this.projection || !this.currentTransform) return;
+
+        // 1. Definimos un ancho objetivo en píxeles
+        const targetPixelWidth = 100;
+
+        // 2. Obtenemos dos puntos en el centro del mapa para minimizar distorsión
+        // Necesitamos invertir la transformación del zoom para obtener coordenadas originales del SVG
+        const centerX = this.viewWidth / 2;
+        const centerY = this.viewHeight / 2;
+        
+        // Convertimos coordenadas de pantalla -> coordenadas de proyección base (sin zoom)
+        // La fórmula es: (punto_pantalla - translate) / scale
+        const p1x = (centerX - this.currentTransform.x) / this.currentTransform.k;
+        const p2x = (centerX + targetPixelWidth - this.currentTransform.x) / this.currentTransform.k;
+        
+        // Coordenada Y constante (usamos el centro)
+        const py = (centerY - this.currentTransform.y) / this.currentTransform.k;
+
+        // 3. Invertimos la proyección para obtener Lat/Lon
+        const coords1 = this.projection.invert([p1x, py]);
+        const coords2 = this.projection.invert([p2x, py]);
+
+        if (!coords1 || !coords2) return;
+
+        // 4. Calculamos distancia real en Kilómetros usando d3.geoDistance (devuelve radianes) * Radio Tierra
+        const distanceKm = d3.geoDistance(coords1, coords2) * 6371;
+
+        // 5. Lógica de "Números Bonitos" (Rounding)
+        // Queremos mostrar 10km, 20km, 50km, no 34.56km
+        let displayDistance = distanceKm;
+        let suffix = 'km';
+
+        // Ajuste si es muy pequeña (metros)
+        if (distanceKm < 1) {
+            displayDistance = distanceKm * 1000;
+            suffix = 'm';
+        }
+
+        // Algoritmo para encontrar el "número bonito" más cercano (1, 2, 5, 10...)
+        const magnitude = Math.pow(10, Math.floor(Math.log10(displayDistance)));
+        const residual = displayDistance / magnitude;
+        
+        let niceValue;
+        if (residual >= 5) niceValue = 5 * magnitude;
+        else if (residual >= 2) niceValue = 2 * magnitude;
+        else niceValue = 1 * magnitude;
+
+        // 6. Recalcular el ancho en píxeles exacto para ese "número bonito"
+        // Regla de tres: Si 'distanceKm' son 'targetPixelWidth' px, entonces 'niceValue' son 'X' px
+        // Nota: convertimos niceValue a km si estaba en m para la proporción
+        const niceValueInKm = suffix === 'm' ? niceValue / 1000 : niceValue;
+        const finalPixelWidth = (niceValueInKm * targetPixelWidth) / distanceKm;
+
+        // 7. Actualizar el DOM
+        this.scaleGroup.select('.scale-bar')
+            .attr('width', finalPixelWidth);
+            
+        this.scaleGroup.select('.scale-bg')
+            .attr('width', finalPixelWidth + 10) // Un poco de padding
+            .attr('x', -5);
+
+        this.scaleGroup.select('.scale-tick-right')
+            .attr('x1', finalPixelWidth)
+            .attr('x2', finalPixelWidth);
+
+        this.scaleGroup.select('.scale-text')
+            .text(`${niceValue} ${suffix}`)
+            .attr('x', finalPixelWidth / 2) // Centrar texto
+            .attr('text-anchor', 'middle');
     }
 }
