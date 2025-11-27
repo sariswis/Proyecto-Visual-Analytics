@@ -74,7 +74,7 @@ class MapManager {
             .append('div')
             .attr('class', 'view-switch-container')
             .style('position', 'absolute')
-            .style('bottom', '85px')
+            .style('bottom', '60px')
             .style('right', '10px')
             .style('z-index', '1000')
             .style('background', 'rgba(255,255,255,0.95)')
@@ -86,11 +86,11 @@ class MapManager {
 
         // Título del switch
         this.viewSwitch.append('span')
-            .style('font-size', '11px')
+            .style('font-size', '14px')
             .style('font-weight', 'bold')
             .style('margin-right', '6px')
             .style('color', '#333')
-            .text('Vista:');
+            .text('Ver:');
 
         // Botones de switch
         const buttonGroup = this.viewSwitch.append('div')
@@ -101,12 +101,12 @@ class MapManager {
             .attr('class', 'view-btn incidence-view')
             .text('Incidencia')
             .style('padding', '3px 10px')
-            .style('border', '1px solid #007bff')
-            .style('background', '#007bff')
+            .style('border', '1px solid #616970')
+            .style('background', '#616970')
             .style('color', 'white')
             .style('border-radius', '12px 0 0 12px')
             .style('cursor', 'pointer')
-            .style('font-size', '10px')
+            .style('font-size', '13px')
             .style('outline', 'none')
             .style('font-family', 'Poppins, sans-serif')
             .on('click', () => {
@@ -118,12 +118,12 @@ class MapManager {
             .attr('class', 'view-btn relations-view')
             .text('Relaciones')
             .style('padding', '3px 10px')
-            .style('border', '1px solid #6c757d')
+            .style('border', '1px solid #616970')
             .style('background', '#fff')
-            .style('color', '#6c757d')
+            .style('color', '#616970')
             .style('border-radius', '0 12px 12px 0')
             .style('cursor', 'pointer')
-            .style('font-size', '10px')
+            .style('font-size', '13px')
             .style('outline', 'none')
             .style('margin-left', '-1px')
             .style('font-family', 'Poppins, sans-serif')
@@ -140,13 +140,13 @@ class MapManager {
         // Actualizar estilos de botones
         d3.selectAll('.view-btn')
             .style('background', '#fff')
-            .style('color', '#6c757d')
-            .style('border', '1px solid #6c757d');
+            .style('color', '#616970')
+            .style('border', '1px solid #616970');
 
         d3.select(`.${viewType}-view`)
-            .style('background', '#007bff')
+            .style('background', '#616970')
             .style('color', 'white')
-            .style('border', '1px solid #007bff');
+            .style('border', '1px solid #616970');
 
         // Redibujar fuentes y leyenda
         this.g.selectAll('.fuente-group').remove();
@@ -501,13 +501,11 @@ class MapManager {
         // Quitar resaltado anterior
         this.g.selectAll('.estacion-punto')
             .attr('stroke-width', 0.6)
-            .attr('stroke', '#fff');
 
         // Resaltar estación seleccionada
         this.g.selectAll('.estacion-punto')
             .filter(d => d.id === stationId)
-            .attr('stroke-width', 2)
-            .attr('stroke', '#ff0000');
+            .attr('stroke-width', 1.2)
     }
 
     // CAMBIO 5: Método para limpiar filtro temporal
@@ -982,7 +980,7 @@ class MapManager {
             .text('Estación:')
             .style('font-size', '14px')
             .style('font-weight', 'bold')
-            .style('fill', '#333')
+            .style('fill', '#000000')
             .style('pointer-events', 'none');
         
         // Triángulo
@@ -1009,7 +1007,7 @@ class MapManager {
             .text(this.contaminanteSeleccionado == 'WDS' ? 'Influencia en la fuente:' : 'Incidencia de la fuente:')
             .style('font-size', '14px')
             .style('font-weight', 'bold')
-            .style('fill', '#333')
+            .style('fill', '#000000')
             .style('pointer-events', 'none');
         
         if (!this.incidenciaRadiusScale) return;
@@ -1048,7 +1046,7 @@ class MapManager {
                 .attr('y', 20)
                 .text(rangoTexto)
                 .style('font-size', '13px')
-                .style('fill', '#666')
+                .style('fill', '#333')
                 .style('pointer-events', 'none');
             
             const textoWidth = rangoTexto.length * 7.5;
@@ -1065,18 +1063,26 @@ class MapManager {
         this.legendRight.append('text')
             .attr('x', 0)
             .attr('y', 20)
-            .text('Relaciones: cada porción = estación')
+            .text('Relaciones de la fuente:')
             .style('font-size', '14px')
             .style('font-weight', 'bold')
+            .style('fill', '#000000')
+            .style('pointer-events', 'none');
+
+        this.legendRight.append('text')
+            .attr('x', 175)
+            .attr('y', 20)
+            .text('Cada porción es una estación afectada')
+            .style('font-size', '14px')
             .style('fill', '#333')
             .style('pointer-events', 'none');
         
         // Ejemplo visual de torta más compacto
         const ejemploGroup = this.legendRight.append('g')
-            .attr('transform', 'translate(280, 12)');
+            .attr('transform', 'translate(480, 12)');
         
         // Dibujar una torta de ejemplo con 3 porciones usando el radio fijo reducido
-        const baseRadius = 6;
+        const baseRadius = 13;
         const anguloPorcion = (2 * Math.PI) / 3;
         
         [0, 1, 2].forEach(index => {
@@ -1150,6 +1156,21 @@ class MapManager {
                     .on('mouseover', null)
                     .on('mouseout', null)
                     .on('mousemove', null)
+            }
+        });
+
+        d3.select('#show-roads').on('mouseover', (event) => { 
+            if (!this.tooltip) this.setupTooltip();
+            this.tooltip
+                .style('opacity', 1)
+                .html('<div>Mostrar/Ocultar Malla Vial</div>');
+
+            this.moveTooltip(event)
+        });
+
+        d3.select('#show-roads').on('mouseout', (event) => { 
+            if (this.tooltip) {
+                this.tooltip.style('opacity', 0);
             }
         });
     }

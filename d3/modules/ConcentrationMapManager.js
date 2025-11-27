@@ -94,10 +94,10 @@ class ConcentrationMapManager {
 
         // Grupos para las leyendas (izquierda y derecha)
         this.legendLeft = this.legendBanner.append('g')
-            .attr('transform', 'translate(50, 20)');
+            .attr('transform', 'translate(25, 20)');
 
         this.legendRight = this.legendBanner.append('g')
-            .attr('transform', 'translate(290, 20)');
+            .attr('transform', 'translate(270, 20)');
     }
 
     setupTooltip() {
@@ -122,6 +122,12 @@ class ConcentrationMapManager {
             .style('max-width', '300px')
             .style('line-height', '1.4')
             .style('backdrop-filter', 'blur(2px)');
+    }
+
+    moveTooltip(event) {
+        this.tooltip
+            .style('left', (event.pageX + 15) + 'px')
+            .style('top', (event.pageY - 15) + 'px');
     }
 
     setupProjection() {
@@ -344,6 +350,21 @@ class ConcentrationMapManager {
                     .on('mousemove', null);
             }
 
+        });
+
+        d3.select('#concentration-show-roads').on('mouseover', (event) => { 
+            if (!this.tooltip) this.setupTooltip();
+            this.tooltip
+                .style('opacity', 1)
+                .html('<div>Mostrar/Ocultar Malla Vial</div>');
+
+            this.moveTooltip(event)
+        });
+
+        d3.select('#concentration-show-roads').on('mouseout', () => { 
+            if (this.tooltip) {
+                this.tooltip.style('opacity', 0);
+            }
         });
     }
 
@@ -600,8 +621,8 @@ class ConcentrationMapManager {
             .attr('y', 12)
             .text(this.contaminanteSeleccionado == 'WDS' ? 'Categorías por niveles' : 'Categorías por concentración')
             .style('font-family', 'Poppins, sans-serif')
-            .style('font-size', '12px')
-            .style('font-weight', '600')
+            .style('font-size', '14px')
+            .style('font-weight', 'bold')
             .style('fill', '#000000');
 
         if (!this.colorScale) return;
@@ -616,14 +637,14 @@ class ConcentrationMapManager {
 
         colors.forEach((color, i) => {
             const item = colorLegend.append('g')
-                .attr('transform', `translate(0, ${24 + i * 22})`);
+                .attr('transform', `translate(0, ${30 + i * 24})`);
 
             // Cuadrado de color SIN BORDE
             item.append('rect')
                 .attr('x', 0)
                 .attr('y', 0)
-                .attr('width', 14)
-                .attr('height', 14)
+                .attr('width', 16)
+                .attr('height', 16)
                 .attr('fill', color)
                 .attr('stroke-width', 0.4)
                 .attr('stroke', '#333');
@@ -634,8 +655,8 @@ class ConcentrationMapManager {
                 .attr('y', 11)
                 .text(labels[i])
                 .style('font-family', 'Poppins, sans-serif')
-                .style('font-size', '11px')
-                .style('fill', '#000000')
+                .style('font-size', '13px')
+                .style('fill', '#333')
                 .style('font-weight', '400');
         });
     }
@@ -648,8 +669,8 @@ class ConcentrationMapManager {
             .attr('y', 12)
             .text(this.contaminanteSeleccionado == 'WDS' ? `Tamaño por niveles (${unit})` : `Tamaño por concentración (${unit})`)
             .style('font-family', 'Poppins, sans-serif')
-            .style('font-size', '12px')
-            .style('font-weight', '600')
+            .style('font-size', '14px')
+            .style('font-weight', 'bold')
             .style('fill', '#000000');
 
         if (!this.radiusScale) return;
@@ -663,7 +684,7 @@ class ConcentrationMapManager {
             `> ${domain[2]}`
         ];
 
-        const rowStartY = 22;  
+        const rowStartY = 28;  
         const rowGap = 40;   
         const offsetX = 0;  
 
@@ -686,8 +707,8 @@ class ConcentrationMapManager {
                 .attr('y', 13)
                 .text(labels[i])
                 .style('font-family', 'Poppins, sans-serif')
-                .style('font-size', '11px')
-                .style('fill', '#000000')
+                .style('font-size', '13px')
+                .style('fill', '#333')
                 .style('font-weight', '400');
         });
     }
@@ -839,7 +860,7 @@ class ConcentrationMapManager {
             .attr('class', 'scale-text')
             .attr('y', -8)
             .attr('font-family', 'sans-serif')
-            .attr('font-size', '10px')
+            .attr('font-size', '11px')
             .attr('fill', '#333')
             .style('font-weight', 'bold');
             
