@@ -94,7 +94,7 @@ class Dashboard {
                 this.variablesChartManager.updateData(contaminante, activeStations);
 
                 // Actualizar comparativo anual
-                this.comparisonChartManager.updateData(contaminante);
+                this.comparisonChartManager.updateData(contaminante, activeStations);
             });
 
         } catch (error) {
