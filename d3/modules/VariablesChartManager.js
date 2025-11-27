@@ -242,10 +242,10 @@ class VariablesChartManager {
             .attr('font-size', 12)
             .attr('transform', `rotate(-90)`)
             .attr('x', -this.height / 2)
-            .attr('y', -45);
+            .attr('y', -48);
 
         this.yAxisLabel
-            .text('Unidad (' + (filteredData[0]?.unit_measurement || '') + ')');
+            .text('Mediciones promedio (' + (filteredData[0]?.unit_measurement || '') + ')');
 
         const grid = this.gridGroup.selectAll('.grid-line')
             .data(this.yScale.ticks(6));
@@ -426,7 +426,7 @@ class VariablesChartManager {
             .style('opacity', 1)
             .html(`
                 <strong>Estación ${dataPoint.station}</strong><br>
-                ${variable}: ${valueFormat(dataPoint.value)}<br>
+                Promedio: ${valueFormat(dataPoint.value)}<br>
                 ${monthLabel} · ${periodLabel}
             `);
 

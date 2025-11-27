@@ -172,10 +172,10 @@ class ComparisonChartManager {
                 .attr("font-size", 12)
                 .attr("transform", `rotate(-90)`)
                 .attr("x", -this.height / 2)
-                .attr("y", -45);
+                .attr("y", -48);
 
         this.yAxisLabel.text(
-            "Unidad (" + (filtered[0]?.unit_measurement || "") + ")"
+            "Mediciones promedio (" + (filtered[0]?.unit_measurement || "") + ")"
         );
 
         const grid = this.gridGroup
