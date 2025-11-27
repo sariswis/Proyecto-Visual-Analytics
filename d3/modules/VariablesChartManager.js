@@ -10,6 +10,11 @@ class VariablesChartManager {
         this.monthLabels = ['Ene', 'Feb', 'Mar', 'Abr', 'May'];
         this.usesExternalColors = false;
 
+        // Estados de interacción
+        this.highlightedStation = null;
+        this.inactiveStations = new Set();
+        this.isHighlightMode = false;
+
         this.initChart();
         window.addEventListener('resize', () => this.handleResize());
     }
@@ -35,6 +40,11 @@ class VariablesChartManager {
         }
 
         this.svg.attr('preserveAspectRatio', 'xMidYMid meet');
+
+        // Overlay para capturar clicks fuera de las líneas
+        this.overlayGroup = this.svg.append('g')
+            .attr('class', 'overlay-group')
+            .style('pointer-events', 'all');
 
         this.chartGroup = this.svg.append('g');
         this.gridGroup = this.chartGroup.append('g').attr('class', 'grid-group');
@@ -71,8 +81,39 @@ class VariablesChartManager {
         this.chartGroup.attr('transform', `translate(${this.margin.left},${this.margin.top})`);
         this.xAxisGroup.attr('transform', `translate(0,${this.height})`);
 
+        // Actualizar overlay
+        this.overlayGroup.selectAll('*').remove();
+        this.overlayGroup.append('rect')
+            .attr('width', fullWidth)
+            .attr('height', fullHeight)
+            .attr('fill', 'transparent')
+            .on('click', (event) => {
+                this.resetHighlight();
+            });
+
         this.xScale.range([0, this.width]);
         this.yScale.range([this.height, 0]);
+    }
+
+    resetHighlight() {
+        this.highlightedStation = null;
+        this.isHighlightMode = false;
+        this.updateData(this.lastVariable, this.lastStations, true);
+    }
+
+    toggleStation(station) {
+        if (this.inactiveStations.has(station)) {
+            this.inactiveStations.delete(station);
+        } else {
+            this.inactiveStations.add(station);
+        }
+        this.updateData(this.lastVariable, this.lastStations, true);
+    }
+
+    handleLineClick(station) {
+        this.highlightedStation = station;
+        this.isHighlightMode = true;
+        this.updateData(this.lastVariable, this.lastStations, true);
     }
 
     init(measurementsData, stationColorScale = null) {
@@ -154,9 +195,15 @@ class VariablesChartManager {
 
         this.hideMessage();
 
-        const allValues = aggregated.flatMap(series => series.values.map(v => v.value).filter(v => v !== null));
+        // Filtrar aggregated para excluir estaciones inactivas
+        const filteredAggregated = aggregated.filter(series => 
+            !this.inactiveStations.has(series.station)
+        );
+
+        const allValues = filteredAggregated.flatMap(series => series.values.map(v => v.value).filter(v => v !== null));
 
         this.yScale.domain([0, (d3.max(allValues) || 1) * 1.1]).nice();
+        
         const aggregatedStations = aggregated.map(series => series.station);
         if (!this.usesExternalColors) {
             this.colorScale.domain(aggregatedStations);
@@ -174,7 +221,7 @@ class VariablesChartManager {
         const yAxis = d3.axisLeft(this.yScale).ticks(6);
 
         this.xAxisGroup.call(xAxis);
-
+        
         // Eje X
         this.xAxisLabel = this.xAxisLabel || this.chartGroup.append('text')
         .attr('class', 'x-axis-label')
@@ -220,25 +267,43 @@ class VariablesChartManager {
             .y(d => this.yScale(d.value))
             .curve(d3.curveMonotoneX);
 
+        // Usar filteredAggregated para las líneas y puntos
         const lines = this.linesGroup.selectAll('.station-line')
-            .data(aggregated, d => d.station);
+            .data(filteredAggregated, d => d.station);
 
-        lines.enter()
+        const linesEnter = lines.enter()
             .append('path')
             .attr('class', 'station-line')
             .attr('fill', 'none')
             .attr('stroke-width', 2)
             .attr('stroke', d => this.colorScale(d.station))
             .attr('d', d => lineGenerator(d.values))
-            .merge(lines)
+            .on('click', (event, d) => {
+                event.stopPropagation();
+                this.handleLineClick(d.station);
+            });
+
+        lines.merge(linesEnter)
             .transition()
             .duration(600)
             .attr('stroke', d => this.colorScale(d.station))
+            .attr('stroke-width', d => {
+                if (this.isHighlightMode) {
+                    return d.station === this.highlightedStation ? 3 : 1;
+                }
+                return 2;
+            })
+            .attr('opacity', d => {
+                if (this.isHighlightMode) {
+                    return d.station === this.highlightedStation ? 1 : 0.3;
+                }
+                return 1;
+            })
             .attr('d', d => lineGenerator(d.values));
 
         lines.exit().remove();
 
-        const pointsData = aggregated.flatMap(series =>
+        const pointsData = filteredAggregated.flatMap(series =>
             series.values
                 .filter(v => v.value !== null)
                 .map(v => ({
@@ -251,7 +316,7 @@ class VariablesChartManager {
         const points = this.pointsGroup.selectAll('.station-point')
             .data(pointsData, d => `${d.station}-${d.month}`);
 
-        points.enter()
+        const pointsEnter = points.enter()
             .append('circle')
             .attr('class', 'station-point')
             .attr('r', 3)
@@ -261,15 +326,33 @@ class VariablesChartManager {
             .on('mouseenter', (event, d) => this.showTooltip(event, d, variable))
             .on('mousemove', (event, d) => this.moveTooltip(event))
             .on('mouseleave', () => this.hideTooltip())
-            .merge(points)
+            .on('click', (event, d) => {
+                event.stopPropagation();
+                this.handleLineClick(d.station);
+            });
+
+        points.merge(pointsEnter)
             .transition()
             .duration(600)
             .attr('cx', d => this.xScale(d.month))
             .attr('cy', d => this.yScale(d.value))
-            .attr('fill', d => this.colorScale(d.station));
+            .attr('fill', d => this.colorScale(d.station))
+            .attr('r', d => {
+                if (this.isHighlightMode) {
+                    return d.station === this.highlightedStation ? 5 : 2;
+                }
+                return 3;
+            })
+            .attr('opacity', d => {
+                if (this.isHighlightMode) {
+                    return d.station === this.highlightedStation ? 1 : 0.3;
+                }
+                return 1;
+            });
 
         points.exit().remove();
 
+        // Renderizar leyenda con TODAS las estaciones que tienen datos (aggregated)
         this.renderLegend(aggregated);
     }
 
@@ -288,27 +371,44 @@ class VariablesChartManager {
 
         const legendEnter = legendItems.enter()
             .append('g')
-            .attr('class', 'legend-item');
+            .attr('class', 'legend-item')
+            .style('cursor', 'pointer')
+            .on('click', (event, d) => {
+                event.stopPropagation();
+                this.toggleStation(d.station);
+            });
 
+        // CORRECCIÓN: Cuadro transparente para estaciones inactivas
         legendEnter.append('rect')
             .attr('width', 10)
             .attr('height', 10)
             .attr('rx', 3)
             .attr('ry', 3)
-            .attr('fill', d => this.colorScale(d.station));
+            .attr('fill', d => this.inactiveStations.has(d.station) ? 'transparent' : this.colorScale(d.station))
+            // Añadir borde para estaciones inactivas para que sean visibles
+            .attr('stroke', d => this.inactiveStations.has(d.station) ? '#999' : 'none')
+            .attr('stroke-width', d => this.inactiveStations.has(d.station) ? 1 : 0);
 
+        // CORRECCIÓN: Mejor alineación vertical del texto
         legendEnter.append('text')
             .attr('x', 16)
-            .attr('y', 8)
+            .attr('y', 2.5) // Centrado verticalmente con el cuadro de 10px
+            .attr('dy', '0.35em') // Ajuste fino para centrado vertical perfecto
             .text(d => `Estación ${d.station}`)
             .attr('font-family', 'Poppins, sans-serif')
             .attr('font-size', 11)
-            .attr('fill', '#333');
+            .attr('fill', d => this.inactiveStations.has(d.station) ? '#999' : '#333');
 
         const merged = legendEnter.merge(legendItems);
 
-        merged.select('rect').attr('fill', d => this.colorScale(d.station));
-        merged.select('text').text(d => `Estación ${d.station}`);
+        merged.select('rect')
+            .attr('fill', d => this.inactiveStations.has(d.station) ? 'transparent' : this.colorScale(d.station))
+            .attr('stroke', d => this.inactiveStations.has(d.station) ? '#999' : 'none')
+            .attr('stroke-width', d => this.inactiveStations.has(d.station) ? 1 : 0);
+
+        merged.select('text')
+            .text(d => `Estación ${d.station}`)
+            .attr('fill', d => this.inactiveStations.has(d.station) ? '#999' : '#333');
 
         merged.attr('transform', (_, i) => `translate(0, ${i * spacing})`);
 
