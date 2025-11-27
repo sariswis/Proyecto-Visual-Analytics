@@ -30,7 +30,7 @@ class MapManager {
         this.projection = null;
         this.incidenciaRadiusScale = null;
         this.legendBanner = null;
-        this.bannerHeight = 75;
+        this.bannerHeight = 55;
         
         // Switch entre visualizaciones
         this.currentView = 'incidence'; // 'incidence' o 'relations'
@@ -152,6 +152,7 @@ class MapManager {
         this.g.selectAll('.fuente-group').remove();
         this.g.selectAll('.fuente-circle').remove();
         this.drawFuentes();
+        this.drawStations();
         this.drawLegend();
     }
 
@@ -187,7 +188,7 @@ class MapManager {
     setupSVG() {
         this.svg = d3.select(this.containerId);
         const width = 735;
-        const height = 350;
+        const height = 460;
 
         this.svg
             .attr('width', width)
@@ -210,7 +211,7 @@ class MapManager {
 
     setupLegendBanner() {
         const width = 735;
-        const height = 385;
+        const height = 460;
 
         const bannerY = height - this.bannerHeight;
 
@@ -257,7 +258,7 @@ class MapManager {
 
         try {
             const width = 735;
-            const height = 385;
+            const height = 400;
 
             this.projection = d3.geoMercator()
                 .fitSize([width, height], this.geoData);
@@ -396,11 +397,11 @@ class MapManager {
                 this.clearTemporaryFilter();
             });
 
-        // Dibujar estaciones
-        this.drawStations();
-
         // Dibujar fuentes según la vista actual
         this.drawFuentes();
+        
+            // Dibujar estaciones
+        this.drawStations();
 
         // CAMBIO: Agregar rectángulo invisible para capturar clics en áreas vacías
         this.g.append('rect')

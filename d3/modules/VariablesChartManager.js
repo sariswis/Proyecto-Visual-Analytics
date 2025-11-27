@@ -2,7 +2,7 @@ class VariablesChartManager {
     constructor(selector) {
         this.selector = selector;
         this.svg = d3.select(selector);
-        this.margin = { top: 48, right: 150, bottom: 55, left: 70 };
+        this.margin = { top: 65, right: 150, bottom: 55, left: 70 };
         this.data = [];
         this.lastVariable = null;
         this.lastStations = [];
@@ -358,7 +358,7 @@ class VariablesChartManager {
 
     renderLegend(series) {
         const itemHeight = 10;
-        const spacing = 18;
+        const spacing = 16;
         const totalLegendHeight = series.length > 0 ?
             ((series.length - 1) * spacing) + itemHeight :
             0;

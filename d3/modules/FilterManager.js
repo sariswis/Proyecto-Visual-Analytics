@@ -74,6 +74,7 @@ class FilterManager {
         this.updateSelectedText('estacion', document.querySelector('#estacion-trigger .selected-text'));
         this.updateSelectedText('municipio', document.querySelector('#municipio-trigger .selected-text'));
         this.updateEstacionesCount();
+        this.updateMunicipiosCount();
     }
 
     populateStandardDropdown(id, options, sinSeleccione = false) {
@@ -259,6 +260,9 @@ class FilterManager {
                 if (type === 'estacion') {
                     this.updateEstacionesCount();
                 }
+                if (type === 'municipio') {
+                    this.updateMunicipiosCount();
+                }
             }
         });
     }
@@ -310,6 +314,7 @@ class FilterManager {
         this.marcarTodasCheckboxes('municipio', true);
         this.marcarOpcionTodas('municipio', true);
         this.updateSelectedText('municipio', document.querySelector('#municipio-trigger .selected-text'));
+        this.updateMunicipiosCount();
     }
 
     desactivarTodosMunicipios() {
@@ -318,6 +323,7 @@ class FilterManager {
         this.marcarTodasCheckboxes('municipio', false);
         this.marcarOpcionTodas('municipio', false);
         this.updateSelectedText('municipio', document.querySelector('#municipio-trigger .selected-text'));
+        this.updateMunicipiosCount();
     }
 
     desmarcarOpcionTodasMunicipios() {
@@ -388,6 +394,14 @@ class FilterManager {
         }
     }
 
+    updateMunicipiosCount() {
+        const count = this.filters.municipio.length;
+        const countElement = document.getElementById('municipios-count');
+        if (countElement) {
+            countElement.textContent = count;
+        }
+    }
+
     closeAllDropdowns() {
         document.querySelectorAll('.custom-dropdown-options').forEach(dropdown => {
             dropdown.classList.remove('show');
@@ -425,6 +439,7 @@ class FilterManager {
         });
 
         this.updateEstacionesCount();
+        this.updateMunicipiosCount();
         this.applyFilters();
     }
 

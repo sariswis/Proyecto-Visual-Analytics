@@ -58,7 +58,7 @@ body {
   top: 92px;
   left: 0;
   width: 455px;
-  height: 390px;
+  height: 485px;
   background-color: #dedede;
   border-radius: 8px;
   display: flex;
@@ -247,7 +247,7 @@ body {
   top: 0;
   left: 490px;
   width: 735px;
-  height: 485px;
+  height: 580px;
   background-color: #ffffff;
   border-radius: 0 8px 0 0;
 }
@@ -422,7 +422,7 @@ body {
 .map-visualization {
   position: relative;
   width: 100%;
-  height: 365px;
+  height: 460px;
   border: 2.9px solid #ddd;
   overflow: hidden;
   background-color: #ddd;
@@ -648,20 +648,20 @@ body {
 /* Tercera gráfica: Comparación 2024 vs 2025 - IZQUIERDA */
 .comparison-chart {
     position: absolute;
-    top: 515px; /* 485px (altura primer mapa) + 30px */
+    top: 610px; /* 485px (altura primer mapa) + 30px */
     left: 0;
     width: 570px; /* (1180px - 40px) / 2 */
-    height: 453px; /* Altura máxima disponible: 968px - 515px */
+    height: 380px; /* Altura máxima disponible: 968px - 515px */
     background-color: #ffffff;
 }
 
 /* Cuarta gráfica: Variables entre estaciones - DERECHA */
 .variables-chart {
     position: absolute;
-    top: 515px; /* Misma posición vertical que la tercera */
+    top: 610px; /* Misma posición vertical que la tercera */
     left: 630px; /* 570px (ancho tercera) + 40px */
     width: 570px; /* Mismo ancho que la tercera */
-    height: 454px; /* Misma altura que la tercera */
+    height: 380px; /* Misma altura que la tercera */
     background-color: #ffffff;
 }
 
@@ -670,7 +670,7 @@ body {
 .variables-visualization {
     position: relative;
     width: 590px;
-    height: 418px; /* 453px - 33px para el título */
+    height: 325px; /* 453px - 33px para el título */
     border: 3px solid #ddd;
     border-radius: 8px;
     background-color: #f8f9fa;
