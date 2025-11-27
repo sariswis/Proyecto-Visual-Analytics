@@ -387,7 +387,7 @@ class MapManager {
             .attr('class', 'via')
             .attr('d', this.path)
             .style('fill', '#ffffff00')
-            .style('stroke', '#f38f2d')
+            .style('stroke', '#274C7C')
             .style('stroke-width', '0.2px')
             .style('cursor', 'pointer')
             .style('opacity', 0)
@@ -986,11 +986,11 @@ class MapManager {
             .style('pointer-events', 'none');
         
         // Triángulo
-        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(100);
+        const triangleSymbol = d3.symbol().type(d3.symbolTriangle).size(250);
         
         this.legendLeft.append('path')
             .attr('d', triangleSymbol)
-            .attr('transform', 'translate(80, 17)')
+            .attr('transform', 'translate(85, 17)')
             .attr('fill', this.stationColorScale(this.stationsData[0]?.id || '1'))
             .attr('stroke', '#fff')
             .attr('stroke-width', 0.6)
@@ -1006,7 +1006,7 @@ class MapManager {
         this.legendRight.append('text')
             .attr('x', 0)
             .attr('y', 20)
-            .text('Incidencia de la fuente:')
+            .text(this.contaminanteSeleccionado == 'WDS' ? 'Influencia en la fuente:' : 'Incidencia de la fuente:')
             .style('font-size', '14px')
             .style('font-weight', 'bold')
             .style('fill', '#333')
@@ -1132,7 +1132,11 @@ class MapManager {
             const vias = this.g.selectAll('.via');
 
             if (this.showRoads) {
-                vias.style('opacity', 1);
+                vias.style('opacity', d => {
+                    if (d.properties.Tipo === 'Troncal') return 1;
+                    else if (d.properties.Tipo === 'Primaria') return 0.9;
+                    else return 0.8;
+                });
 
                 vias
                     .on('mouseover', this.handleRoadMouseOver.bind(this))

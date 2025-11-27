@@ -18,7 +18,7 @@ class ConcentrationMapManager {
         this.colorScale = null;
         this.radiusScale = null;
         this.legendBanner = null;
-        this.bannerHeight = 175;
+        this.bannerHeight = 215;
 
         // Nuevas variables para filtros
         this.activeStations = [];
@@ -47,7 +47,7 @@ class ConcentrationMapManager {
         this.setupZoom();
         this.drawMap();
         this.setupControls();
-
+        this.setupScale();
         return this;
     }
 
@@ -165,6 +165,7 @@ class ConcentrationMapManager {
                 this.currentTransform = event.transform;
                 this.g.attr('transform', event.transform);
                 
+                this.updateScale();
                 this.scaleMarkers(event.transform.k);
                 
                 if (!this.isApplyingExternalTransform && typeof this.onTransformChange === 'function') {
@@ -265,7 +266,7 @@ class ConcentrationMapManager {
             .attr('class', 'via')
             .attr('d', this.path)
             .style('fill', '#ffffff00')
-            .style('stroke', '#f38f2d')
+            .style('stroke', '#274C7C')
             .style('stroke-width', '0.2px')
             .style('cursor', 'pointer')
             .style('opacity', 0);
@@ -323,21 +324,26 @@ class ConcentrationMapManager {
             const vias = this.g.selectAll('.via');
 
             if (this.showRoads) {
-                vias.style('opacity', 1);
+                vias.style('opacity', d => {
+                    if (d.properties.Tipo === 'Troncal') return 1;
+                    else if (d.properties.Tipo === 'Primaria') return 0.9;
+                    else return 0.8;
+                });
 
                 vias
                     .on('mouseover', this.handleRoadMouseOver.bind(this))
                     .on('mouseout', this.handleRoadMouseOut.bind(this))
                     .on('mousemove', this.handleRoadMouseMove.bind(this));
-                
+
             } else {
                 vias.style('opacity', 0);
 
                 vias
                     .on('mouseover', null)
                     .on('mouseout', null)
-                    .on('mousemove', null)
+                    .on('mousemove', null);
             }
+
         });
     }
 
@@ -394,23 +400,65 @@ class ConcentrationMapManager {
 
         const valores = promedios.map(d => d.average);
 
-        const percentiles = [0, 0.25, 0.5, 0.75, 1];
-        const thresholds = percentiles.map(p => Math.round(d3.quantile(valores, p)));
+        const rawQ = [
+            d3.quantile(valores, 0.25),
+            d3.quantile(valores, 0.50),
+            d3.quantile(valores, 0.75)
+        ];
 
-        // Escala de colores (4 categorías)
+        // función para redondear con decimales específicos
+        function roundWithDecimals(value, decimals) {
+            return Number(value.toFixed(decimals));
+        }
+
+        // función para encontrar la mínima cantidad de decimales que separe dos valores
+        function findMinDecimals(lower, upper, maxDecimals = 2) {
+            for (let d = 0; d <= maxDecimals; d++) {
+                const roundedLower = roundWithDecimals(lower, d);
+                const roundedUpper = roundWithDecimals(upper, d);
+                if (roundedLower < roundedUpper) {
+                    return d;
+                }
+            }
+            return maxDecimals; // si no se puede separar, usar el máximo
+        }
+
+        // determinar decimales necesarios para cada cuantil
+        const decimals = [0, 0, 0];
+
+        // Para Q1: debe ser menor que Q2
+        decimals[0] = findMinDecimals(rawQ[0], rawQ[1]);
+
+        // Para Q2: debe ser mayor que Q1 Y menor que Q3
+        const decimalsQ2vsQ1 = findMinDecimals(rawQ[0], rawQ[1]);
+        const decimalsQ2vsQ3 = findMinDecimals(rawQ[1], rawQ[2]);
+        decimals[1] = Math.max(decimalsQ2vsQ1, decimalsQ2vsQ3);
+
+        // Para Q3: debe ser mayor que Q2
+        decimals[2] = findMinDecimals(rawQ[1], rawQ[2]);
+
+        // 5. aplicar redondeo final
+        const thresholds = rawQ.map((v, i) => roundWithDecimals(v, decimals[i]));
+
+        // 6. validación final: asegurar orden estricto
+        for (let i = 0; i < thresholds.length - 1; i++) {
+            if (thresholds[i] >= thresholds[i + 1]) {
+                console.warn(`Advertencia: Q${i+1} (${thresholds[i]}) >= Q${i+2} (${thresholds[i + 1]})`);
+            }
+        }
+
+        console.log('raw cuartiles:', rawQ);
+        console.log('decimales usados:', decimals);
+        console.log('Umbrales (final):', thresholds);
+
+        // 7. crear ambas escalas con los mismos umbrales
         this.colorScale = d3.scaleThreshold()
-            .domain(thresholds.slice(1, 4))
+            .domain(thresholds)
             .range(['#8FE200', '#FFEA00', '#FFA601', '#cb181d']);
 
-        // Escala de radios con 3 bins (pequeño, mediano, grande)
-        const radiusThresholds = [
-            Math.round(d3.quantile(valores, 0.33)),
-            Math.round(d3.quantile(valores, 0.67))
-        ];
-        
         this.radiusScale = d3.scaleThreshold()
-            .domain(radiusThresholds)
-            .range([8, 14, 20]);
+            .domain(thresholds)
+            .range([6, 10, 15, 20]);
     }
 
     drawCircles(promedios) {
@@ -550,7 +598,7 @@ class ConcentrationMapManager {
         colorLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
-            .text('Categorías por concentración')
+            .text(this.contaminanteSeleccionado == 'WDS' ? 'Categorías por niveles' : 'Categorías por concentración')
             .style('font-family', 'Poppins, sans-serif')
             .style('font-size', '12px')
             .style('font-weight', '600')
@@ -598,7 +646,7 @@ class ConcentrationMapManager {
         sizeLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
-            .text(`Tamaño por concentración (${unit})`)
+            .text(this.contaminanteSeleccionado == 'WDS' ? `Tamaño por niveles (${unit})` : `Tamaño por concentración (${unit})`)
             .style('font-family', 'Poppins, sans-serif')
             .style('font-size', '12px')
             .style('font-weight', '600')
@@ -609,9 +657,10 @@ class ConcentrationMapManager {
         const domain  = this.radiusScale.domain();
         const radii   = this.radiusScale.range();
         const labels = [
-            `≤ ${domain[0].toFixed(0)}`,
-            `${domain[0].toFixed(0)} - ${domain[1].toFixed(0)}`,
-            `> ${domain[1].toFixed(0)}`
+            `≤ ${domain[0]}`,
+            `${domain[0]} - ${domain[1]}`,
+            `${domain[1]} - ${domain[2]}`,
+            `> ${domain[2]}`
         ];
 
         const rowStartY = 22;  
@@ -746,5 +795,126 @@ class ConcentrationMapManager {
 
         console.log(`Promedios calculados para ${contaminante}:`, promedios);
         return promedios;
+    }
+
+    setupScale() {
+        // Creamos un grupo para la escala. 
+        this.scaleGroup = this.svg.append('g')
+            .attr('class', 'map-scale-container')
+            .attr('transform', `translate(${this.viewWidth - 120}, ${this.viewHeight - 230})`); // Posición: Abajo a la derecha
+
+        // Fondo semi-transparente (opcional, para legibilidad)
+        this.scaleGroup.append('rect')
+            .attr('class', 'scale-bg')
+            .attr('fill', 'rgba(255, 255, 255, 0.7)')
+            .attr('height', 20)
+            .attr('y', -15);
+
+        // La barra de escala (línea negra)
+        this.scaleGroup.append('rect')
+            .attr('class', 'scale-bar')
+            .attr('height', 4)
+            .attr('y', 0)
+            .attr('fill', '#333');
+
+        // Línea de borde
+        this.scaleGroup.append('line')
+            .attr('class', 'scale-tick-left')
+            .attr('stroke', '#333')
+            .attr('stroke-width', 2)
+            .attr('y1', -4)
+            .attr('y2', 4)
+            .attr('x1', 0)
+            .attr('x2', 0);
+            
+        this.scaleGroup.append('line')
+            .attr('class', 'scale-tick-right')
+            .attr('stroke', '#333')
+            .attr('stroke-width', 2)
+            .attr('y1', -4)
+            .attr('y2', 4);
+
+        // El texto de la distancia
+        this.scaleGroup.append('text')
+            .attr('class', 'scale-text')
+            .attr('y', -8)
+            .attr('font-family', 'sans-serif')
+            .attr('font-size', '10px')
+            .attr('fill', '#333')
+            .style('font-weight', 'bold');
+            
+        this.updateScale();
+    }
+
+    updateScale() {
+        if (!this.projection || !this.currentTransform) return;
+
+        // 1. Definimos un ancho objetivo en píxeles
+        const targetPixelWidth = 100;
+
+        // 2. Obtenemos dos puntos en el centro del mapa para minimizar distorsión
+        // Necesitamos invertir la transformación del zoom para obtener coordenadas originales del SVG
+        const centerX = this.viewWidth / 2;
+        const centerY = this.viewHeight / 2;
+        
+        // Convertimos coordenadas de pantalla -> coordenadas de proyección base (sin zoom)
+        // La fórmula es: (punto_pantalla - translate) / scale
+        const p1x = (centerX - this.currentTransform.x) / this.currentTransform.k;
+        const p2x = (centerX + targetPixelWidth - this.currentTransform.x) / this.currentTransform.k;
+        
+        // Coordenada Y constante (usamos el centro)
+        const py = (centerY - this.currentTransform.y) / this.currentTransform.k;
+
+        // 3. Invertimos la proyección para obtener Lat/Lon
+        const coords1 = this.projection.invert([p1x, py]);
+        const coords2 = this.projection.invert([p2x, py]);
+
+        if (!coords1 || !coords2) return;
+
+        // 4. Calculamos distancia real en Kilómetros usando d3.geoDistance (devuelve radianes) * Radio Tierra
+        const distanceKm = d3.geoDistance(coords1, coords2) * 6371;
+
+        // 5. Lógica de "Números Bonitos" (Rounding)
+        // Queremos mostrar 10km, 20km, 50km, no 34.56km
+        let displayDistance = distanceKm;
+        let suffix = 'km';
+
+        // Ajuste si es muy pequeña (metros)
+        if (distanceKm < 1) {
+            displayDistance = distanceKm * 1000;
+            suffix = 'm';
+        }
+
+        // Algoritmo para encontrar el "número bonito" más cercano (1, 2, 5, 10...)
+        const magnitude = Math.pow(10, Math.floor(Math.log10(displayDistance)));
+        const residual = displayDistance / magnitude;
+        
+        let niceValue;
+        if (residual >= 5) niceValue = 5 * magnitude;
+        else if (residual >= 2) niceValue = 2 * magnitude;
+        else niceValue = 1 * magnitude;
+
+        // 6. Recalcular el ancho en píxeles exacto para ese "número bonito"
+        // Regla de tres: Si 'distanceKm' son 'targetPixelWidth' px, entonces 'niceValue' son 'X' px
+        // Nota: convertimos niceValue a km si estaba en m para la proporción
+        const niceValueInKm = suffix === 'm' ? niceValue / 1000 : niceValue;
+        const finalPixelWidth = (niceValueInKm * targetPixelWidth) / distanceKm;
+
+        // 7. Actualizar el DOM
+        this.scaleGroup.select('.scale-bar')
+            .attr('width', finalPixelWidth);
+            
+        this.scaleGroup.select('.scale-bg')
+            .attr('width', finalPixelWidth + 10) // Un poco de padding
+            .attr('x', -5);
+
+        this.scaleGroup.select('.scale-tick-right')
+            .attr('x1', finalPixelWidth)
+            .attr('x2', finalPixelWidth);
+
+        this.scaleGroup.select('.scale-text')
+            .text(`${niceValue} ${suffix}`)
+            .attr('x', finalPixelWidth / 2) // Centrar texto
+            .attr('text-anchor', 'middle');
     }
 }
