@@ -18,7 +18,7 @@ class ConcentrationMapManager {
         this.colorScale = null;
         this.radiusScale = null;
         this.legendBanner = null;
-        this.bannerHeight = 175;
+        this.bannerHeight = 215;
 
         // Nuevas variables para filtros
         this.activeStations = [];
@@ -265,7 +265,7 @@ class ConcentrationMapManager {
             .attr('class', 'via')
             .attr('d', this.path)
             .style('fill', '#ffffff00')
-            .style('stroke', '#f38f2d')
+            .style('stroke', '#274C7C')
             .style('stroke-width', '0.2px')
             .style('cursor', 'pointer')
             .style('opacity', 0);
@@ -323,21 +323,26 @@ class ConcentrationMapManager {
             const vias = this.g.selectAll('.via');
 
             if (this.showRoads) {
-                vias.style('opacity', 1);
+                vias.style('opacity', d => {
+                    if (d.properties.Tipo === 'Troncal') return 1;
+                    else if (d.properties.Tipo === 'Primaria') return 0.9;
+                    else return 0.8;
+                });
 
                 vias
                     .on('mouseover', this.handleRoadMouseOver.bind(this))
                     .on('mouseout', this.handleRoadMouseOut.bind(this))
                     .on('mousemove', this.handleRoadMouseMove.bind(this));
-                
+
             } else {
                 vias.style('opacity', 0);
 
                 vias
                     .on('mouseover', null)
                     .on('mouseout', null)
-                    .on('mousemove', null)
+                    .on('mousemove', null);
             }
+
         });
     }
 
@@ -394,23 +399,65 @@ class ConcentrationMapManager {
 
         const valores = promedios.map(d => d.average);
 
-        const percentiles = [0, 0.25, 0.5, 0.75, 1];
-        const thresholds = percentiles.map(p => Math.round(d3.quantile(valores, p)));
+        const rawQ = [
+            d3.quantile(valores, 0.25),
+            d3.quantile(valores, 0.50),
+            d3.quantile(valores, 0.75)
+        ];
 
-        // Escala de colores (4 categorías)
+        // función para redondear con decimales específicos
+        function roundWithDecimals(value, decimals) {
+            return Number(value.toFixed(decimals));
+        }
+
+        // función para encontrar la mínima cantidad de decimales que separe dos valores
+        function findMinDecimals(lower, upper, maxDecimals = 2) {
+            for (let d = 0; d <= maxDecimals; d++) {
+                const roundedLower = roundWithDecimals(lower, d);
+                const roundedUpper = roundWithDecimals(upper, d);
+                if (roundedLower < roundedUpper) {
+                    return d;
+                }
+            }
+            return maxDecimals; // si no se puede separar, usar el máximo
+        }
+
+        // determinar decimales necesarios para cada cuantil
+        const decimals = [0, 0, 0];
+
+        // Para Q1: debe ser menor que Q2
+        decimals[0] = findMinDecimals(rawQ[0], rawQ[1]);
+
+        // Para Q2: debe ser mayor que Q1 Y menor que Q3
+        const decimalsQ2vsQ1 = findMinDecimals(rawQ[0], rawQ[1]);
+        const decimalsQ2vsQ3 = findMinDecimals(rawQ[1], rawQ[2]);
+        decimals[1] = Math.max(decimalsQ2vsQ1, decimalsQ2vsQ3);
+
+        // Para Q3: debe ser mayor que Q2
+        decimals[2] = findMinDecimals(rawQ[1], rawQ[2]);
+
+        // 5. aplicar redondeo final
+        const thresholds = rawQ.map((v, i) => roundWithDecimals(v, decimals[i]));
+
+        // 6. validación final: asegurar orden estricto
+        for (let i = 0; i < thresholds.length - 1; i++) {
+            if (thresholds[i] >= thresholds[i + 1]) {
+                console.warn(`Advertencia: Q${i+1} (${thresholds[i]}) >= Q${i+2} (${thresholds[i + 1]})`);
+            }
+        }
+
+        console.log('raw cuartiles:', rawQ);
+        console.log('decimales usados:', decimals);
+        console.log('Umbrales (final):', thresholds);
+
+        // 7. crear ambas escalas con los mismos umbrales
         this.colorScale = d3.scaleThreshold()
-            .domain(thresholds.slice(1, 4))
+            .domain(thresholds)
             .range(['#8FE200', '#FFEA00', '#FFA601', '#cb181d']);
 
-        // Escala de radios con 3 bins (pequeño, mediano, grande)
-        const radiusThresholds = [
-            Math.round(d3.quantile(valores, 0.33)),
-            Math.round(d3.quantile(valores, 0.67))
-        ];
-        
         this.radiusScale = d3.scaleThreshold()
-            .domain(radiusThresholds)
-            .range([8, 14, 20]);
+            .domain(thresholds)
+            .range([6, 10, 15, 20]);
     }
 
     drawCircles(promedios) {
@@ -550,7 +597,7 @@ class ConcentrationMapManager {
         colorLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
-            .text('Categorías por concentración')
+            .text(this.contaminanteSeleccionado == 'WDS' ? 'Categorías por niveles' : 'Categorías por concentración')
             .style('font-family', 'Poppins, sans-serif')
             .style('font-size', '12px')
             .style('font-weight', '600')
@@ -598,7 +645,7 @@ class ConcentrationMapManager {
         sizeLegend.append('text')
             .attr('x', 0)
             .attr('y', 12)
-            .text(`Tamaño por concentración (${unit})`)
+            .text(this.contaminanteSeleccionado == 'WDS' ? `Tamaño por niveles (${unit})` : `Tamaño por concentración (${unit})`)
             .style('font-family', 'Poppins, sans-serif')
             .style('font-size', '12px')
             .style('font-weight', '600')
@@ -609,9 +656,10 @@ class ConcentrationMapManager {
         const domain  = this.radiusScale.domain();
         const radii   = this.radiusScale.range();
         const labels = [
-            `≤ ${domain[0].toFixed(0)}`,
-            `${domain[0].toFixed(0)} - ${domain[1].toFixed(0)}`,
-            `> ${domain[1].toFixed(0)}`
+            `≤ ${domain[0]}`,
+            `${domain[0]} - ${domain[1]}`,
+            `${domain[1]} - ${domain[2]}`,
+            `> ${domain[2]}`
         ];
 
         const rowStartY = 22;  
