@@ -1,7 +1,5 @@
 # Datasets a usar para la visualización
 
-## Obligatorios
-
 Mediciones de la calidad del aire (Dataset 3 preparado): `data\preparada\measurements.csv`
 
 Estaciones de calidad del aire (Dataset 1 preparado): `data\preparada\stations.csv`
@@ -12,9 +10,9 @@ Empresas con fuentes de emisión (Dataset 2 preparado): `data\preparada\emission
 
 Mapa de municipios (Dataset 9): `data\preparada\municipios_final.geojson`
 
-## Opcionales
+Mapa de departamentos (Dataset 10): `data\preparada\departamentos_final.geojson`
 
-Matriz Empresa - Variable (Dataset 7): `data\preparada\variable_permits_matrix.csv`
+Malla vial (Dataset 11): `data\preparada\vias_final.geojson`
 
 
 
